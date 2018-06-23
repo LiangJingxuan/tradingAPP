@@ -1,0 +1,62 @@
+用户user：
+主键	Id			int ;
+用户名	Username	char(10) ;
+密码	Password		varchar(50) ;
+权限	Roles		varchar(100) ;
+
+类目category：
+主键		Id		int ;
+类名		cname	varchar(20) ;
+
+子类目 subcategory：
+主键		id		int ;
+类名		sname	varchar(20) ;
+父类外键	parent_id		int ;
+
+商品 goods：
+主键	id	int ;
+商品名	goods_name	varchar(20) ;
+卖点	goods_point	varchar(80) ;
+图片	goods_pic	varchar(300) ;
+产品概述	goods_summary	varchar(500) ;
+热门商品	state		tinyint(1) ;
+规格外键	standard_id	varchar(100) ;
+类目外键	subcategory_id	int ;
+
+规格 standard：
+主键	id	int ;
+规格名	standard_key	char(20) ;
+规格值	standard_val	char(20) ;
+
+新闻 news：
+主键	id		int ;
+标题	title		varchar(40) ;
+时间	time		datatime ;
+内容	content 	text ;
+类目外键	subcategory_id	int ;
+
+案例 case：
+主键	id	int ;
+标题	case_title		varchar(20) ;
+时间	case_time	datatime;
+图片	case_pic		varchar(300) ;
+热门案例	states	tinyint(1) ;	
+类目外键	subcategory_id	int ;
+关于我们 about：
+主键	id	int ;
+内容	content	varchar(1000) ;
+
+客户留言 customer：
+主键	id	int ;
+客户姓名	name	varchar(7) ;
+客户邮箱	email	varchar(40) ;
+客户标题	title		varchar(40) ;	
+客户电话	phone	char(11) ;
+客户留言	content	varchar(150) ;
+
+公司信息 company：
+主键	id	int ;
+地址	adds		varchar(100) ;
+电话	phone	varchar(100) ; 
+邮箱	email	varchar(100) ;
+位置	location	varchar(100) ;

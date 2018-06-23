@@ -1,0 +1,23 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "liangjingxuan",
+  "license": "ISC",
+  "devDependencies": {
+    "co-mysql": "^1.0.0",
+    "ejs": "^2.6.1",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-mysql-session": "^0.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static-cache": "^5.1.2",
+    "koa-views": "^6.1.4",
+    "md5": "^2.2.1",
+    "mysql": "^2.15.0"
+  }
+}
