@@ -1,7 +1,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="brand">
-        <a ><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+        <a ><img src="/admin/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
     </div>
     <div class="container-fluid">
         <div class="navbar-btn">
@@ -13,12 +13,12 @@
                 <span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
             </div>
         </form>
-        <div class="navbar-btn navbar-btn-right">
+        <!--<div class="navbar-btn navbar-btn-right">
             <a class="btn btn-success update-pro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-        </div>
+        </div>-->
         <div id="navbar-menu">
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+                <li class="dropdown" style="cursor: pointer">
                     <a class="dropdown-toggle icon-menu" data-toggle="dropdown">
                         <i class="lnr lnr-alarm"></i>
                         <span class="badge bg-danger">5</span>
@@ -32,7 +32,7 @@
                         <li><a class="more">See all notifications</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
+                <li class="dropdown" style="cursor: pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a >Basic Use</a></li>
@@ -41,8 +41,8 @@
                         <li><a >Troubleshooting</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                <li class="dropdown" style="cursor: pointer">
+                    <a class="dropdown-toggle" data-toggle="dropdown"><!--<img src="assets/img/user.png" class="img-circle" alt="Avatar">--> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a ><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
                         <li><a ><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
@@ -60,26 +60,260 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                <li><a class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
+                <li><a class="active"><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
+                <!--<li><a class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
                 <li><a class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                 <li><a class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
                 <li><a class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
                 <li>
-                    <a data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <a href="/#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="subPages" class="collapse ">
                         <ul class="nav">
                             <li><a class="">Profile</a></li>
-                            <li><a class="">Login</a></li>
-                            <li><a class="">Lockscreen</a></li>
+                            <li><a href="page-login.html" class="">Login</a></li>
+                            <li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
                 <li><a class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-                <li><a class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
+                <li><a class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>-->
             </ul>
         </nav>
     </div>
 </div>
 <!-- END LEFT SIDEBAR -->
+<script>
+    $(document).ready(function() {
+
+        /*-----------------------------------/
+        /*	TOP NAVIGATION AND LAYOUT
+        /*----------------------------------*/
+        $('.btn-toggle-fullwidth').on('click', function() {
+            if(!$('html').hasClass('layout-fullwidth')) {
+                $('html').addClass('layout-fullwidth');
+
+            } else {
+                $('html').removeClass('layout-fullwidth');
+                $('html').removeClass('layout-default'); // also remove default behaviour if set
+            }
+
+            $(this).find('.lnr').toggleClass('lnr-arrow-left-circle lnr-arrow-right-circle');
+
+            if($(window).innerWidth() < 1025) {
+                if(!$('html').hasClass('offcanvas-active')) {
+                    $('html').addClass('offcanvas-active');
+                } else {
+                    $('html').removeClass('offcanvas-active');
+                }
+            }
+        });
+
+        $(window).on('load', function() {
+            if($(window).innerWidth() < 1025) {
+                $('.btn-toggle-fullwidth').find('.icon-arrows')
+                    .removeClass('icon-arrows-move-left')
+                    .addClass('icon-arrows-move-right');
+            }
+
+            // adjust right sidebar top position
+            $('.right-sidebar').css('top', $('.navbar').innerHeight());
+
+            // if page has content-menu, set top padding of main-content
+            if($('.has-content-menu').length > 0) {
+                $('.navbar + .main-content').css('padding-top', $('.navbar').innerHeight());
+            }
+
+            // for shorter main content
+            if($('.main').height() < $('#sidebar-nav').height()) {
+                $('.main').css('min-height', $('#sidebar-nav').height());
+            }
+        });
+
+
+        /*-----------------------------------/
+        /*	SIDEBAR NAVIGATION
+        /*----------------------------------*/
+
+        var flag=false;
+        $('.sidebar a[data-toggle="collapse"]').on('click', function() {
+            if($(this).hasClass('collapsed')) {
+                $(this).addClass('active');
+            } else {
+                $(this).removeClass('active');
+            }
+            flag=!flag;
+            if(flag){
+                $(this).children('.icon-submenu').css({'transform':'rotate(-90deg)'});
+            }else{
+                $(this).children('.icon-submenu').css({'transform':'rotate(0deg)'});
+            }
+        });
+
+        if( $('.sidebar-scroll').length > 0 ) {
+            $('.sidebar-scroll').slimScroll({
+                height: '95%',
+                wheelStep: 2,
+            });
+        }
+
+
+        /*-----------------------------------/
+        /*	PANEL FUNCTIONS
+        /*----------------------------------*/
+
+        // panel remove
+        $('.panel .btn-remove').click(function(e){
+
+            e.preventDefault();
+            $(this).parents('.panel').fadeOut(300, function(){
+                $(this).remove();
+            });
+        });
+
+        // panel collapse/expand
+        var affectedElement = $('.panel-body');
+
+        /*$('.panel .btn-toggle-collapse').clickToggle(
+            function(e) {
+                e.preventDefault();
+
+                // if has scroll
+                if( $(this).parents('.panel').find('.slimScrollDiv').length > 0 ) {
+                    affectedElement = $('.slimScrollDiv');
+                }
+
+                $(this).parents('.panel').find(affectedElement).slideUp(300);
+                $(this).find('i.lnr-chevron-up').toggleClass('lnr-chevron-down');
+            },
+            function(e) {
+                e.preventDefault();
+
+                // if has scroll
+                if( $(this).parents('.panel').find('.slimScrollDiv').length > 0 ) {
+                    affectedElement = $('.slimScrollDiv');
+                }
+
+                $(this).parents('.panel').find(affectedElement).slideDown(300);
+                $(this).find('i.lnr-chevron-up').toggleClass('lnr-chevron-down');
+            }
+        );*/
+
+
+        /*-----------------------------------/
+        /*	PANEL SCROLLING
+        /*----------------------------------*/
+
+        if( $('.panel-scrolling').length > 0) {
+            $('.panel-scrolling .panel-body').slimScroll({
+                height: '430px',
+                wheelStep: 2,
+            });
+        }
+
+        if( $('#panel-scrolling-demo').length > 0) {
+            $('#panel-scrolling-demo .panel-body').slimScroll({
+                height: '175px',
+                wheelStep: 2,
+            });
+        }
+
+        /*-----------------------------------/
+        /*	TODO LIST
+        /*----------------------------------*/
+
+        $('.todo-list input').change( function() {
+            if( $(this).prop('checked') ) {
+                $(this).parents('li').addClass('completed');
+            }else {
+                $(this).parents('li').removeClass('completed');
+            }
+        });
+
+
+        /*-----------------------------------/
+        /* TOASTR NOTIFICATION
+        /*----------------------------------*/
+
+        if($('#toastr-demo').length > 0) {
+            toastr.options.timeOut = "false";
+            toastr.options.closeButton = true;
+            toastr['info']('Hi there, this is notification demo with HTML support. So, you can add HTML elements like <a href="#">this link</a>');
+
+            $('.btn-toastr').on('click', function() {
+                $context = $(this).data('context');
+                $message = $(this).data('message');
+                $position = $(this).data('position');
+
+                if($context == '') {
+                    $context = 'info';
+                }
+
+                if($position == '') {
+                    $positionClass = 'toast-left-top';
+                } else {
+                    $positionClass = 'toast-' + $position;
+                }
+
+                toastr.remove();
+                toastr[$context]($message, '' , { positionClass: $positionClass });
+            });
+
+            $('#toastr-callback1').on('click', function() {
+                $message = $(this).data('message');
+
+                toastr.options = {
+                    "timeOut": "300",
+                    "onShown": function() { alert('onShown callback'); },
+                    "onHidden": function() { alert('onHidden callback'); }
+                }
+
+                toastr['info']($message);
+            });
+
+            $('#toastr-callback2').on('click', function() {
+                $message = $(this).data('message');
+
+                toastr.options = {
+                    "timeOut": "10000",
+                    "onclick": function() { alert('onclick callback'); },
+                }
+
+                toastr['info']($message);
+
+            });
+
+            $('#toastr-callback3').on('click', function() {
+                $message = $(this).data('message');
+
+                toastr.options = {
+                    "timeOut": "10000",
+                    "closeButton": true,
+                    "onCloseClick": function() { alert('onCloseClick callback'); }
+                }
+
+                toastr['info']($message);
+            });
+        }
+    });
+
+    // toggle function
+    /*$.fn.clickToggle = function( f1, f2 ) {
+        return this.each( function() {
+            var clicked = false;
+            $(this).bind('click', function() {
+                if(clicked) {
+                    clicked = false;
+                    return f2.apply(this, arguments);
+                }
+
+                clicked = true;
+                return f1.apply(this, arguments);
+            });
+        });
+
+    }*/
+
+
+
+</script>
