@@ -40,5 +40,15 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 用户管理
+        .state('user',{
+            url:'/user',
+            views:{
+                'view':{
+                    controller:'userCtrl',
+                    templateUrl:'tpl/user/user.html'
+                }
+            }
+        })
 
 }]);

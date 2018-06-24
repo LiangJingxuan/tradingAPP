@@ -96,7 +96,7 @@ a:hover {
 }
 
 .modal-header {
-    background: #00A8B3;
+    background: #2b333e;
     color: #fff;
     border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
@@ -112,7 +112,7 @@ a:hover {
 .form-control {
     border: 1px solid #e2e2e4;
     box-shadow: none;
-    color: #c2c2c2;
+    color: #333;
 }
 
 

@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4d032176-aa6c-48e5-bf6c-f721030a30dd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/admin/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/admin/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/admin/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/admin/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/admin/lib/bootstrap/bootstrap-reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/admin/lib/bootstrap/bootstrap-reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/admin/tpl/commons/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/admin/tpl/commons/nav.html" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="node" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="ejs" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tempup</find>
+      <find>dir</find>
+      <find>normalize</find>
+      <find>data-page</find>
+      <find>shanchu</find>
+      <find>password</find>
+      <find>update</find>
+      <find>touxiang</find>
+      <find>register</find>
+      <find>postMsg</find>
+      <find>postBox</find>
+      <find>pageamout</find>
+      <find>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</find>
+      <find>avtive</find>
+      <find>username</find>
+      <find>userlist</find>
+      <find>list</find>
+      <find>badyparser</find>
+      <find>bodyparser</find>
+      <find>dopost</find>
+      <find>db</find>
+      <find>json</find>
+      <find>getObjectId</find>
+      <find>routes</find>
+      <find>active</find>
+      <find>Title</find>
+      <find>.modal-header</find>
+      <find>.form-control</find>
+      <find>bs-example-modal-sm</find>
+      <find>number</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/views/setavatar.ejs" />
+        <option value="$PROJECT_DIR$/views/cut.ejs" />
+        <option value="$PROJECT_DIR$/views/register.ejs" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
+        <option value="$PROJECT_DIR$/models/db.js" />
+        <option value="$PROJECT_DIR$/views/user.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/router/router.js" />
+        <option value="$PROJECT_DIR$/views/userlist.ejs" />
+        <option value="$PROJECT_DIR$/views/header.ejs" />
+        <option value="$PROJECT_DIR$/01.js" />
+        <option value="$PROJECT_DIR$/02.route.js" />
+        <option value="$PROJECT_DIR$/02.router.js" />
+        <option value="$PROJECT_DIR$/03.get.js" />
+        <option value="$PROJECT_DIR$/04.middleware.js" />
+        <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/05.ejs.js" />
+        <option value="$PROJECT_DIR$/views/index.ejs" />
+        <option value="$PROJECT_DIR$/views/post.ejs" />
+        <option value="$PROJECT_DIR$/06.post.js" />
+        <option value="$PROJECT_DIR$/static.js" />
+        <option value="$PROJECT_DIR$/07.static.js" />
+        <option value="$PROJECT_DIR$/views/test.ejs" />
+        <option value="$PROJECT_DIR$/static/style.css" />
+        <option value="$PROJECT_DIR$/08.cookie.js" />
+        <option value="$PROJECT_DIR$/09.session.js" />
+        <option value="$PROJECT_DIR$/10.js-SingleCase.js" />
+        <option value="$PROJECT_DIR$/11.mongo.js" />
+        <option value="$PROJECT_DIR$/12.mongodb-dao.js" />
+        <option value="$PROJECT_DIR$/dao/module/config.js" />
+        <option value="$PROJECT_DIR$/dao/module/db.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/app.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/routers/admin/user.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/routers/admin/goods.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/routers/admin.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/routers/api/add.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/routers/api.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/module/module.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/statics/statics.js" />
+        <option value="$PROJECT_DIR$/koa-app-test/views/index.ejs" />
+        <option value="$PROJECT_DIR$/router/admin/user.js" />
+        <option value="$PROJECT_DIR$/www/admin/js/app.js" />
+        <option value="$PROJECT_DIR$/www/admin/js/controller/userModule/userCtrl.js" />
+        <option value="$PROJECT_DIR$/www/admin/js/controller/userModule/userModule.js" />
+        <option value="$PROJECT_DIR$/www/admin/tpl/commons/nav.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/www/admin/index.html" />
+        <option value="$PROJECT_DIR$/www/admin/lib/bootstrap/bootstrap-reset.css" />
+        <option value="$PROJECT_DIR$/www/admin/tpl/user/user.html" />
+        <option value="$PROJECT_DIR$/www/admin/css/main.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="136" />
+    <option name="y" value="261" />
+    <option name="width" value="1068" />
+    <option name="height" value="590" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tradingAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradingAPP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tradingAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradingAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="8.9.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tradingAPP" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\htdocs\project\node-learn\koa2\koa-app-test\routers\api" />
+      <recent name="D:\htdocs\project\node-learn\koa2\koa-app-test\routers\admin" />
+      <recent name="D:\htdocs\project\koa2\dao" />
+      <recent name="D:\htdocs\project\node-learn\littleAlbum\uploads\兔兔" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\htdocs\project\node-learn\shuoshuo\views" />
+      <recent name="D:\htdocs\project\node-learn\shuoshuo\models" />
+      <recent name="D:\htdocs\project\node-learn\shuoshuo\public\css" />
+      <recent name="D:\htdocs\project\node-learn\shuoshuo\public" />
+      <recent name="D:\htdocs\project\node-learn\shuoshuo\public\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Node.js.app.js (2)">
+    <configuration name="10.js-SingleCase.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="node" path-to-js-file="10.js-SingleCase.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="11.mongo.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="node" path-to-js-file="11.mongo.js" working-dir="$PROJECT_DIR$" />
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="node" />
+    <configuration name="app.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/koa-app-test" />
+    <configuration name="app.js (2)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="node" path-to-js-file="$PROJECT_DIR$/01.app.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="db.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="node" path-to-js-file="db.js" working-dir="$PROJECT_DIR$/dao/module" />
+    <list>
+      <item itemvalue="Node.js.app.js" />
+      <item itemvalue="Node.js.10.js-SingleCase.js" />
+      <item itemvalue="Node.js.11.mongo.js" />
+      <item itemvalue="Node.js.db.js" />
+      <item itemvalue="Node.js.app.js (1)" />
+      <item itemvalue="Node.js.app.js (2)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.app.js (2)" />
+        <item itemvalue="Node.js.app.js (1)" />
+        <item itemvalue="Node.js.db.js" />
+        <item itemvalue="Node.js.11.mongo.js" />
+        <item itemvalue="Node.js.10.js-SingleCase.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d032176-aa6c-48e5-bf6c-f721030a30dd" name="Default" comment="" />
+      <created>1524379482641</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524379482641</updated>
+      <workItem from="1524379484044" duration="789000" />
+      <workItem from="1524380317934" duration="301000" />
+      <workItem from="1524380643993" duration="19067000" />
+      <workItem from="1524487253509" duration="5351000" />
+      <workItem from="1525050119634" duration="47000" />
+      <workItem from="1525067959319" duration="90000" />
+      <workItem from="1525353074337" duration="7036000" />
+      <workItem from="1525438105194" duration="29000" />
+      <workItem from="1525529334729" duration="9306000" />
+      <workItem from="1525574047560" duration="598000" />
+      <workItem from="1525600255918" duration="119000" />
+      <workItem from="1525600412350" duration="6675000" />
+      <workItem from="1525697741378" duration="7282000" />
+      <workItem from="1525785564719" duration="10368000" />
+      <workItem from="1525871055038" duration="6360000" />
+      <workItem from="1526110970516" duration="5685000" />
+      <workItem from="1526134275781" duration="1436000" />
+      <workItem from="1526302715503" duration="8099000" />
+      <workItem from="1526312300876" duration="873000" />
+      <workItem from="1526389136062" duration="2057000" />
+      <workItem from="1526395161598" duration="5241000" />
+      <workItem from="1526475428286" duration="10050000" />
+      <workItem from="1526563210979" duration="6904000" />
+      <workItem from="1526648522427" duration="877000" />
+      <workItem from="1526738938453" duration="6510000" />
+      <workItem from="1526795568074" duration="89000" />
+      <workItem from="1526908183055" duration="10331000" />
+      <workItem from="1526995231917" duration="4879000" />
+      <workItem from="1527080141317" duration="6970000" />
+      <workItem from="1527513366075" duration="687000" />
+      <workItem from="1528005904893" duration="13940000" />
+      <workItem from="1528031243405" duration="6262000" />
+      <workItem from="1528117502386" duration="6995000" />
+      <workItem from="1528203835925" duration="3000000" />
+      <workItem from="1528289599190" duration="6966000" />
+      <workItem from="1528377068350" duration="6420000" />
+      <workItem from="1528722592012" duration="1068000" />
+      <workItem from="1529821746014" duration="364000" />
+      <workItem from="1529832248762" duration="638000" />
+      <workItem from="1529834697533" duration="135000" />
+      <workItem from="1529834866072" duration="437000" />
+      <workItem from="1529845932485" duration="5364000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="195695000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48659003" visible="true" weight="0.25340393" />
+      <window_info anchor="bottom" id="TODO" order="5" sideWeight="0.49702382" weight="0.32744783" />
+      <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5029762" side_tool="true" weight="0.32636657" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="right" id="Run" order="3" weight="0.33812407" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Terminal" order="4" sideWeight="0.49702382" weight="0.25718608" />
+      <window_info id="Favorites" order="2" sideWeight="0.51341" side_tool="true" weight="0.25297618" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905295" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48659003" visible="true" weight="0.25297618" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49702382" weight="0.32744783" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16211878" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905295" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49702382" weight="0.32744783" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5029762" side_tool="true" weight="0.32817337" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" sideWeight="0.51341" side_tool="true" weight="0.25297618" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/models/db.js" />
+    <entry file="file://$PROJECT_DIR$/public/css/jumbotron.css" />
+    <entry file="file://$PROJECT_DIR$/views/user.ejs" />
+    <entry file="file://$PROJECT_DIR$/views/userlist.ejs" />
+    <entry file="file://$PROJECT_DIR$/views/header.ejs" />
+    <entry file="file://$PROJECT_DIR$/router/router.js" />
+    <entry file="file://$PROJECT_DIR$/02.router.js" />
+    <entry file="file://$PROJECT_DIR$/03.get.js" />
+    <entry file="file://$PROJECT_DIR$/04.middleware.js" />
+    <entry file="file://$PROJECT_DIR$/01.async.js" />
+    <entry file="file://$PROJECT_DIR$/views/index.html" />
+    <entry file="file://$PROJECT_DIR$/views/post.ejs" />
+    <entry file="file://$PROJECT_DIR$/05.ejs.js" />
+    <entry file="file://$PROJECT_DIR$/06.post.js" />
+    <entry file="file://$PROJECT_DIR$/views/index.ejs" />
+    <entry file="file://$PROJECT_DIR$/views/test.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/style.css" />
+    <entry file="file://$PROJECT_DIR$/07.static.js" />
+    <entry file="file://$PROJECT_DIR$/08.cookie.js" />
+    <entry file="file://$PROJECT_DIR$/10.js-SingleCase.js" />
+    <entry file="file://$PROJECT_DIR$/dao/module/config.js" />
+    <entry file="file://$PROJECT_DIR$/11.mongo.js" />
+    <entry file="file://$PROJECT_DIR$/dao/module/db.js" />
+    <entry file="file://$PROJECT_DIR$/dao/12.mongodb-dao.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/09.session.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/routers/admin/user.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/routers/admin/goods.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/routers/api/add.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/app.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/routers/api/index.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/routers/admin/index.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/statics/statics.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/module/module.js" />
+    <entry file="file://$PROJECT_DIR$/koa-app-test/views/index.ejs" />
+    <entry file="file://$PROJECT_DIR$/router/admin/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/router/admin/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/js/controller/HomeModule/homeModule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="47" column="40" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/js/controller/userModule/userModule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/tpl/commons/nav.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="143" column="13" lean-forward="true" selection-start-line="139" selection-start-column="12" selection-end-line="143" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/tpl/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="72" lean-forward="true" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/lib/bootstrap/bootstrap-reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="114" column="16" lean-forward="true" selection-start-line="114" selection-start-column="16" selection-end-line="114" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/admin/tpl/user/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="n#div#1;n#!!top" />
+            <element signature="n#div#2;n#!!top" />
+            <element signature="n#div#4;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/table-structure.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
