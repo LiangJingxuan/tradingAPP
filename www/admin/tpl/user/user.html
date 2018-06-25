@@ -14,23 +14,23 @@
                             <div class="table-responsive">
                                 <table class="table project-table">
                                     <thead>
-                                    <tr>
-                                        <th>用户姓名</th>
-                                        <th>用户电话</th>
-                                        <th>用户权限</th>
-                                        <th>用户操作</th>
-                                    </tr>
+                                        <tr>
+                                            <th>用户姓名</th>
+                                            <th>用户电话</th>
+                                            <th>用户权限</th>
+                                            <th>用户操作</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>梁景轩</td>
-                                        <td>15100284122</td>
-                                        <td>管理员</td>
-                                        <td>
-                                            <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
-                                            <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
-                                        </td>
-                                    </tr>
+                                        <tr ng-repeat="u in userList">
+                                            <td ng-bind="u.username"></td>
+                                            <td ng-bind="u.tel"></td>
+                                            <td ng-bind="u.roles"></td>
+                                            <td>
+                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
+                                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <div class="margin-top-30 text-center"><button class="btn btn-white" data-toggle="modal" data-target=".addUserModel">新增用户</button></div>
@@ -52,30 +52,27 @@
             <div class="modal-header">
                 新增用户
             </div>
-            <div class="modal-body">
-                <label>用户名：</label>
-                <input type="text" class="form-control" placeholder="填写用户名">
-                <br>
-                <label>用户密码：</label>
-                <input type="password" class="form-control" placeholder="填写用户登录密码">
-                <br>
-                <label>用户电话：</label>
-                <input type="number" class="form-control" placeholder="填写用户电话">
-                <br>
-                <label>用户权限：</label>
-                <select class="form-control">
-                    <option value="cheese">Cheese</option>
-                    <option value="tomatoes">Tomatoes</option>
-                    <option value="mozarella">Mozzarella</option>
-                    <option value="mushrooms">Mushrooms</option>
-                    <option value="pepperoni">Pepperoni</option>
-                    <option value="onions">Onions</option>
-                </select>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-xs btn-danger">确认新增</button>
-                <button class="btn btn-xs btn-primary" data-dismiss="modal">取消</button>
-            </div>
+            <form onkeydown="if(event.keyCode==13)return false;" id="userAddId" action="/admin/user/useradd" method="post">
+                <div class="modal-body">
+                    <label>用户名：</label>
+                    <input name="username" type="text" class="form-control" placeholder="填写用户名" autocomplete="off">
+                    <br>
+                    <label>用户密码：</label>
+                    <input name="password" type="password" class="form-control" placeholder="填写用户登录密码" autocomplete="off">
+                    <br>
+                    <label>用户电话：</label>
+                    <input name="tel" type="number" class="form-control" placeholder="填写用户电话" autocomplete="off">
+                    <br>
+                    <label>用户权限：</label>
+                    <select name="roles" class="form-control">
+                        <option value="1">管理员</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-xs btn-danger" ng-click="userAdd()" ng-disabled="ADDUSERIF">确认新增</button>
+                    <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">取消</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

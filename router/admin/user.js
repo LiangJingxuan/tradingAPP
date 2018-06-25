@@ -51,13 +51,42 @@ router
         ctx.body = true;
     })
 
-    // 测试
-    .get('/i', async (ctx)=>{
-        ctx.session.token='hq ai jx ...';
-        let a=await userModule.userData();
-        console.log(a);
-        ctx.body=ctx.session;
+    // 用户列表
+    .get('/userlist', async (ctx)=>{
+        ctx.body=await userModule.userList();
+    })
 
-    });
+    // 用户添加
+    .post('/useradd', async (ctx)=>{
+        const user=ctx.request.body;
+        const password=md5(md5(user.password).substr(4,7)+md5(user.password));
+        const data=await userModule.userAdd(user.username,password,user.tel,user.roles);
+
+        console.log(data);
+
+        try{
+            if(data.affectedRows){
+                // 新增成功
+                ctx.body={
+                    msg: '新增成功！',
+                    i: true
+                }
+            }else{
+                // 新增失败
+                ctx.body={
+                    msg: '新增失败，请重试！',
+                    i: false
+                }
+            }
+
+        }catch (e){
+            ctx.body={
+                msg: '服务器错误！',
+                i: false
+            }
+        }
+    })
+
+    ;
 
 module.exports=router.routes();
