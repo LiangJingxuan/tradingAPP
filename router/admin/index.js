@@ -1,5 +1,20 @@
 const router=require('koa-router')();
 
+// session失效设置
+router.use(async (ctx,next)=>{
+    await next();
+    try{
+        if(!(ctx.session.uid)){
+            // ctx.redirect('/admin/signin.html');
+            ctx.body={
+                expire: true
+            }
+        }
+    }catch (e) {
+
+    }
+});
+
 // 静态页面展示
 router.get('/', async (ctx)=>{
     if(ctx.session.uid){
