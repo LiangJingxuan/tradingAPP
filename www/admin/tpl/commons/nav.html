@@ -1,3 +1,4 @@
+<div ng-controller="navCtrl">
 <!-- NAVBAR -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="brand">
@@ -42,12 +43,12 @@
                     </ul>
                 </li>
                 <li class="dropdown" style="cursor: pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown"><!--<img src="assets/img/user.png" class="img-circle" alt="Avatar">--> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown"><!--<img src="assets/img/user.png" class="img-circle" alt="Avatar">--> <span ng-bind="username"></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <!--<li><a ><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>-->
                         <!--<li><a ><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>-->
                         <!--<li><a ><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>-->
-                        <li><a ><i class="lnr lnr-exit"></i> <span>退出系统</span></a></li>
+                        <li ng-click="signout()"><a><i class="lnr lnr-exit"></i> <span>退出系统</span></a></li>
                     </ul>
                 </li>
             </ul>
@@ -83,6 +84,7 @@
     </div>
 </div>
 <!-- END LEFT SIDEBAR -->
+</div>
 <script>
     $(document).ready(function() {
 

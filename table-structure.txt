@@ -2,6 +2,7 @@
 主键	Id			int ;
 用户名	Username	char(10) ;
 密码	Password		varchar(50) ;
+电话	tel		char(11) ;
 权限	Roles		varchar(100) ;
 
 类目category：

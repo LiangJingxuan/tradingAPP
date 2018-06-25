@@ -1,0 +1,20 @@
+@keyframes scaleUp{
+    0%{opacity:0;transform:translateX(-5px);}
+    100%{opacity:1;transform:translateX(0);}
+}
+.view-animations.ng-enter{animation: scaleUp 0.3s both ease-in;}
+
+/*数据列表动画*/
+.itemData{transition:0.5s all;}
+.itemData.ng-enter{
+    opacity: 0;
+}
+.itemData.ng-enter-active{
+    opacity: 1
+}
+.itemData.ng-leave{
+    display: none;
+}
+.itemData.ng-enter-stagger{
+    animation-delay:0ms;
+}

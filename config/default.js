@@ -7,7 +7,7 @@ const config={
     port: 9527,
     // 数据库配置
     db: {
-        database: 'test',
+        database: 'juyi',
         user: 'root',
         password: 'rootliang',
         host: '127.0.0.1',

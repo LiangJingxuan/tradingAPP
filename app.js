@@ -14,10 +14,11 @@ const app=new koa();
 app.use(views('views',{extension: 'ejs'}));
 app.use(statics(paths.join(__dirname,'./www'),{dynamic:true},{maxAge: 365*24*60*60}));
 app.use(bodyparser());
+
 app.use(session({
-    key: 'session-id',
+    key: 'uid',
     cookie: {
-        maxAge: 1000 * 30,
+        maxAge: 2*3600*1000,
         httpOnly: true,
         overwrite: false
     }

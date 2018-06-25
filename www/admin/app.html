@@ -11,14 +11,15 @@
 		<link rel="stylesheet" href="lib/bootstrap/bootstrap-datetimepicker.min.css">
 		<link href="http://cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
 		<link href="http://cdn.bootcss.com/select2/4.0.3/css/select2.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="/admin/lib/bootstrap/fonts.css">
-		<link rel="stylesheet" href="/admin/css/main.css">
+		<link rel="stylesheet" href="lib/bootstrap/fonts.css">
+		<link rel="stylesheet" href="css/animations.css">
+		<link rel="stylesheet" href="css/main.css">
 
 		<!--<link rel="stylesheet" href="css/animations.css">-->
 	</head>
 	<body id="wrapper">
 		<div ng-include="'tpl/commons/nav.html'" ng-if="navScope"></div>
-		<div ui-view="view"></div>
+		<div ui-view="view" class="view-animations" id="uiviews"></div>
 		<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
 		<script src="lib/jquery/jquery.scrollTo.min.js"></script>
 		<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
@@ -40,7 +41,6 @@
 		<!-- 特殊接口配置文件 -->
 		<script src="js/config.js"></script>
 		<!-- 公共模块 -->
-		<script src="js/controller/CommonModule/commonRegister.js"></script>
 		<script src="js/controller/CommonModule/commonNav.js"></script>
 		<!-- 主页模块 -->
 		<script src="js/controller/HomeModule/homeModule.js"></script>
