@@ -21,5 +21,13 @@ module.exports={
     // 用户删除
     userDel(id){
         return sql.query(`DELETE FROM user WHERE id=${id};`);
+    },
+    // 用户修改
+    userEdit(id,username,tel,password){
+        if(password){
+            return sql.query(`UPDATE user SET username='${username}',tel='${tel}',password='${password}' WHERE id=${id}`);
+        }else{
+            return sql.query(`UPDATE user SET username='${username}',tel='${tel}' WHERE id=${id}`);
+        }
     }
 };

@@ -96,7 +96,38 @@ router
 
     // 用户修改
     .post('/useredit', async (ctx)=>{
+        const user=ctx.request.body;
+        if(user.password){
+            user.password=md5(md5(user.password).substr(4,7)+md5(user.password));
+        }
+        try{
+            if(ctx.session.uid===parseInt(user.id)){
+                // 不能修改正在使用的账号
+                ctx.body=info.err('不能修改正在使用的账号！');
+            }else{
+                // 电话未修改设置
+                if(user.orTel!==user.tel){
+                    const telCheck=await userModule.userTel(user.tel);
+                    // 电话查重
+                    if(telCheck.length!==0){
+                        // 修改失败 电话重复
+                        ctx.body=info.err('修改失败，电话号码不能重复！');
+                        return;
+                    }
+                }
+                const data=await userModule.userEdit(user.id,user.username,user.tel,user.password);
+                if(data.affectedRows){
+                    // 修改成功
+                    ctx.body=info.suc('修改成功！');
+                }else{
+                    // 修改失败
+                    ctx.body=info.err('修改失败，请重试！');
+                }
+            }
 
+        }catch (e){
+            ctx.body=info.err('操作失败，请重试！');
+        }
     })
 
     ;

@@ -22,10 +22,10 @@ angular.module('app')
                     G.expire(data);
                     $scope.ADDUSERIF = false;
 
-                    // 提交添加
                     $('.addUserModel').modal('hide');
                     $('.alerts .modal-body').text(data.msg);
                     $('.alerts').modal('show');
+                    document.getElementById("userAddId").reset();
                     if(data.i){
                         $scope.Tip = function(){
                             // 更新数据
@@ -58,6 +58,47 @@ angular.module('app')
 
                 });
             }
+        };
+
+        // 用户修改
+        $scope.userEdit=function(id){
+            // 查询要修改的信息
+            G.upview($http,G,'/admin/user/userlist',function(data){
+                for(var i=0,len=data.length;i<len;i++){
+                    if(data[i].id===id){
+                        $scope.userDetail=data[i];
+                        $scope.tel=parseInt(data[i].tel); // 电话处理
+                    }
+                }
+            });
+            // 修改数据
+            $('#userEditId').ajaxForm({
+                beforeSend:function(){
+                    $scope.EDITUSERIF = true;
+                },
+                success:function(data){
+                    G.expire(data);
+                    $scope.EDITUSERIF = false;
+
+                    $('.editUserModel').modal('hide');
+                    $('.alerts .modal-body').text(data.msg);
+                    $('.alerts').modal('show');
+                    document.getElementById("userEditId").reset();
+                    if(data.i){
+                        $scope.Tip = function(){
+                            // 更新数据
+                            G.upview($http,G,'/admin/user/userlist',function(data){
+                                $scope.userList=data;
+                            });
+                        }
+                    }
+                }
+            });
+        };
+
+        // 释放模态框 重置表单
+        $scope.dismiss=function(m){
+            $('.'+m).modal('hide');
         }
 
     }]);

@@ -28,7 +28,7 @@
                                             <td ng-bind="u.roles"></td>
                                             <td>
                                                 <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms" ng-click="userDel(u.id)">删除</button>
-                                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
+                                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel" ng-click="userEdit(u.id)">修改</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -57,20 +57,20 @@
                     <label>用户名：</label>
                     <input required name="username" type="text" class="form-control" placeholder="填写用户名" autocomplete="off">
                     <br>
-                    <label>用户密码：</label>
-                    <input required name="password" type="password" class="form-control" placeholder="填写用户登录密码" autocomplete="off">
-                    <br>
                     <label>用户电话：</label>
                     <input required name="tel" type="number" class="form-control" placeholder="填写用户电话" autocomplete="off">
                     <br>
+                    <label>用户密码：</label>
+                    <input required name="password" type="password" class="form-control" placeholder="填写用户登录密码" autocomplete="off">
+                    <br>
                     <label>用户权限：</label>
                     <select required name="roles" class="form-control">
-                        <option value="1">管理员</option>
+                        <option value="管理员">管理员</option>
                     </select>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-xs btn-danger" ng-click="userAdd()" ng-disabled="ADDUSERIF">确认新增</button>
-                    <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">取消</button>
+                    <button type="reset" class="btn btn-xs btn-primary" ng-click="dismiss('addUserModel')">取消</button>
                 </div>
             </form>
         </div>
@@ -82,32 +82,30 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                修改用户
+                修改用户 （红框项不能为空）
             </div>
-            <div class="modal-body">
-                <label>用户名：</label>
-                <input type="text" class="form-control" placeholder="填写用户名">
-                <br>
-                <label>用户密码：</label>
-                <input type="password" class="form-control" placeholder="填写用户登录密码">
-                <br>
-                <label>用户电话：</label>
-                <input type="number" class="form-control" placeholder="填写用户电话">
-                <br>
-                <label>用户权限：</label>
-                <select class="form-control">
-                    <option value="cheese">Cheese</option>
-                    <option value="tomatoes">Tomatoes</option>
-                    <option value="mozarella">Mozzarella</option>
-                    <option value="mushrooms">Mushrooms</option>
-                    <option value="pepperoni">Pepperoni</option>
-                    <option value="onions">Onions</option>
-                </select>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-xs btn-danger">确认修改</button>
-                <button class="btn btn-xs btn-primary" data-dismiss="modal">取消</button>
-            </div>
+            <form onkeydown="if(event.keyCode==13)return false;" id="userEditId" action="/admin/user/useredit" method="post">
+                <input name="id" type="hidden" value={{userDetail.id}}>
+                <input name="orTel" type="hidden" value={{userDetail.tel}}>
+                <div class="modal-body">
+                    <label>用户名：</label>
+                    <span class="has-error">
+                        <input required name="username" type="text" class="form-control" placeholder="填写用户名" autocomplete="off" value={{userDetail.username}}>
+                    </span>
+                    <br>
+                    <label>用户电话：</label>
+                    <span class="has-error">
+                        <input required name="tel" type="number" class="form-control" placeholder="填写用户电话" autocomplete="off" value={{tel}}>
+                    </span>
+                    <br>
+                    <label>用户密码：</label>
+                    <input type="password" name="password" class="form-control" placeholder="填写新密码，为空则不修改" autocomplete="off">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-xs btn-danger" ng-disabled="EDITUSERIF">确认修改</button>
+                    <button type="reset" class="btn btn-xs btn-primary" ng-click="dismiss('editUserModel')">取消</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
