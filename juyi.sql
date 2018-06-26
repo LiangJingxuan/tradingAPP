@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : liang
-Source Server Version : 50520
+Source Server         : root
+Source Server Version : 50703
 Source Host           : localhost:3306
 Source Database       : juyi
 
 Target Server Type    : MYSQL
-Target Server Version : 50520
+Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2018-06-26 17:51:12
+Date: 2018-06-26 23:46:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -174,9 +174,10 @@ CREATE TABLE `user` (
   `roles` varchar(100) NOT NULL COMMENT '用户权限',
   `tel` char(11) NOT NULL COMMENT '用户电话',
   PRIMARY KEY (`id`,`tel`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('36', 'haiqi', 'ae2d874fe06430805b3fa7e61ae7f46d', '1', '15100284122');
+INSERT INTO `user` VALUES ('36', '海琦', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284122');
+INSERT INTO `user` VALUES ('37', '梁景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284121');
