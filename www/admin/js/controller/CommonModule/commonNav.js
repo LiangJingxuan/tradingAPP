@@ -13,7 +13,7 @@ angular.module('app')
                     sessionStorage.removeItem('uid');
                     sessionStorage.removeItem('username');
                     sessionStorage.removeItem('roles');
-                    G.expire();
+                    location.replace('./signin.html');
                 }
             });
         }

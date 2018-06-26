@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-06-25 17:55:07
+Date: 2018-06-26 17:51:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -174,14 +174,9 @@ CREATE TABLE `user` (
   `roles` varchar(100) NOT NULL COMMENT '用户权限',
   `tel` char(11) NOT NULL COMMENT '用户电话',
   PRIMARY KEY (`id`,`tel`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '梁景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '1', '15100284122');
-INSERT INTO `user` VALUES ('2', '张俊', 'ae2d874fe06430805b3fa7e61ae7f46d', '1', '15857485233');
-INSERT INTO `user` VALUES ('3', '韩超', '39dd3ce6739382f32b155746aa6e11fd', '1', '18195367425');
-INSERT INTO `user` VALUES ('4', '任双', 'ae2d874fe06430805b3fa7e61ae7f46d', '1', '15100284121');
-INSERT INTO `user` VALUES ('5', '', 'ae2d874fe06430805b3fa7e61ae7f46d', '1', '15100284121');
-INSERT INTO `user` VALUES ('6', '', 'b1aa311f294f2d178e2f17244ec6b87a', '1', '');
+INSERT INTO `user` VALUES ('36', 'haiqi', 'ae2d874fe06430805b3fa7e61ae7f46d', '1', '15100284122');

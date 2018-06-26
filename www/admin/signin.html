@@ -82,7 +82,7 @@
         });
         // 请求登录
         $("#signinId").ajaxForm(function(data){
-            if(data.i){
+            if(data.uid){
                 // 登录成功
                 sessionStorage.setItem('uid',data.uid);
                 sessionStorage.setItem('username',data.username);

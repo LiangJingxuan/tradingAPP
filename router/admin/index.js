@@ -4,8 +4,11 @@ const router=require('koa-router')();
 router.use(async (ctx,next)=>{
     await next();
     try{
-        if(!(ctx.session.uid)){
-            ctx.body=false;
+        // 过滤登录请求
+        if (ctx.request.path !== '/admin/user/signin') {
+            if(!(ctx.session.uid)){
+                ctx.body={ex:true};
+            }
         }
     }catch (e) {
 

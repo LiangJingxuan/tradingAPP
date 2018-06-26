@@ -27,7 +27,7 @@
                                             <td ng-bind="u.tel"></td>
                                             <td ng-bind="u.roles"></td>
                                             <td>
-                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
+                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms" ng-click="userDel(u.id)">删除</button>
                                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
                                             </td>
                                         </tr>
@@ -46,25 +46,25 @@
 </div>
 
 <!-- 新增用户 -->
-<div class="modal fade addUserModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade addUserModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                新增用户
+                新增用户 （红框项为必填项）
             </div>
             <form onkeydown="if(event.keyCode==13)return false;" id="userAddId" action="/admin/user/useradd" method="post">
-                <div class="modal-body">
+                <div class="modal-body has-error">
                     <label>用户名：</label>
-                    <input name="username" type="text" class="form-control" placeholder="填写用户名" autocomplete="off">
+                    <input required name="username" type="text" class="form-control" placeholder="填写用户名" autocomplete="off">
                     <br>
                     <label>用户密码：</label>
-                    <input name="password" type="password" class="form-control" placeholder="填写用户登录密码" autocomplete="off">
+                    <input required name="password" type="password" class="form-control" placeholder="填写用户登录密码" autocomplete="off">
                     <br>
                     <label>用户电话：</label>
-                    <input name="tel" type="number" class="form-control" placeholder="填写用户电话" autocomplete="off">
+                    <input required name="tel" type="number" class="form-control" placeholder="填写用户电话" autocomplete="off">
                     <br>
                     <label>用户权限：</label>
-                    <select name="roles" class="form-control">
+                    <select required name="roles" class="form-control">
                         <option value="1">管理员</option>
                     </select>
                 </div>
@@ -78,7 +78,7 @@
 </div>
 
 <!-- 修改用户 -->
-<div class="modal fade editUserModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade editUserModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -113,14 +113,14 @@
 </div>
 
 <!-- Confirm -->
-<div class="modal fade confirms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade confirms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 确认删除该用户数据？
             </div>
             <div class="modal-footer">
-                <button class="btn btn-xs btn-danger">确认删除</button>
+                <button class="btn btn-xs btn-danger" ng-click="del()">确认删除</button>
                 <button class="btn btn-xs btn-primary" data-dismiss="modal">放弃</button>
             </div>
         </div>
@@ -128,14 +128,12 @@
 </div>
 
 <!-- Alert -->
-<div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                操作成功！
-            </div>
+            <div class="modal-body"></div>
             <div class="modal-footer">
-                <button class="btn btn-xs btn-primary" data-dismiss="modal">确认</button>
+                <button class="btn btn-xs btn-primary" data-dismiss="modal" ng-click="Tip()">确认</button>
             </div>
         </div>
     </div>
