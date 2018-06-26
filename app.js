@@ -38,7 +38,7 @@ app.use(session({
 app.use(async (ctx,next)=>{
     await next();
     if(ctx.status===404){
-        ctx.body='not fond ...'
+        ctx.redirect('/404.html');
     }
 });
 

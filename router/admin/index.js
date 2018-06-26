@@ -5,10 +5,7 @@ router.use(async (ctx,next)=>{
     await next();
     try{
         if(!(ctx.session.uid)){
-            // ctx.redirect('/admin/signin.html');
-            ctx.body={
-                expire: true
-            }
+            ctx.body=false;
         }
     }catch (e) {
 

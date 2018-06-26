@@ -3,7 +3,7 @@ var app = angular.module('app',['ui.router','ngAnimate','ngSanitize','Directives
 app.run(['$rootScope','$http','$state','G',function($rootScope,$http,$state,G){
     // 拦截器
     if(!(sessionStorage.getItem("uid"))){
-        document.location.replace('./signin.html');
+        G.expire();
     }
     $rootScope.$on('$stateChangeStart',function(event,toState){
         // 隐藏导航操作

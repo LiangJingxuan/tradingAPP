@@ -8,7 +8,11 @@ angular.module('app')
 
         // 用户数据列表
         $http.get('/admin/user/userlist').success(function(data){
-            $scope.userList=data;
+            if(data){
+                $scope.userList=data;
+            }else{
+                G.expire();
+            }
         });
 
         // 用户添加
