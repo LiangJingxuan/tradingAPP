@@ -72,6 +72,20 @@ input[type=number]::-webkit-outer-spin-button {
 }
 textarea{resize: none;}
 
+/* select2 */
+.select2-container{
+  width: 100% !important;
+}
+.select2-container .select2-selection--single{
+  height: 35px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 35px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+  top: 4px;
+}
+
 /********************
  * LAYOUT
  ********************/

@@ -64,7 +64,7 @@
                     <input required name="password" type="password" class="form-control" placeholder="填写用户登录密码" autocomplete="off">
                     <br>
                     <label>用户权限：</label>
-                    <select required name="roles" class="form-control">
+                    <select required name="roles" class="form-control select2">
                         <option value="管理员">管理员</option>
                     </select>
                 </div>
@@ -136,3 +136,10 @@
         </div>
     </div>
 </div>
+
+<script>
+    //页面加载完成后初始化select2控件
+    $(function () {
+        $(".select2").select2();
+    });
+</script>
