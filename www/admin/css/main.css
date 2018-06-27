@@ -70,6 +70,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+textarea{resize: none;}
 
 /********************
  * LAYOUT
@@ -607,7 +608,11 @@ ul.list-justify > li {
 
 .btn-group-xs > .btn,
 .btn-xs {
-  padding: 2px 7px; }
+  padding: 1px 6px; }
+
+.modal-footer .btn,
+.modal-footer .btn {
+  padding: 4px 10px; }
 
 .btn-primary {
   background-color: #00AAFF;

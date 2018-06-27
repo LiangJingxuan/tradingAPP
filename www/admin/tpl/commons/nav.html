@@ -43,7 +43,7 @@
                     </ul>
                 </li>
                 <li class="dropdown" style="cursor: pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown"><!--<img src="assets/img/user.png" class="img-circle" alt="Avatar">--> <span ng-bind="username"></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-user"></i> <!--<img src="assets/img/user.png" class="img-circle" alt="Avatar">--> <span ng-bind="username"></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <!--<li><a ><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>-->
                         <!--<li><a ><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>-->
@@ -61,9 +61,9 @@
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a ui-sref="home" ui-sref-active="active" class="active"><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
-                <li><a ui-sref="user" ui-sref-active="active" class=""><i class="lnr lnr-user"></i> <span>用户管理</span></a></li>
-                <li><a ui-sref="news" ui-sref-active="active" class=""><i class="lnr lnr-leaf"></i> <span>新闻管理</span></a></li>
+                <li><a ui-sref="home" ui-sref-active="active" class=""><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
+                <li><a ui-sref="news" ng-class="{'active':state.current.name.indexOf('news') != -1}" class=""><i class="lnr lnr-leaf"></i> <span>新闻管理</span></a></li>
+                <li><a ui-sref="user" ui-sref-active="active" class=""><i class="lnr lnr-users"></i> <span>用户管理</span></a></li>
                 <!--<li><a class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                 <li><a class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
                 <li><a class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>

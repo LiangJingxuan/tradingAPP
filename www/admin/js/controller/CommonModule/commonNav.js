@@ -3,6 +3,9 @@
  */
 angular.module('app')
     .controller('navCtrl',['$scope','$state','$filter','$http','G','$location','$anchorScroll','$timeout',function($scope,$state,$filter,$http,G,$location,$anchorScroll,$timeout){
+        // active样式控制
+        $scope.state=$state;
+
         // 用户信息
         $scope.username=sessionStorage.getItem('username');
 

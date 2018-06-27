@@ -6,4 +6,5 @@ angular.module('app')
         $location.hash('main-content');
         $anchorScroll();
 
+
     }]);
