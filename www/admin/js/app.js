@@ -40,5 +40,15 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 新闻管理
+        .state('news',{
+            url:'/news',
+            views:{
+                'view':{
+                    controller:'newsCtrl',
+                    templateUrl:'tpl/news/news.html'
+                }
+            }
+        })
 
 }]);

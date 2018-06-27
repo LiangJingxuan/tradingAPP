@@ -1,0 +1,94 @@
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- OVERVIEW -->
+            <!--<div class="panel panel-headline">
+                <div class="panel-heading">
+                    <h3 class="panel-title">新闻管理</h3>
+                    <p class="panel-subtitle">news management</p>
+                </div>
+            </div>-->
+            <div class="panel panel-headline">
+                <div class="panel-heading">
+                    <h3 class="panel-title">新闻管理</h3>
+                    <p class="panel-subtitle">news management</p>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <form class="form-inline" style="background: #f5f5f5;padding: 20px;">
+                            <div class="form-group">
+                                <label>分类：</label>
+                                <select class="form-control">
+                                    <option value="1">全部新闻</option>
+                                    <option value="2">行业新闻</option>
+                                    <option value="3">公司新闻</option>
+                                    <option value="4">公司公告</option>
+                                </select>
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+                            <div class="form-group">
+                                <label>关键词：</label>
+                                <input type="text" class="form-control" placeholder="请输入新闻标题关键词">
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-success btn-sm">搜索</button>
+                            <button type="reset" class="btn btn-info btn-sm">重置</button>
+                            &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-primary btn-sm">新增发布新闻</button>
+                        </form>
+
+                        <div class="tab-pane fade active in">
+                            <div class="table-responsive">
+                                <table class="table project-table">
+                                    <thead>
+                                        <tr>
+                                            <th>标题</th>
+                                            <th>分类</th>
+                                            <th>发布时间</th>
+                                            <th>状态</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>标题标题标题</td>
+                                            <td>公司公告</td>
+                                            <td>2018-6-25 13:20:23</td>
+                                            <td><span class="label label-success">已发布</span></td>
+                                            <td>
+                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
+                                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>标题标题标题</td>
+                                            <td>公司公告</td>
+                                            <td>2018-6-25 13:20:23</td>
+                                            <td><span class="label label-success">已发布</span></td>
+                                            <td>
+                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
+                                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OVERVIEW -->
+            <!-- 分页 -->
+            <nav aria-label="" class="text-right">
+                <ul class="pagination">
+                    <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                    <li class="active"><a>1 <span class="sr-only">(current)</span></a></li>
+                    <li><a>2 <span class="sr-only">(current)</span></a></li>
+                    <li><a aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
