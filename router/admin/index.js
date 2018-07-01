@@ -24,8 +24,11 @@ router.get('/', async (ctx)=>{
     }
 });
 
-// 用户操作
+// 用户模块
 router.use('/user',require('./user'));
+
+// 新闻模块
+router.use('/news',require('./news'));
 
 
 module.exports=router.routes();

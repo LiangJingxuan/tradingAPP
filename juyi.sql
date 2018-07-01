@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50703
 File Encoding         : 65001
 
-Date: 2018-06-26 23:46:08
+Date: 2018-07-01 22:23:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -55,11 +55,14 @@ CREATE TABLE `category` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '类目id',
   `cname` varchar(20) NOT NULL COMMENT '类目名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
 -- ----------------------------
+INSERT INTO `category` VALUES ('1', '公司产品');
+INSERT INTO `category` VALUES ('2', '公司案例');
+INSERT INTO `category` VALUES ('3', '新闻中心');
 
 -- ----------------------------
 -- Table structure for company
@@ -125,8 +128,9 @@ CREATE TABLE `news` (
   `title` varchar(40) NOT NULL COMMENT '新闻标题',
   `time` int(10) unsigned NOT NULL COMMENT '新闻时间',
   `content` varchar(5000) NOT NULL COMMENT '新闻内容',
-  `cid` int(11) NOT NULL COMMENT '类目外键',
-  PRIMARY KEY (`id`)
+  `sid` int(11) NOT NULL COMMENT '类目外键',
+  `state` tinyint(1) unsigned zerofill NOT NULL,
+  PRIMARY KEY (`id`,`title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -157,11 +161,19 @@ CREATE TABLE `subcategory` (
   `sname` varchar(20) NOT NULL,
   `cid` int(10) unsigned NOT NULL COMMENT '父类id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of subcategory
 -- ----------------------------
+INSERT INTO `subcategory` VALUES ('1', '公司新闻', '3');
+INSERT INTO `subcategory` VALUES ('2', '行业新闻', '3');
+INSERT INTO `subcategory` VALUES ('3', '公司公告', '3');
+INSERT INTO `subcategory` VALUES ('4', '地暖', '1');
+INSERT INTO `subcategory` VALUES ('5', '光伏发电', '1');
+INSERT INTO `subcategory` VALUES ('6', '空气能', '1');
+INSERT INTO `subcategory` VALUES ('7', '太阳能', '1');
+INSERT INTO `subcategory` VALUES ('8', '风机盘管', '1');
 
 -- ----------------------------
 -- Table structure for user
@@ -180,4 +192,4 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('36', '海琦', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284122');
-INSERT INTO `user` VALUES ('37', '梁景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284121');
+INSERT INTO `user` VALUES ('37', '景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284121');

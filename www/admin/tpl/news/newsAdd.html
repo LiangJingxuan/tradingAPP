@@ -8,50 +8,61 @@
                     <h3 class="panel-title">添加新闻</h3>
                     <p class="panel-subtitle">news management</p>
                 </div>
-                <div class="panel-body">
-                    <input type="text" class="form-control" placeholder="text field">
+                <form onkeydown="if(event.keyCode==13)return false;" id="newsAddId" action="/admin/news/newsadd" method="post">
+                <div class="panel-body has-error">
+                    <select class="form-control select2">
+                        <option value="">文章分类</option>
+                        <option value="1">公司新闻</option>
+                        <option value="2">行业新闻</option>
+                        <option value="3">公司公告</option>
+                    </select>
                     <br>
-                    <input type="password" class="form-control" value="asecret">
+                    <br>
+                    <input type="text" class="form-control" placeholder="文章标题">
                     <br>
                     <style>
                         .cke_maximized{top: 80px !important;}
+                        .select2-container .select2-selection--single{border: 1px solid #a94442;}
                     </style>
-                    <textarea name="content" class="form-control" placeholder="textarea"></textarea>
-                    <br>
-                    <select class="form-control">
-                        <option value="cheese">Cheese</option>
-                        <option value="tomatoes">Tomatoes</option>
-                        <option value="mozarella">Mozzarella</option>
-                        <option value="mushrooms">Mushrooms</option>
-                        <option value="pepperoni">Pepperoni</option>
-                        <option value="onions">Onions</option>
-                    </select>
-                    <br>
-                    <label class="fancy-checkbox">
-                        <input type="checkbox">
-                        <span>Fancy Checkbox 1</span>
-                    </label>
-                    <label class="fancy-checkbox">
-                        <input type="checkbox">
-                        <span>Fancy Checkbox 2</span>
-                    </label>
-                    <label class="fancy-checkbox">
-                        <input type="checkbox">
-                        <span>Fancy Checkbox 3</span>
-                    </label>
+                    <textarea name="content" id="content" class="ckeditor form-control" placeholder="textarea"></textarea>
                     <br>
                     <label class="fancy-radio">
-                        <input name="gender" value="male" type="radio">
-                        <span><i></i>Male</span>
+                        <input name="gender" value="male" type="radio" ng-click="dataIn()" ng-model="now">
+                        <span><i></i>立即发布</span>
                     </label>
                     <label class="fancy-radio">
-                        <input name="gender" value="female" type="radio">
-                        <span><i></i>Female</span>
+                        <input name="gender" value="female" type="radio" ng-click="dataOut()" ng-model="timing">
+                        <span><i></i>定时发布</span>
                     </label>
+                    <input type="text" class="form-control datetime" placeholder="选择时间" ng-model="dates" ng-show="datetime">
+                    <script>
+                        //录入日期：
+                        $('.datetime').datetimepicker({
+                            format: 'yyyy-mm-dd hh:ii',
+                            language: 'zh-CN',
+                            startDate: new Date(),
+                            todayBtn : true,
+                            autoclose : true,
+                            todayHighlight : true
+                        })
+                    </script>
+                    <br>
+                    <br>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-danger">确认添加</button>
+                        <button type="reset" class="btn btn-primary">重置</button>
+                    </div>
                 </div>
+                </form>
             </div>
             <!-- END OVERVIEW -->
         </div>
     </div>
     <!-- END MAIN CONTENT -->
 </div>
+<script>
+    //页面加载完成后初始化select2控件
+    $(function () {
+        $(".select2").select2();
+    });
+</script>

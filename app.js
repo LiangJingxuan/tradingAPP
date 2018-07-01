@@ -17,7 +17,9 @@ app.use(views('views',{extension: 'ejs'}));
 app.use(statics(paths.join(__dirname,'./www'),{dynamic:true},{maxAge: 365*24*60*60}));
 
 // post数据接收中间件
-app.use(bodyparser());
+app.use(bodyparser({
+    formLimit: '1mb'
+}));
 
 // session配置中间件
 let arr=[];

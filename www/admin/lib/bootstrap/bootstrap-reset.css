@@ -90,6 +90,13 @@ a:hover {
 
 /*modal*/
 
+.modal{
+    /*z-index: 1503 !important;*/
+}
+.fade.in{
+    /*z-index: 1502;*/
+}
+
 .modal-content {
     box-shadow: none;
     border: none;
