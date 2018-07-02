@@ -4,7 +4,7 @@ const co=require('co-mysql');
 // 配置信息
 const config={
     // 启动端口
-    port: 9527,
+    port: 80,
     // 数据库配置
     db: {
         database: 'juyi',

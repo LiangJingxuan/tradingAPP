@@ -6,5 +6,11 @@ angular.module('app')
         $location.hash('main-content');
         $anchorScroll();
 
+        // 查询新闻
+        $http.get('/admin/news/newslist').success(function(data){
+            G.expire(data);
+            $scope.newsList=data;
+        });
+
 
     }]);

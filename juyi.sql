@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : root
-Source Server Version : 50703
+Source Server         : liang
+Source Server Version : 50520
 Source Host           : localhost:3306
 Source Database       : juyi
 
 Target Server Type    : MYSQL
-Target Server Version : 50703
+Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-07-01 22:23:39
+Date: 2018-07-02 17:48:16
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -127,15 +127,21 @@ CREATE TABLE `news` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '新闻id',
   `title` varchar(40) NOT NULL COMMENT '新闻标题',
   `time` int(10) unsigned NOT NULL COMMENT '新闻时间',
+  `timing` int(10) unsigned DEFAULT NULL COMMENT '定时发布',
   `content` varchar(5000) NOT NULL COMMENT '新闻内容',
   `sid` int(11) NOT NULL COMMENT '类目外键',
-  `state` tinyint(1) unsigned zerofill NOT NULL,
+  `state` tinyint(1) unsigned zerofill NOT NULL COMMENT '发布状态',
+  `uid` int(10) unsigned NOT NULL COMMENT '用户id',
   PRIMARY KEY (`id`,`title`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news
 -- ----------------------------
+INSERT INTO `news` VALUES ('1', '保定空气能热泵：空气能热泵比天然气有那些优点？', '1530498347', null, '<p><a href=\"http://www.hbjynt.com/\" target=\"_self\">保定空气能热泵</a>：空气能热泵比天然气有那些优点？</p>\r\n\r\n<p>近年来，北方冬季雾霾天气频发，已经成为社会普遍关注的问题，而散煤采暖大量排放的污染物是导致雾霾的基本因素之一。现今，我国每年散煤用量高达3亿多吨，占煤炭总用量近10%左右，由于基本都没有采取除尘、脱硫等措施，大气污染物排放严重超标，燃烧一吨散煤所排放的大气污染物是等量电煤的10倍以上。因此，散煤的治理和清洁供暖改造工程已经迫在眉睫。一时间空气源热泵采暖、天然气采暖成为清洁采暖的热门产品。<br />\r\n天然气是一种清洁的化石燃料，近几年随着煤改清洁能源以及低碳环保的深入人心，天然气的消费也进入到快速增长期。但自去年以来，天然气消费遭遇了瓶颈，出现了低水平的富余。究其原因在于：<br />\r\n&nbsp;&nbsp;&nbsp; 一是天然气气价不稳定，相对较高；二是天然气输送管线特别是配气管网建设相对滞后，很多区域无法使用。改善大气污染，在燃煤替代的过程中即要让老百姓从根本上认同，同时也要保证老百姓用得起、用得舒心。这就出现近年来技术日渐成熟的空气源热泵采暖在北方煤改清洁能源的进程中所发挥的巨大作用。空气源热泵采暖与天然气采暖不同，它主要运用的是空气中无时无刻不存在的空气源能，是一种可再生清洁能源。北方的利普曼空气源更是超高能效比，克服北方低温限制，在北方地区大受欢迎。空气源热泵采暖具有环保、节能、安全、智能等特点，在近两年尤其是京津冀地区，应用最为广泛。</p>\r\n', '1', '1', '36');
+INSERT INTO `news` VALUES ('11', '测试测试', '1530520733', '1532615700', '<p>测试测试</p>\n', '1', '0', '36');
+INSERT INTO `news` VALUES ('12', '试试', '1530520867', null, '', '1', '1', '36');
+INSERT INTO `news` VALUES ('13', '搜索', '1530521448', '1531990500', '<p>是是是</p>\n', '2', '0', '36');
 
 -- ----------------------------
 -- Table structure for standard
