@@ -31,7 +31,18 @@ router
 
     // 查询新闻
     .get('/newslist', async (ctx)=>{
-        ctx.body=await newsModel.newsList();
+        const page=ctx.query.page;
+        const pagesize=ctx.query.pagesize;
+        const data=await newsModel.newsList(page,pagesize);
+        const dataList = await data.dataList;
+        const totalPage = await data.totalPage;
+        const totalRows = await data.totalRows;
+        ctx.body={
+            dataList: dataList,
+            page: data.page,
+            totalPage: totalPage,
+            totalRows: totalRows
+        }
     })
 
     ;

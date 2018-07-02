@@ -7,7 +7,7 @@ angular.module('app')
         $anchorScroll();
 
         // 查询新闻
-        $http.get('/admin/news/newslist').success(function(data){
+        $http.get('/admin/news/newslist',{params:{page:1,pagesize:2}}).success(function(data){
             G.expire(data);
             $scope.newsList=data;
         });
