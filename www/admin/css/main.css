@@ -86,6 +86,11 @@ textarea{resize: none;}
   top: 4px;
 }
 
+/* news */
+.news-title{
+  width: 200px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;display: inline-block;
+}
+
 /********************
  * LAYOUT
  ********************/

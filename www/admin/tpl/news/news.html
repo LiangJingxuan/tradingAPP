@@ -46,23 +46,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>标题标题标题</td>
-                                            <td>公司公告</td>
-                                            <td>梁景轩</td>
-                                            <td>2018-6-25 13:20:23</td>
-                                            <td><span class="label label-success">已发布</span></td>
+                                        <tr ng-repeat="d in newsList.dataList">
                                             <td>
-                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
-                                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
+                                                <span ng-bind="d.title" class="news-title"></span>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td>标题标题标题</td>
-                                            <td>公司公告</td>
-                                            <td>梁景轩</td>
-                                            <td>2018-6-25 13:20:23</td>
-                                            <td><span class="label label-success">已发布</span></td>
+                                            <td ng-bind="d.sname"></td>
+                                            <td ng-bind="d.username"></td>
+                                            <td ng-bind="d.time"></td>
+                                            <td>
+                                                <span ng-class="d.state?'label-success':'label-default';" class="label">
+                                                    <span ng-if="d.state">已发布</span>
+                                                    <span ng-if="!d.state">未发布</span>
+                                                </span>
+                                            </td>
                                             <td>
                                                 <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
                                                 <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>

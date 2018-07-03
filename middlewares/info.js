@@ -12,5 +12,15 @@ module.exports={
             msg: suc,
             i: true
         }
+    },
+    // 分页返回信息
+    paging (dataList,page,totalPage,totalRows){
+        return {
+            dataList,
+            page,
+            totalPage,
+            totalRows: totalRows[0].n
+        }
     }
+
 };
