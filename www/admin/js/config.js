@@ -17,6 +17,12 @@ Configs.constant('G',{
             G.expire(data);
             callback(data);
         });
+    },
+
+    // 分页统一参数
+    paging: {
+        page: 1,
+        pagesize: 20
     }
 
 

@@ -7,10 +7,18 @@ angular.module('app')
         $anchorScroll();
 
         // 查询新闻
-        $http.get('/admin/news/newslist',{params:{page:1,pagesize:5}}).success(function(data){
-            G.expire(data);
-            $scope.newsList=data;
-        });
+        var page=G.paging.page, pagesize=G.paging.pagesize;
+        (function queryNews(page,pagesize){
+            $http.get('/admin/news/newslist',{params:{page:page,pagesize:pagesize}}).success(function(data){
+                G.expire(data);
+                $scope.newsList=data;
+                $scope.pagesize=pagesize;
+            });
+            // 分页控制
+            $scope.PagingAct = function(page,pagesize){
+                queryNews(page,pagesize);
+            }
+        })(page,pagesize);
 
 
     }]);

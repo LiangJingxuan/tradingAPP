@@ -74,12 +74,16 @@
             <!-- END OVERVIEW -->
             <!-- 分页 -->
             <nav aria-label="" class="text-right">
-                <ul class="pagination">
-                    <li class="disabled"><a aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                    <li class="active"><a>1 <span class="sr-only">(current)</span></a></li>
-                    <li><a>2 <span class="sr-only">(current)</span></a></li>
-                    <li><a aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
-                </ul>
+                <paging
+                        class="small"
+                        page="newsList.page"
+                        page-size="pagesize"
+                        total="newsList.totalRows"
+                        scroll-top="{{scrollTop}}"
+                        show-prev-next="true"
+                        show-first-last="true"
+                        paging-action="PagingAct(page, pageSize)">
+                </paging>
             </nav>
         </div>
     </div>
