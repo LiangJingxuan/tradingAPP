@@ -10,12 +10,10 @@ router
     .post('/newsadd', async (ctx)=>{
         const news=ctx.request.body;
         const uid=ctx.session.uid;
-        const time=moment().unix();
-        if(news.timing){
-            news.timing=moment(news.timing).unix();
-        }
+        let time=0;
+        parseInt(news.state)?time=moment().unix():time=moment(news.timing).unix();
         try{
-            const data=await newsModel.newsAdd(news.title,news.content,news.sid,news.state,time,uid,news.timing);
+            const data=await newsModel.newsAdd(news.title,news.content,news.sid,news.state,time,uid);
             if(data.affectedRows){
                 // 新增成功
                 ctx.body=info.suc('新增成功！');
@@ -31,6 +29,7 @@ router
 
     // 查询新闻
     .get('/newslist', async (ctx)=>{
+        newsModel.newsTiming();
         const page=parseInt(ctx.query.page);
         const pagesize=parseInt(ctx.query.pagesize);
 
