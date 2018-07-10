@@ -30,10 +30,11 @@ router
     // 查询新闻
     .get('/newslist', async (ctx)=>{
         newsModel.newsTiming();
-        const page=parseInt(ctx.query.page);
-        const pagesize=parseInt(ctx.query.pagesize);
+        const params=ctx.query; // 定时发布新闻
+        const page=parseInt(params.page);
+        const pagesize=parseInt(params.pagesize);
 
-        const data=await newsModel.newsList(page,pagesize);
+        const data=await newsModel.newsList(page,pagesize,params.sid,params.title);
         const dataList = await data.list;
         const totalRows = await data.totalRows;
         const totalPage=Math.ceil(totalRows[0].n/pagesize);

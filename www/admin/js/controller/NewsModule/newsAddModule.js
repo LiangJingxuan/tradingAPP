@@ -42,6 +42,7 @@ angular.module('app')
                     $scope.ADDNEWSIF = true;
                 },
                 success:function(data){
+                    G.expire(data);
                     $scope.ADDNEWSIF = false;
                     $('.alerts .modal-body').text(data.msg);
                     $('.alerts').modal('show');

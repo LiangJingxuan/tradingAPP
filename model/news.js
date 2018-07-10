@@ -11,10 +11,20 @@ module.exports={
 
     // 查询新闻
     newsList(page,pagesize,sid,title){
-        const totalRows=sql.query(`SELECT COUNT(id) AS n FROM news;`);
+
+        // 查询条件设置
+        let condition=``;
+        sid?condition=`WHERE sid=${sid}`:``;
+        title?condition=`WHERE title LIKE '%${title}%'`:``;
+        sid && title?condition=`WHERE sid=${sid} AND title LIKE '%${title}%'`:``;
+
+        // 总记录数
+        const totalRows=sql.query(`SELECT COUNT(id) AS n FROM news ${condition};`);
+
+        // 查询语句
         const list=sql.query(`SELECT news.id,title,FROM_UNIXTIME(time,'%Y-%m-%d %H:%i:%S') AS time,sname,username,state FROM news 
                               LEFT JOIN subcategory ON news.sid=subcategory.id LEFT JOIN user ON uid=user.id 
-                              WHERE sid=${sid} AND title LIKE '%${title}%' 
+                              ${condition} 
                               LIMIT ${(page-1)*pagesize},${pagesize};`);
         return {
             totalRows, // 总记录数
