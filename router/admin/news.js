@@ -27,7 +27,7 @@ router
         }
     })
 
-    // 查询新闻
+    // 查询新闻列表
     .get('/newslist', async (ctx)=>{
         newsModel.newsTiming();
         const params=ctx.query; // 定时发布新闻
@@ -40,6 +40,28 @@ router
         const totalPage=Math.ceil(totalRows[0].n/pagesize);
 
         ctx.body=info.paging(dataList,page,totalPage,totalRows);
+    })
+
+    // 删除新闻
+    .get('/newsdel', async (ctx)=>{
+        try{
+            const data = await newsModel.newsDel(ctx.query.id);
+            if(data.affectedRows){
+                // 删除成功
+                ctx.body=info.suc('删除成功！');
+            }else{
+                // 删除失败
+                ctx.body=info.err('删除失败，请重试！');
+            }
+        }catch (e) {
+            ctx.body=info.err('操作失败，请重试！');
+        }
+    })
+
+    // 查询新闻详情
+    .get('/newsonly', async (ctx)=>{
+        const data=await newsModel.newsOnly(ctx.query.id);
+        ctx.body=data[0];
     })
 
     ;

@@ -62,8 +62,8 @@
                                                 </span>
                                             </td>
                                             <td>
-                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms">删除</button>
-                                                <button class="btn btn-xs btn-primary" data-toggle="modal" data-target=".editUserModel">修改</button>
+                                                <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms" ng-click="newsDel(d.id)">删除</button>
+                                                <a ui-sref="news-edit({id:d.id})" class="btn btn-xs btn-primary">修改</a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -90,6 +90,31 @@
         </div>
     </div>
     <!-- END MAIN CONTENT -->
+</div>
+<!-- Confirm -->
+<div class="modal fade confirms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                确认删除该新闻？
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-xs btn-danger" ng-click="del()">确认删除</button>
+                <button class="btn btn-xs btn-primary" data-dismiss="modal">放弃</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Alert -->
+<div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-xs btn-primary" data-dismiss="modal" ng-click="Tip()">确认</button>
+            </div>
+        </div>
+    </div>
 </div>
 <style>
     .select2-container{width: auto !important;}

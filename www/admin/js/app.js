@@ -60,5 +60,15 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 新闻编辑
+        .state('news-edit',{
+            url:'/newsEdit/:id',
+            views:{
+                'view':{
+                    controller:'newsEditCtrl',
+                    templateUrl:'tpl/news/newsEdit.html'
+                }
+            }
+        })
 
 }]);

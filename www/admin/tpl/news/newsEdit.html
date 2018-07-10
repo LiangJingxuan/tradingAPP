@@ -1,0 +1,79 @@
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- OVERVIEW -->
+            <div class="panel panel-headline">
+                <div class="panel-heading">
+                    <h3 class="panel-title">修改新闻</h3>
+                    <p class="panel-subtitle">news management</p>
+                </div>
+                <form onkeydown="if(event.keyCode==13)return false;" id="newsAddId" action="/admin/news/newsadd" method="post">
+                    <div class="panel-body has-error">
+                        <select name="sid" class="form-control select2" required>
+                            <option value="">文章分类</option>
+                            <option value="1">公司新闻</option>
+                            <option value="2">行业新闻</option>
+                            <option value="3">公司公告</option>
+                        </select>
+                        <br>
+                        <br>
+                        <input name="title" type="text" class="form-control" placeholder="文章标题" autocomplete="off" required value="{{news.title}}">
+                        <br>
+                        <style>
+                            .cke_maximized{top: 80px !important;}
+                            .select2-container .select2-selection--single{border: 1px solid #a94442;}
+                        </style>
+                        <textarea name="content" id="content" class="ckeditor form-control" ng-bind="news.content"></textarea>
+                        <br>
+                        <label class="fancy-radio">
+                            <input name="state" value="1" type="radio" ng-click="dataIn()" ng-model="now" autocomplete="off">
+                            <span><i></i>立即发布</span>
+                        </label>
+                        <label class="fancy-radio">
+                            <input name="state" value="0" type="radio" ng-click="dataOut()" ng-model="timing" autocomplete="off">
+                            <span><i></i>定时发布</span>
+                        </label>
+                        <input name="timing" type="text" class="form-control datetime" placeholder="选择时间" ng-model="dates" ng-show="datetime" autocomplete="off">
+                        <script>
+                            //录入日期：
+                            $('.datetime').datetimepicker({
+                                format: 'yyyy-mm-dd hh:ii',
+                                language: 'zh-CN',
+                                startDate: new Date(),
+                                todayBtn : true,
+                                autoclose : true,
+                                todayHighlight : true
+                            })
+                        </script>
+                        <br>
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-danger" ng-click="newsAdd()" ng-disabled="ADDNEWSIF">确认添加</button>
+                            <button type="reset" class="btn btn-primary" ng-click="restNewsAdd()">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END OVERVIEW -->
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+<!-- Alert -->
+<div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-xs btn-primary" data-dismiss="modal" ng-click="Tip()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //页面加载完成后初始化select2控件
+    $(function () {
+        $(".select2").select2();
+    });
+</script>

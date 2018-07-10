@@ -9,7 +9,7 @@ module.exports={
             ('${title}','${content}',${sid},${state},${time},${uid});`);
     },
 
-    // 查询新闻
+    // 查询新闻列表
     newsList(page,pagesize,sid,title){
 
         // 查询条件设置
@@ -24,7 +24,7 @@ module.exports={
         // 查询语句
         const list=sql.query(`SELECT news.id,title,FROM_UNIXTIME(time,'%Y-%m-%d %H:%i:%S') AS time,sname,username,state FROM news 
                               LEFT JOIN subcategory ON news.sid=subcategory.id LEFT JOIN user ON uid=user.id 
-                              ${condition} 
+                              ${condition} ORDER BY news.id DESC  
                               LIMIT ${(page-1)*pagesize},${pagesize};`);
         return {
             totalRows, // 总记录数
@@ -35,6 +35,18 @@ module.exports={
     // 定时发布新闻
     newsTiming(){
         sql.query(`UPDATE news SET state=1 WHERE time<=${moment().unix()};`);
+    },
+
+    // 删除新闻
+    newsDel(id){
+        return sql.query(`DELETE FROM news WHERE id=${id};`);
+    },
+
+    // 查询新闻详情
+    newsOnly(id){
+        return sql.query(`SELECT * FROM news WHERE id=${id}`);
     }
+
+    // 编辑新闻
 
 };
