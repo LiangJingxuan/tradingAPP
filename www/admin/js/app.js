@@ -70,5 +70,15 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 商品管理
+        .state('goods',{
+            url:'/goods',
+            views:{
+                'view':{
+                    controller:'goodsCtrl',
+                    templateUrl:'tpl/GoodsManage/goods.html'
+                }
+            }
+        })
 
 }]);
