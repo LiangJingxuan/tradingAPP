@@ -7,9 +7,33 @@ angular.module('app')
         $anchorScroll();
 
         // 查询新闻详情
+        $scope.unique=$stateParams.id;
         $http.get('/admin/news/newsonly',{params:{id:$stateParams.id}}).success(function(data){
             G.expire(data);
             $scope.news=data;
+
+            // 文章详情初始化
+            (function msgInit(){
+                // 文章分类下拉框处理
+                var selects = $('#genreBox .select2-selection__rendered'),
+                    options = $('#genreBox option[value='+$scope.news.sid+']');
+                options.attr('selected',true);
+                selects.text(options.text());
+                selects.attr('title',options.text());
+
+                // 定时发布时间选择框处理
+                $scope.datetime=!$scope.news.state;
+                if(!$scope.news.state){
+                    $scope.dates=$scope.news.time;
+                }
+
+                // 重置操作
+                $scope.restNewsEdit=function(){
+                    msgInit();
+                    // 富文本
+                    CKEDITOR.instances. content .setData($scope.news.content);
+                }
+            })();
         });
 
         // 富文本编辑器配置
@@ -41,15 +65,15 @@ angular.module('app')
             }
         };
 
-        // 添加新闻
-        $scope.newsAdd=function(){
-            $('#newsAddId').ajaxForm({
+        // 修改新闻
+        $scope.newsEdit=function(){
+            $('#newsEditId').ajaxForm({
                 beforeSend:function(){
-                    $scope.ADDNEWSIF = true;
+                    $scope.EDITNEWSIF = true;
                 },
                 success:function(data){
                     G.expire(data);
-                    $scope.ADDNEWSIF = false;
+                    $scope.EDITNEWSIF = false;
                     $('.alerts .modal-body').text(data.msg);
                     $('.alerts').modal('show');
                     if(data.i){
@@ -63,17 +87,5 @@ angular.module('app')
                 }
             });
         };
-
-        // 重置操作
-        $scope.restNewsAdd=function(){
-            // 下拉框
-            var selects = $('#newsAddId .select2-selection__rendered');
-            selects.text('文章分类');
-            selects.attr('title','文章分类');
-            // 富文本
-            CKEDITOR.instances. content .setData(' ');
-            // 时间选择框
-            $scope.datetime=false;
-        }
 
     }]);

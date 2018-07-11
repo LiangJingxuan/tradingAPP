@@ -8,14 +8,18 @@
                     <h3 class="panel-title">修改新闻</h3>
                     <p class="panel-subtitle">news management</p>
                 </div>
-                <form onkeydown="if(event.keyCode==13)return false;" id="newsAddId" action="/admin/news/newsadd" method="post">
+                <form onkeydown="if(event.keyCode==13)return false;" id="newsEditId" action="/admin/news/newsedit" method="post">
+                    <input type="hidden" value="{{unique}}" name="id">
+                    <input type="hidden" value="{{news.uid}}" name="uid">
                     <div class="panel-body has-error">
-                        <select name="sid" class="form-control select2" required>
-                            <option value="">文章分类</option>
-                            <option value="1">公司新闻</option>
-                            <option value="2">行业新闻</option>
-                            <option value="3">公司公告</option>
-                        </select>
+                        <span id="genreBox">
+                            <select name="sid" class="form-control select2" required>
+                                <option value="">文章分类</option>
+                                <option value="1">公司新闻</option>
+                                <option value="2">行业新闻</option>
+                                <option value="3">公司公告</option>
+                            </select>
+                        </span>
                         <br>
                         <br>
                         <input name="title" type="text" class="form-control" placeholder="文章标题" autocomplete="off" required value="{{news.title}}">
@@ -27,14 +31,14 @@
                         <textarea name="content" id="content" class="ckeditor form-control" ng-bind="news.content"></textarea>
                         <br>
                         <label class="fancy-radio">
-                            <input name="state" value="1" type="radio" ng-click="dataIn()" ng-model="now" autocomplete="off">
+                            <input name="state" value="1" type="radio" ng-click="dataIn()" ng-model="now" autocomplete="off" ng-checked="news.state">
                             <span><i></i>立即发布</span>
                         </label>
                         <label class="fancy-radio">
-                            <input name="state" value="0" type="radio" ng-click="dataOut()" ng-model="timing" autocomplete="off">
+                            <input name="state" value="0" type="radio" ng-click="dataOut()" ng-model="timing" autocomplete="off" ng-checked="!news.state">
                             <span><i></i>定时发布</span>
                         </label>
-                        <input name="timing" type="text" class="form-control datetime" placeholder="选择时间" ng-model="dates" ng-show="datetime" autocomplete="off">
+                        <input name="timing" type="text" class="form-control datetime" placeholder="选择时间" value="{{dates}}" ng-show="datetime" autocomplete="off">
                         <script>
                             //录入日期：
                             $('.datetime').datetimepicker({
@@ -49,8 +53,8 @@
                         <br>
                         <br>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-danger" ng-click="newsAdd()" ng-disabled="ADDNEWSIF">确认添加</button>
-                            <button type="reset" class="btn btn-primary" ng-click="restNewsAdd()">重置</button>
+                            <button type="submit" class="btn btn-danger" ng-click="newsEdit()" ng-disabled="EDITNEWSIF">确认修改</button>
+                            <button type="reset" class="btn btn-primary" ng-click="restNewsEdit()">重置</button>
                         </div>
                     </div>
                 </form>

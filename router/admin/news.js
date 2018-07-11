@@ -64,6 +64,29 @@ router
         ctx.body=data[0];
     })
 
+    // 修改新闻
+    .post('/newsedit', async (ctx)=>{
+        const news=ctx.request.body;
+        let time=0;
+        parseInt(news.state)?time=moment().unix():time=moment(news.timing).unix();
+        try {
+            if(ctx.session.uid!==parseInt(news.uid)){
+                ctx.body=info.err('不能修改非本人发布的新闻！');
+            }else {
+                const data = await newsModel.newsEdit(news.id, news.title, time, news.content, news.sid, news.state);
+                if (data.affectedRows) {
+                    // 修改成功
+                    ctx.body = info.suc('修改成功！');
+                } else {
+                    // 修改失败
+                    ctx.body = info.err('修改失败，请重试！');
+                }
+            }
+        }catch (e) {
+            ctx.body=info.err('操作失败，请重试！');
+        }
+    })
+
     ;
 
 module.exports=router.routes();
