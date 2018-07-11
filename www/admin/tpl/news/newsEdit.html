@@ -28,7 +28,7 @@
                             .cke_maximized{top: 80px !important;}
                             .select2-container .select2-selection--single{border: 1px solid #a94442;}
                         </style>
-                        <textarea name="content" id="content" class="ckeditor form-control" ng-bind="news.content"></textarea>
+                        <textarea name="content" id="content" class="ckeditor form-control" ng-bind-html="news.content"></textarea>
                         <br>
                         <label class="fancy-radio">
                             <input name="state" value="1" type="radio" ng-click="dataIn()" ng-model="now" autocomplete="off" ng-checked="news.state">
