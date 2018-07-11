@@ -80,5 +80,15 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 商品添加
+        .state('goods-add',{
+            url:'/goodsAdd',
+            views:{
+                'view':{
+                    controller:'goodsAddCtrl',
+                    templateUrl:'tpl/GoodsManage/goodsAdd.html'
+                }
+            }
+        })
 
 }]);
