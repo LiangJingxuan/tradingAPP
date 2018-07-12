@@ -20,7 +20,8 @@
 卖点	goods_point	varchar(80) ;
 图片	goods_pic	varchar(300) ;
 产品概述	goods_summary	varchar(500) ;
-热门商品	state		tinyint(1) ;
+热门商品	nice		tinyint(1) ;
+上下架 state      tinyint(1) ;
 规格外键	standard_id	varchar(100) ;
 类目外键	subcategory_id	int ;
 

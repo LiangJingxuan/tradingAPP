@@ -28,28 +28,23 @@
                             .cke_maximized{top: 80px !important;}
                             .select2-container .select2-selection--single{border: 1px solid #a94442;}
                         </style>
+                        <p style="margin-bottom: 5px;">商品概述：</p>
                         <textarea name="content" id="content" class="ckeditor form-control"></textarea>
+                        <!-- 商品图片上传 -->
+                        <div class="img-box full">
+                            <section class=" img-section">
+                                <p class="up-p">商品图片：<span class="up-span">最多可以上传5张</span></p>
+                                <div class="z_photo upimg-div clear">
+                                    <section class="z_file fl">
+                                        <img src="img/a11.png" class="add-img">
+                                        <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                    </section>
+                                </div>
+                            </section>
+                        </div>
                         <br>
-                        <label class="fancy-radio">
-                            <input name="state" value="1" type="radio" ng-click="dataIn()" ng-model="now" autocomplete="off">
-                            <span><i></i>立即发布</span>
-                        </label>
-                        <label class="fancy-radio">
-                            <input name="state" value="0" type="radio" ng-click="dataOut()" ng-model="timing" autocomplete="off">
-                            <span><i></i>定时发布</span>
-                        </label>
-                        <input name="timing" type="text" class="form-control datetime" placeholder="选择时间" ng-model="dates" ng-show="datetime" autocomplete="off">
-                        <script>
-                            //录入日期：
-                            $('.datetime').datetimepicker({
-                                format: 'yyyy-mm-dd hh:ii',
-                                language: 'zh-CN',
-                                startDate: new Date(),
-                                todayBtn : true,
-                                autoclose : true,
-                                todayHighlight : true
-                            })
-                        </script>
+                        <label class="fancy-checkbox"><input type="checkbox"><span>热门商品</span></label>
+                        <label class="fancy-checkbox"><input type="checkbox"><span>上架商品</span></label>
                         <br>
                         <br>
                         <div class="text-right">
