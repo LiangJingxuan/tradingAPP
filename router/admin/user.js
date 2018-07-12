@@ -2,7 +2,7 @@
 
 const md5=require('md5');
 const router=require('koa-router')();
-const userModule=require('../../model/user');
+const userModel=require('../../model/user');
 const info=require('../../middlewares/info');
 
 router
@@ -11,7 +11,7 @@ router
         const user=ctx.request.body;
         const password=md5(md5(user.password).substr(4,7)+md5(user.password));
         // console.log(password);
-        const data=await userModule.userData(user.username);
+        const data=await userModel.userData(user.username);
         try{
             if(data[0]){
                 // 判断密码是否正确
@@ -44,7 +44,7 @@ router
 
     // 用户列表
     .get('/userlist', async (ctx)=>{
-        ctx.body=await userModule.userList();
+        ctx.body=await userModel.userList();
     })
 
     // 用户添加
@@ -52,10 +52,10 @@ router
         const user=ctx.request.body;
         const password=md5(md5(user.password).substr(4,7)+md5(user.password));
         try{
-            const telCheck=await userModule.userTel(user.tel);
+            const telCheck=await userModel.userTel(user.tel);
             // 电话查重
             if(telCheck.length===0){
-                const data=await userModule.userAdd(user.username,password,user.tel,user.roles);
+                const data=await userModel.userAdd(user.username,password,user.tel,user.roles);
                 if(data.affectedRows){
                     // 新增成功
                     ctx.body=info.suc('新增成功！');
@@ -80,7 +80,7 @@ router
                 // 不能删除正在使用的账号
                 ctx.body=info.err('不能删除正在使用的账号！');
             }else{
-                const data = await userModule.userDel(ctx.query.id);
+                const data = await userModel.userDel(ctx.query.id);
                 if(data.affectedRows){
                     // 删除成功
                     ctx.body=info.suc('删除成功！');
@@ -107,7 +107,7 @@ router
             }else{
                 // 电话未修改设置
                 if(user.orTel!==user.tel){
-                    const telCheck=await userModule.userTel(user.tel);
+                    const telCheck=await userModel.userTel(user.tel);
                     // 电话查重
                     if(telCheck.length!==0){
                         // 修改失败 电话重复
@@ -115,7 +115,7 @@ router
                         return;
                     }
                 }
-                const data=await userModule.userEdit(user.id,user.username,user.tel,user.password);
+                const data=await userModel.userEdit(user.id,user.username,user.tel,user.password);
                 if(data.affectedRows){
                     // 修改成功
                     ctx.body=info.suc('修改成功！');

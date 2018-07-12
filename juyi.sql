@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-07-11 15:25:02
+Date: 2018-07-12 16:17:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,7 +109,8 @@ CREATE TABLE `goods` (
   `goods_point` varchar(100) DEFAULT NULL COMMENT '商品卖点',
   `goods_pic` varchar(300) DEFAULT NULL COMMENT '商品图片',
   `goods_summary` varchar(500) DEFAULT NULL COMMENT '商品概述',
-  `state` tinyint(1) unsigned zerofill NOT NULL COMMENT '热门商品状态',
+  `state` tinyint(1) unsigned zerofill NOT NULL COMMENT '商品上下架状态',
+  `nice` tinyint(1) unsigned zerofill NOT NULL COMMENT '热门商品状态',
   `standard_id` varchar(100) DEFAULT NULL COMMENT '规格外键',
   `subcategory_id` int(10) unsigned NOT NULL COMMENT '类目外键',
   PRIMARY KEY (`id`)
@@ -200,4 +201,4 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('36', '海琦', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284122');
-INSERT INTO `user` VALUES ('37', '景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284121');
+INSERT INTO `user` VALUES ('37', '景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '听管理员的', '15100284121');
