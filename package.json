@@ -11,6 +11,7 @@
     "co-mysql": "^1.0.0",
     "ejs": "^2.6.1",
     "koa": "^2.5.1",
+    "koa-body": "^4.0.4",
     "koa-bodyparser": "^4.2.1",
     "koa-mysql-session": "^0.0.2",
     "koa-router": "^7.4.0",
