@@ -1810,3 +1810,68 @@ ul.activity-timeline > li {
     border: 1px solid #CCC; }
 
 /*# sourceMappingURL=main.css.map */
+
+/* 图片上传 */
+.section {
+  width: 100%;
+  margin: auto;
+}
+.article {
+  border: 1px #ccc dotted;
+}
+.item {
+  width: 128px;
+  height: 128px;
+  float: left;
+  position: relative;
+  margin: 20px;
+}
+.addImg {
+  border: 1px solid #fff;
+  width: 128px;
+  height: 128px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.preview,.preBlock{
+  position: absolute;
+  display: block;
+  width: 128px;
+  height: 128px;
+  left: 0;
+  top: 0;
+}
+.delete {
+  width: 30px;
+  position: absolute;
+  right: -30px;
+  top: -15px;
+  cursor: pointer;
+  display: none;
+}
+.preBlock img {
+  display: block;
+  width: 128px;
+  height: 128px;
+}
+.upload_input{
+  display: block;
+  width: 0;
+  height: 0;
+  -webkit-opacity: 0.0;
+  /* Netscape and Older than Firefox 0.9 */
+  -moz-opacity: 0.0;
+  /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
+  -khtml-opacity: 0.0;
+  /* IE9 + etc...modern browsers */
+  opacity: .0;
+  /* IE 4-9 */
+  filter:alpha(opacity=0);
+  /*This works in IE 8 & 9 too*/
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  /*IE4-IE9*/
+  filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
