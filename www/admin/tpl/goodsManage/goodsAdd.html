@@ -10,7 +10,7 @@
                 </div>
                 <form onkeydown="if(event.keyCode==13)return false;" id="goodsAddId" action="/admin/goods/goodsadd" method="post">
                     <div class="panel-body has-error">
-                        <select name="sid" class="form-control select2" required>
+                        <select name="sId" class="form-control select2" required>
                             <option value="">商品分类</option>
                             <option value="4">地暖</option>
                             <option value="5">光伏发电</option>
@@ -20,25 +20,24 @@
                         </select>
                         <br>
                         <br>
-                        <input name="title" type="text" class="form-control" placeholder="商品标题" autocomplete="off" required>
+                        <input name="goodsName" type="text" class="form-control" placeholder="商品标题" autocomplete="off" required>
                         <br>
-                        <input name="title" type="text" class="form-control" placeholder="商品卖点" autocomplete="off" required>
+                        <input name="goodsPoint" type="text" class="form-control" placeholder="商品卖点" autocomplete="off" required>
                         <br>
                         <style>
                             .cke_maximized{top: 80px !important;}
                             .select2-container .select2-selection--single{border: 1px solid #a94442;}
                         </style>
                         <p style="margin-bottom: 5px;">商品概述：</p>
-                        <textarea name="content" id="content" class="ckeditor form-control"></textarea>
-                        <!-- 商品图片上传 -->
-                        <!--<input type="file" name="pic">-->
+                        <textarea name="goodsSummary" id="content" class="ckeditor form-control"></textarea>
                         <br>
-                        <p style="margin-bottom: 5px;">商品图片：(最多上传五张)</p>
+                        <!-- 商品图片上传 -->
+                        <p style="margin-bottom: 5px;">商品图片：(<span style="color: red">至少上传一张，最多上传五张</span>)</p>
                         <div class="section">
                             <div class="article">
                                 <div class="item">
                                     <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
-                                    <input name="url" type="file" class="upload_input" onchange="change(this)" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" required />
                                     <div class="preBlock">
                                         <img class="preview" alt="" name="pic" width="190" height="190" />
                                     </div>
@@ -46,7 +45,7 @@
                                 </div>
                                 <div class="item">
                                     <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
-                                    <input name="url" type="file" class="upload_input" onchange="change(this)" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
                                     <div class="preBlock">
                                         <img class="preview" alt="" name="pic" width="190" height="190" />
                                     </div>
@@ -54,7 +53,7 @@
                                 </div>
                                 <div class="item">
                                     <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
-                                    <input name="url" type="file" class="upload_input" onchange="change(this)" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
                                     <div class="preBlock">
                                         <img class="preview" alt="" name="pic" width="190" height="190" />
                                     </div>
@@ -62,7 +61,7 @@
                                 </div>
                                 <div class="item">
                                     <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
-                                    <input name="url" type="file" class="upload_input" onchange="change(this)" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
                                     <div class="preBlock">
                                         <img class="preview" alt="" name="pic" width="190" height="190" />
                                     </div>
@@ -70,7 +69,7 @@
                                 </div>
                                 <div class="item">
                                     <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
-                                    <input name="url" type="file" class="upload_input" onchange="change(this)" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
                                     <div class="preBlock">
                                         <img class="preview" alt="" name="pic" width="190" height="190" />
                                     </div>
@@ -80,13 +79,13 @@
                             </div>
                         </div>
                         <br>
-                        <label class="fancy-checkbox"><input type="checkbox"><span>热门商品</span></label>
-                        <label class="fancy-checkbox"><input type="checkbox"><span>上架商品</span></label>
+                        <label class="fancy-checkbox"><input type="checkbox" name="nice" value="1"><span>热门商品</span></label>
+                        <label class="fancy-checkbox"><input type="checkbox" name="state" value="1"><span>上架商品</span></label>
                         <br>
                         <br>
                         <div class="text-right">
                             <button type="submit" class="btn btn-danger" ng-click="goodsAdd()" ng-disabled="ADDGOODSIF">确认添加</button>
-                            <button type="reset" class="btn btn-primary" ng-click="restGoodsAdd()">重置</button>
+                            <!--<button type="reset" class="btn btn-primary" ng-click="restGoodsAdd()">重置</button>-->
                         </div>
                     </div>
                 </form>

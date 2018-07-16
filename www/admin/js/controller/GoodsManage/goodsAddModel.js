@@ -2,14 +2,14 @@
  *  商品管理模块_商品添加
  */
 angular.module('app')
-    .controller('goodsAddCtrl',['$scope','$rootScope','$location','$anchorScroll','$http','G',function($scope,$rootScope,$location,$anchorScroll,$http,G){
+    .controller('goodsAddCtrl',['$scope','$rootScope','$location','$anchorScroll','$http','G','$state',function($scope,$rootScope,$location,$anchorScroll,$http,G,$state){
         $location.hash('main-content');
         $anchorScroll();
 
         // 产品图片上传
 
         // 富文本编辑器配置
-        CKEDITOR.replace('content',{
+        CKEDITOR.replace('goodsSummary',{
             toolbar:[
                 ['Undo','Redo','-','Find','-','SelectAll','RemoveFormat'],
                 ['FontSize'],['Bold', 'Italic'],['TextColor','BGColor'],

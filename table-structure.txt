@@ -23,7 +23,7 @@
 热门商品	nice		tinyint(1) ;
 上下架 state      tinyint(1) ;
 规格外键	standard_id	varchar(100) ;
-类目外键	subcategory_id	int ;
+类目外键	sid	int ;
 
 规格 standard：
 主键	id	int ;
