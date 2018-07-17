@@ -81,6 +81,30 @@ router
         }
     })
 
+    // 查询商品详情
+    .get('/goodsonly', async (ctx)=>{
+        const data=await goodsModel.goodsOnly(ctx.query.id);
+        ctx.body=data[0];
+    })
+
+    // 修改商品
+    .post('/goodsedit', async (ctx)=>{
+        const goods=ctx.request.body;
+        try {
+            const data = await goodsModel.goodsEdit(goods.id,goods.goodsName,goods.goodsPoint,goods.goodsSummary,goods.state,goods.nice,goods.sId);
+            if (data.affectedRows) {
+                // 修改成功
+                ctx.body = info.suc('修改成功！');
+            } else {
+                // 修改失败
+                ctx.body = info.err('修改失败，请重试！');
+            }
+        }catch (e) {
+            console.log(e);
+            ctx.body=info.err('操作失败，请重试！');
+        }
+    })
+
     ;
 
 module.exports=router.routes();

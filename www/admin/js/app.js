@@ -90,5 +90,15 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 商品编辑
+        .state('goods-edit',{
+            url:'/goodsEdit/:id',
+            views:{
+                'view':{
+                    controller:'goodsEditCtrl',
+                    templateUrl:'tpl/GoodsManage/goodsEdit.html'
+                }
+            }
+        })
 
 }]);

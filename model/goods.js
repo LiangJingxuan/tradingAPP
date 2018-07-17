@@ -46,4 +46,22 @@ module.exports={
         return sql.query(`DELETE FROM goods WHERE id=${id};`);
     },
 
+    // 查询商品详情
+    goodsOnly(id){
+        return sql.query(`SELECT id,goods_name,goods_point,goods_pic,goods_summary,state,nice,sid FROM goods WHERE id=${id};`);
+    },
+
+    // 修改商品
+    goodsEdit(id,goods_name,goods_point,goods_summary,state,nice,sid){
+
+        // 默认值判断
+        !goods_summary?goods_summary=``:``;
+        !state?state=0:``;
+        !nice?nice=0:``;
+
+        // 修改数据
+        return sql.query(`UPDATE goods SET goods_name='${goods_name}',goods_point=${goods_point},goods_summary='${goods_summary}',
+            state=${state},nice=${nice},sid=${sid} WHERE id=${id};`);
+    }
+
 };
