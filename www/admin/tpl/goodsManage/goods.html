@@ -11,21 +11,23 @@
                 <div class="panel-body">
                     <div class="tab-content">
                         <form class="form-inline" style="background: #f5f5f5;padding: 20px;">
-                            <div class="form-group">
+                            <div class="form-group" style="width: 20%;">
                                 <label>分类：</label>
                                 <span id="genreBox">
                                     <select class="form-control select2" ng-model="genre">
-                                        <option value="">全部新闻</option>
-                                        <option value="1">公司新闻</option>
-                                        <option value="2">行业新闻</option>
-                                        <option value="3">公司公告</option>
+                                        <option value="">全部商品</option>
+                                        <option value="4">地暖</option>
+                                        <option value="5">光伏发电</option>
+                                        <option value="6">空气能</option>
+                                        <option value="7">太阳能</option>
+                                        <option value="8">风机盘管</option>
                                     </select>
                                 </span>
                             </div>
                             &nbsp;&nbsp;&nbsp;
                             <div class="form-group">
                                 <label>关键词：</label>
-                                <input type="text" class="form-control" placeholder="请输入新闻标题关键词" ng-model="kw">
+                                <input type="text" class="form-control" placeholder="请输入商品名称关键词" ng-model="kw">
                             </div>
                             &nbsp;&nbsp;&nbsp;
                             <button type="submit" class="btn btn-success btn-sm" ng-click="filterCond(genre,kw)">搜索</button>
@@ -39,30 +41,35 @@
                                 <table class="table project-table">
                                     <thead>
                                     <tr>
-                                        <th>标题</th>
+                                        <th>名称</th>
                                         <th>分类</th>
-                                        <th>发布人</th>
                                         <th>发布时间</th>
+                                        <th>热卖</th>
                                         <th>状态</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr ng-repeat="d in newsList.dataList">
+                                    <tr ng-repeat="d in goodsList.dataList">
                                         <td>
-                                            <span ng-bind="d.title" class="news-title"></span>
+                                            <span ng-bind="d.goods_name" class="news-title"></span>
                                         </td>
                                         <td ng-bind="d.sname"></td>
-                                        <td ng-bind="d.username"></td>
                                         <td ng-bind="d.time"></td>
                                         <td>
-                                                <span ng-class="d.state?'label-success':'label-default';" class="label">
-                                                    <span ng-if="d.state">已发布</span>
-                                                    <span ng-if="!d.state">未发布</span>
-                                                </span>
+                                            <span ng-class="d.nice?'label-success':'label-default';" class="label">
+                                                <span ng-if="d.nice">是</span>
+                                                <span ng-if="!d.nice">否</span>
+                                            </span>
                                         </td>
                                         <td>
-                                            <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms" ng-click="newsDel(d.id)">删除</button>
+                                            <span ng-class="d.state?'label-success':'label-default';" class="label">
+                                                <span ng-if="d.state">已上架</span>
+                                                <span ng-if="!d.state">未上架</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-xs btn-danger" data-toggle="modal" data-target=".confirms" ng-click="goodsDel(d.id)">删除</button>
                                             <a ui-sref="news-edit({id:d.id})" class="btn btn-xs btn-primary">修改</a>
                                         </td>
                                     </tr>
@@ -78,9 +85,9 @@
             <nav aria-label="" class="text-right">
                 <paging
                         class="small"
-                        page="newsList.page"
+                        page="goodsList.page"
                         page-size="pagesize"
-                        total="newsList.totalRows"
+                        total="goodsList.totalRows"
                         scroll-top="{{scrollTop}}"
                         show-prev-next="true"
                         show-first-last="true"
@@ -117,7 +124,7 @@
     </div>
 </div>
 <style>
-    .select2-container{width: auto !important;}
+    .select2-container{width: 70% !important;}
 </style>
 <script>
     //页面加载完成后初始化select2控件

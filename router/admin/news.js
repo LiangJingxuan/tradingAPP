@@ -29,8 +29,8 @@ router
 
     // 查询新闻列表
     .get('/newslist', async (ctx)=>{
-        newsModel.newsTiming();
-        const params=ctx.query; // 定时发布新闻
+        newsModel.newsTiming(); // 定时发布新闻
+        const params=ctx.query;
         const page=parseInt(params.page);
         const pagesize=parseInt(params.pagesize);
 
