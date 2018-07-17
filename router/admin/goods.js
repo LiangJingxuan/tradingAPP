@@ -31,9 +31,9 @@ router
         // 图片路径获取
         let pics=[];
         for(let i=0,len=pic.goodsPic.length;i<len;i++){
-            pics.push(pic.goodsPic[i].path);
+            pics.push(`/uploads/goods/${paths.parse(pic.goodsPic[i].path).base}`);
         }
-        !pics.length?pics=pic.goodsPic.path:'';
+        !pics.length?pics=`/uploads/goods/${paths.parse(pic.goodsPic.path).base}`:'';
 
         // 添加操作
         try {
@@ -46,7 +46,6 @@ router
                 ctx.body=info.err('新增失败，请重试！');
             }
         }catch (e) {
-            console.log(e);
             ctx.body=info.err('操作失败，请重试！');
         }
 
