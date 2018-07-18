@@ -47,6 +47,21 @@ router
 
     // 删除商品
     .get('/goodsdel', async (ctx)=>{
+
+        // 删除图片文件
+        const picList=await goodsModel.goodsPicDel(ctx.query.id).picList(),
+              picPath=picList[0].goods_pic;
+        if(picPath){
+            const arr=picPath.split(',');
+            for(let i=0,len=arr.length;i<len;i++){
+                // 删除图片文件
+                fs.unlinkSync(paths.join(__dirname,`../../www${arr[i]}`),(err)=>{
+                    if(err) return false;
+                });
+            }
+        }
+
+        // 删除操作
         try{
             const data = await goodsModel.goodsDel(ctx.query.id);
             if(data.affectedRows){
@@ -68,10 +83,22 @@ router
     })
 
     // 修改商品
-    .post('/goodsedit', async (ctx)=>{
-        const goods=ctx.request.body;
+    .post('/goodsedit', upload.configure('goods'), async (ctx)=>{
+        let goods=ctx.request.body,
+            picList=await goodsModel.goodsPicDel(goods.id).picList(), // 全部图片路径
+            pics=upload.pathHandle(ctx,'goodsPic','goods'), // 获取图片路径
+            picUp=''; // 更新图片路径
+
+        if(picList[0].goods_pic && JSON.stringify(ctx.request.files)!=='{}'){
+            picUp=picList[0].goods_pic+','+pics;
+        }else if(JSON.stringify(ctx.request.files)==='{}'){
+            picUp=picList[0].goods_pic;
+        }else{
+            picUp=pics;
+        }
+
         try {
-            const data = await goodsModel.goodsEdit(goods.id,goods.goodsName,goods.goodsPoint,goods.goodsSummary,goods.state,goods.nice,goods.sId);
+            const data = await goodsModel.goodsEdit(goods.id,goods.goodsName,goods.goodsPoint,picUp,goods.goodsSummary,goods.state,goods.nice,goods.sId);
             if (data.affectedRows) {
                 // 修改成功
                 ctx.body = info.suc('修改成功！');

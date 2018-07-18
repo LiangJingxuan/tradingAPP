@@ -169,10 +169,10 @@ textarea{resize: none;}
     .navbar + .main-content {
       padding-top: 155px; } }
 
-html.fullscreen-bg,
+/*html.fullscreen-bg,
 html.fullscreen-bg body,
 html.fullscreen-bg #wrapper {
-  height: 100%; }
+  height: 100%; }*/
 
 .vertical-align-wrap {
   position: absolute;

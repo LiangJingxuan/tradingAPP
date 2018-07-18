@@ -52,7 +52,7 @@ module.exports={
     },
 
     // 修改商品
-    goodsEdit(id,goods_name,goods_point,goods_summary,state,nice,sid){
+    goodsEdit(id,goods_name,goods_point,goods_pic,goods_summary,state,nice,sid){
 
         // 默认值判断
         !goods_summary?goods_summary=``:``;
@@ -60,7 +60,7 @@ module.exports={
         !nice?nice=0:``;
 
         // 修改数据
-        return sql.query(`UPDATE goods SET goods_name='${goods_name}',goods_point='${goods_point}',goods_summary='${goods_summary}',
+        return sql.query(`UPDATE goods SET goods_name='${goods_name}',goods_point='${goods_point}',goods_pic='${goods_pic}',goods_summary='${goods_summary}',
             state=${state},nice=${nice},sid=${sid} WHERE id=${id};`);
     },
 
