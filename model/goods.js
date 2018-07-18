@@ -60,8 +60,20 @@ module.exports={
         !nice?nice=0:``;
 
         // 修改数据
-        return sql.query(`UPDATE goods SET goods_name='${goods_name}',goods_point=${goods_point},goods_summary='${goods_summary}',
+        return sql.query(`UPDATE goods SET goods_name='${goods_name}',goods_point='${goods_point}',goods_summary='${goods_summary}',
             state=${state},nice=${nice},sid=${sid} WHERE id=${id};`);
-    }
+    },
+
+    // 删除商品图片
+    goodsPicDel(id,path){
+        return {
+            picList(){
+                return sql.query(`SELECT goods_pic FROM goods WHERE id=${id};`);  // 全部商品图片
+            },
+            upPic(){
+                return sql.query(`UPDATE goods SET goods_pic='${path}' WHERE id=${id};`);  // 更新商品图片
+            }
+        };
+    },
 
 };

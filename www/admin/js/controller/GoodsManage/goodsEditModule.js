@@ -8,12 +8,12 @@ angular.module('app')
 
         // 查询新闻详情
         $scope.unique=$stateParams.id;
-        $http.get('/admin/goods/goodsonly',{params:{id:$stateParams.id}}).success(function(data){
-            G.expire(data);
-            $scope.goods=data;
+        // 文章详情
+        (function msgInit(){
+            $http.get('/admin/goods/goodsonly',{params:{id:$stateParams.id}}).success(function(data){
+                G.expire(data);
+                $scope.goods=data;
 
-            // 文章详情初始化
-            (function msgInit(){
                 // 商品分类下拉框处理
                 var selects = $('#genreBox .select2-selection__rendered'),
                     options = $('#genreBox option[value='+$scope.goods.sid+']');
@@ -37,6 +37,28 @@ angular.module('app')
                     // filebrowserImageUploadUrl: '/uploads?type=images'
                 });
 
+                // 商品图片展示
+                $scope.pic=$scope.goods.goods_pic;
+                if($scope.pic){
+                    $scope.pic=$scope.pic.split(',');
+                }
+                // 删除图片操作
+                $scope.removePic = function(path){
+                    $scope.del = function(){
+                        $http.get('/admin/goods/goodspicdel',{params:{id:$stateParams.id,path:path}}).success(function(data){
+                            $('.confirms').modal('hide');
+                            $('.alerts .modal-body').text(data.msg);
+                            $('.alerts').modal('show');
+                            if(data.i){
+                                $scope.Tip = function(){
+                                    // 更新数据
+                                    setTimeout(function(){location.reload()},500)
+                                }
+                            }
+                        });
+                    };
+                };
+
                 // 修改新闻
                 $scope.goodsEdit=function(){
                     $('#goodsEditId').ajaxForm({
@@ -59,7 +81,8 @@ angular.module('app')
                         }
                     });
                 };
-            })();
-        });
+
+            });
+        })();
 
     }]);
