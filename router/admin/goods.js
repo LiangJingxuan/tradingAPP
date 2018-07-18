@@ -2,8 +2,6 @@
 
 const router=require('koa-router')();
 const moment=require('moment');
-const fs=require('fs');
-const paths=require('path');
 const goodsModel=require('../../model/goods');
 const upload=require('../../middlewares/uploaded');
 const info=require('../../middlewares/info');
@@ -49,17 +47,8 @@ router
     .get('/goodsdel', async (ctx)=>{
 
         // 删除图片文件
-        const picList=await goodsModel.goodsPicDel(ctx.query.id).picList(),
-              picPath=picList[0].goods_pic;
-        if(picPath){
-            const arr=picPath.split(',');
-            for(let i=0,len=arr.length;i<len;i++){
-                // 删除图片文件
-                fs.unlinkSync(paths.join(__dirname,`../../www${arr[i]}`),(err)=>{
-                    if(err) return false;
-                });
-            }
-        }
+        const list=await goodsModel.goodsPicDel(ctx.query.id).picList(); // 获取全部图片
+        upload.fileDelete(list,'goods_pic');
 
         // 删除操作
         try{
@@ -87,18 +76,10 @@ router
         let goods=ctx.request.body,
             picList=await goodsModel.goodsPicDel(goods.id).picList(), // 全部图片路径
             pics=upload.pathHandle(ctx,'goodsPic','goods'), // 获取图片路径
-            picUp=''; // 更新图片路径
-
-        if(picList[0].goods_pic && JSON.stringify(ctx.request.files)!=='{}'){
-            picUp=picList[0].goods_pic+','+pics;
-        }else if(JSON.stringify(ctx.request.files)==='{}'){
-            picUp=picList[0].goods_pic;
-        }else{
-            picUp=pics;
-        }
+            site=upload.fileUpdate(ctx,pics,picList,'goods_pic'); // 修改图片路径
 
         try {
-            const data = await goodsModel.goodsEdit(goods.id,goods.goodsName,goods.goodsPoint,picUp,goods.goodsSummary,goods.state,goods.nice,goods.sId);
+            const data = await goodsModel.goodsEdit(goods.id,goods.goodsName,goods.goodsPoint,site,goods.goodsSummary,goods.state,goods.nice,goods.sId);
             if (data.affectedRows) {
                 // 修改成功
                 ctx.body = info.suc('修改成功！');
@@ -114,28 +95,15 @@ router
 
     // 删除商品图片
     .get('/goodspicdel', async (ctx)=>{
-        let params=ctx.query,
-            picList=await goodsModel.goodsPicDel(params.id).picList(),
-            picPath=picList[0].goods_pic,
-            arr=picPath.split(',');
+        const params=ctx.query,
+              list=await goodsModel.goodsPicDel(params.id).picList(); // 获取全部图片
 
-        for(let i=0,len=arr.length;i<len;i++){
-            if(params.path===arr[i]){
-
-                // 删除图片文件
-                fs.unlinkSync(paths.join(__dirname,`../../www${arr[i]}`),(err)=>{
-                    if(err) return false;
-                });
-
-                // 删除路径
-                arr.splice(i,1);
-            }
-        }
-        picPath=arr.join();
+        // 删除图片文件及地址处理
+        const pic=upload.fileDelete(list,'goods_pic',params.path);
 
         // 执行删除
         try{
-            const data=await goodsModel.goodsPicDel(params.id,picPath).upPic();
+            const data=await goodsModel.goodsPicDel(params.id,pic).upPic();
             if(data.affectedRows){
                 // 删除成功
                 ctx.body=info.suc('删除成功！');

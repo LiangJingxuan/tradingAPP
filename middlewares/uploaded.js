@@ -1,5 +1,6 @@
 const koaBody=require('koa-body');
 const paths=require('path');
+const fs=require('fs');
 
 module.exports={
 
@@ -37,6 +38,51 @@ module.exports={
         }
 
         return path;
+    },
+
+    // 文件删除操作
+    fileDelete(list,picname,site){
+        let record=list[0][picname],
+            arr=record.split(',');
+
+        for(let i=0,len=arr.length;i<len;i++){
+            if(site){
+                // 删除指定文件
+                if(site===arr[i]){
+                    // 删除图片文件
+                    fs.unlinkSync(paths.join(__dirname,`../www${arr[i]}`),(err)=>{
+                        if(err) return false;
+                    });
+                    // 删除路径
+                    arr.splice(i,1);
+                }
+                record=arr.join();
+            }else{
+                // 删除全部文件
+                if(record){
+                    // 删除图片文件
+                    fs.unlinkSync(paths.join(__dirname,`../www${arr[i]}`),(err)=>{
+                        if(err) return false;
+                    });
+                }
+
+            }
+        }
+
+        return record;
+    },
+
+    // 文件修改操作
+    fileUpdate(ctx,path,list,picname){
+        let up='';
+        if(list[0][picname] && JSON.stringify(ctx.request.files)!=='{}'){
+            up=list[0][picname]+','+path;
+        }else if(JSON.stringify(ctx.request.files)==='{}'){
+            up=list[0][picname];
+        }else{
+            up=path;
+        }
+        return up;
     }
 
 };
