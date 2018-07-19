@@ -1,0 +1,209 @@
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- OVERVIEW -->
+            <div class="panel panel-headline">
+                <div class="panel-heading">
+                    <h3 class="panel-title">修改案例</h3>
+                    <p class="panel-subtitle">news management</p>
+                </div>
+                <form onkeydown="if(event.keyCode==13)return false;" id="goodsEditId" action="/admin/goods/goodsedit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="{{unique}}" name="id">
+                    <div class="panel-body has-error">
+                        <span id="genreBox">
+                            <select name="sId" class="form-control select2" required>
+                                <option value="">商品分类</option>
+                                <option value="4">地暖</option>
+                                <option value="5">光伏发电</option>
+                                <option value="6">空气能</option>
+                                <option value="7">太阳能</option>
+                                <option value="8">风机盘管</option>
+                            </select>
+                        </span>
+                        <br>
+                        <br>
+                        <input name="goodsName" type="text" class="form-control" placeholder="商品标题" autocomplete="off" required value="{{goods.goods_name}}">
+                        <br>
+                        <input name="goodsPoint" type="text" class="form-control" placeholder="商品卖点" autocomplete="off" required value="{{goods.goods_point}}">
+                        <br>
+                        <style>
+                            .cke_maximized{top: 80px !important;}
+                            .select2-container .select2-selection--single{border: 1px solid #a94442;}
+                        </style>
+                        <p style="margin-bottom: 5px;">商品概述：</p>
+                        <textarea name="goodsSummary" id="content" class="ckeditor form-control" ng-bind-html="goods.goods_summary"></textarea>
+                        <br>
+                        <!-- 商品图片 -->
+                        <p style="margin-bottom: 5px;">商品图片：(<span style="color: red">最多上传五张</span>)</p>
+                        <!-- 商品图片上传 -->
+                        <div class="section">
+                            <div class="article">
+                                <div class="item">
+                                    <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
+                                    <div class="preBlock">
+                                        <img class="preview" alt="" name="pic" width="190" height="190" />
+                                    </div>
+                                    <img class="delete" onclick="deleteImg(this)" src="./img/delete.png" />
+                                </div>
+                                <div class="item">
+                                    <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
+                                    <div class="preBlock">
+                                        <img class="preview" alt="" name="pic" width="190" height="190" />
+                                    </div>
+                                    <img class="delete" onclick="deleteImg(this)" src="./img/delete.png" />
+                                </div>
+                                <div class="item">
+                                    <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
+                                    <div class="preBlock">
+                                        <img class="preview" alt="" name="pic" width="190" height="190" />
+                                    </div>
+                                    <img class="delete" onclick="deleteImg(this)" src="./img/delete.png" />
+                                </div>
+                                <div class="item">
+                                    <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
+                                    <div class="preBlock">
+                                        <img class="preview" alt="" name="pic" width="190" height="190" />
+                                    </div>
+                                    <img class="delete" onclick="deleteImg(this)" src="./img/delete.png" />
+                                </div>
+                                <div class="item">
+                                    <img class="addImg" onclick="clickImg(this);" src="./img/addImg.png" />
+                                    <input name="goodsPic" type="file" class="upload_input" onchange="change(this)" />
+                                    <div class="preBlock">
+                                        <img class="preview" alt="" name="pic" width="190" height="190" />
+                                    </div>
+                                    <img class="delete" onclick="deleteImg(this)" src="./img/delete.png" />
+                                </div>
+                                <div style="clear: left;"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <p style="margin-bottom: 5px;" ng-if="pic">已上传商品图片列表：</p>
+                        <div class="row">
+                            <div class="col-md-2" ng-repeat="p in pic">
+                                <div class="thumbnail">
+                                    <img class="delete" src="./img/delete.png" data-toggle="modal" data-target=".confirms" ng-click="removePic(p)">
+                                    <img ng-src="{{p}}">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <label class="fancy-checkbox"><input type="checkbox" name="nice" value="1" ng-checked="goods.nice"><span>热门商品</span></label>
+                        <label class="fancy-checkbox"><input type="checkbox" name="state" value="1" ng-checked="goods.state"><span>上架商品</span></label>
+                        <br>
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-danger" ng-click="goodsEdit()" ng-disabled="EDITGOODSIF">确认修改</button>
+                            <!--<button type="reset" class="btn btn-primary" ng-click="restGoodsAdd()">重置</button>-->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END OVERVIEW -->
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+<!-- Confirm -->
+<div class="modal fade confirms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                确认删除该商品图片？
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-xs btn-danger" ng-click="del()">确认删除</button>
+                <button class="btn btn-xs btn-primary" data-dismiss="modal">放弃</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Alert -->
+<div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-xs btn-primary" data-dismiss="modal" ng-click="Tip()">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    html{overflow-x: hidden;}
+</style>
+<script>
+    //页面加载完成后初始化select2控件
+    $(function () {
+        $(".select2").select2();
+    });
+    //点击
+    var clickImg = function(obj){
+        $(obj).parent().find('.upload_input').click();
+    }
+    //删除
+    var deleteImg = function(obj){
+        $(obj).parent().find('input').val('');
+        $(obj).parent().find('img.preview').attr("src","");
+        //IE9以下
+        $(obj).parent().find('img.preview').css("filter","");
+        $(obj).hide();
+        $(obj).parent().find('.addImg').show();
+    }
+    //选择图片
+    function change(file) {
+        //预览
+        var pic = $(file).parent().find(".preview");
+        //添加按钮
+        var addImg = $(file).parent().find(".addImg");
+        //删除按钮
+        var deleteImg = $(file).parent().find(".delete");
+
+        var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
+
+        // gif在IE浏览器暂时无法显示
+        if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
+            if (ext != '') {
+                alert("图片的格式必须为png或者jpg或者jpeg格式！");
+            }
+            return;
+        }
+        //判断IE版本
+        var isIE = navigator.userAgent.match(/MSIE/)!= null,
+            isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
+        isIE10 = navigator.userAgent.match(/MSIE 10.0/)!= null;
+        if(isIE && !isIE10) {
+            file.select();
+            var reallocalpath = document.selection.createRange().text;
+            // IE6浏览器设置img的src为本地路径可以直接显示图片
+            if (isIE6) {
+                pic.attr("src",reallocalpath);
+            }else{
+                // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现
+                pic.css("filter","progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale',src=\"" + reallocalpath + "\")");
+                // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
+                pic.attr('src','data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+            }
+            addImg.hide();
+            deleteImg.show();
+        }else {
+            html5Reader(file,pic,addImg,deleteImg);
+        }
+    }
+    //H5渲染
+    function html5Reader(file,pic,addImg,deleteImg){
+        var file = file.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(e){
+            pic.attr("src",this.result);
+        }
+        addImg.hide();
+        deleteImg.show();
+    }
+</script>

@@ -100,5 +100,35 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 案例管理
+        .state('case',{
+            url:'/case',
+            views:{
+                'view':{
+                    controller:'caseCtrl',
+                    templateUrl:'tpl/GoodsManage/case.html'
+                }
+            }
+        })
+        // 案例添加
+        .state('case-add',{
+            url:'/caseAdd',
+            views:{
+                'view':{
+                    controller:'caseAddCtrl',
+                    templateUrl:'tpl/GoodsManage/caseAdd.html'
+                }
+            }
+        })
+        // 案例编辑
+        .state('case-edit',{
+            url:'/caseEdit/:id',
+            views:{
+                'view':{
+                    controller:'caseEditCtrl',
+                    templateUrl:'tpl/GoodsManage/caseEdit.html'
+                }
+            }
+        })
 
 }]);

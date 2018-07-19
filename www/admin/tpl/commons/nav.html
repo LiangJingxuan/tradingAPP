@@ -63,7 +63,16 @@
             <ul class="nav">
                 <li><a ui-sref="home" ui-sref-active="active" class=""><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
                 <li><a ui-sref="news" ng-class="{'active':state.current.name.indexOf('news') != -1}" class=""><i class="lnr lnr-leaf"></i> <span>新闻管理</span></a></li>
-                <li><a ui-sref="goods" ng-class="{'active':state.current.name.indexOf('goods') != -1}" class=""><i class="lnr lnr-cart"></i> <span>商品管理</span></a></li>
+                <li>
+                    <a href="/#subPages" data-toggle="collapse"
+                       ng-class="{'active':(state.current.name.indexOf('goods') != -1) || (state.current.name.indexOf('case') != -1)}" class="collapsed"><i class="lnr lnr-cart"></i> <span>商品管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                    <div id="subPages" class="collapse ">
+                        <ul class="nav">
+                            <li><a ui-sref="goods" ng-class="{'active':state.current.name.indexOf('goods') != -1}" class="">商品</a></li>
+                            <li><a ui-sref="case" ng-class="{'active':state.current.name.indexOf('case') != -1}" class="">案例</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li><a ui-sref="user" ui-sref-active="active" class=""><i class="lnr lnr-users"></i> <span>用户管理</span></a></li>
                 <!--<li><a class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                 <li><a class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
@@ -142,9 +151,9 @@
         var flag=false;
         $('.sidebar a[data-toggle="collapse"]').on('click', function() {
             if($(this).hasClass('collapsed')) {
-                $(this).addClass('active');
+                // $(this).addClass('active');
             } else {
-                $(this).removeClass('active');
+                // $(this).removeClass('active');
             }
             flag=!flag;
             if(flag){

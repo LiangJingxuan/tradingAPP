@@ -17,6 +17,7 @@
 商品 goods：
 主键	id	int ;
 商品名	goods_name	varchar(20) ;
+商品添加时间	goods_time	int ;
 卖点	goods_point	varchar(80) ;
 图片	goods_pic	varchar(300) ;
 产品概述	goods_summary	varchar(500) ;
@@ -27,17 +28,20 @@
 新闻 news：
 主键	id		int ;
 标题	title		varchar(40) ;
-时间	time		datatime ;
+时间	time		int ;
 内容	content 	text ;
-类目外键	subcategory_id	int ;
+类目外键	sid	int ;
+发布人外键 uid   int ;
+发布状态	state	tinyint(1) ;
 
 案例 case：
 主键	id	int ;
 标题	case_title		varchar(20) ;
-时间	case_time	datatime;
+时间	case_time	int;
 图片	case_pic		varchar(300) ;
-热门案例	states	tinyint(1) ;	
-类目外键	subcategory_id	int ;
+热门案例	state	tinyint(1) ;
+类目外键	sid	int ;
+
 关于我们 about：
 主键	id	int ;
 内容	content	varchar(1000) ;
