@@ -73,8 +73,10 @@ module.exports={
     },
 
     // 文件修改操作
-    fileUpdate(ctx,path,list,picname){
-        let up='';
+    fileUpdate(ctx,field,site,list,picname,){
+        let path=this.pathHandle(ctx,field,site), // 文件路径处理
+            up=''; // 更新文件路径存储
+
         if(list[0][picname] && JSON.stringify(ctx.request.files)!=='{}'){
             up=list[0][picname]+','+path;
         }else if(JSON.stringify(ctx.request.files)==='{}'){

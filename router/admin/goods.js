@@ -75,8 +75,7 @@ router
     .post('/goodsedit', upload.configure('goods'), async (ctx)=>{
         let goods=ctx.request.body,
             picList=await goodsModel.goodsPicDel(goods.id).picList(), // 全部图片路径
-            pics=upload.pathHandle(ctx,'goodsPic','goods'), // 获取图片路径
-            site=upload.fileUpdate(ctx,pics,picList,'goods_pic'); // 修改图片路径
+            site=upload.fileUpdate(ctx,'goodsPic','goods',picList,'goods_pic'); // 修改图片路径
 
         try {
             const data = await goodsModel.goodsEdit(goods.id,goods.goodsName,goods.goodsPoint,site,goods.goodsSummary,goods.state,goods.nice,goods.sId);
