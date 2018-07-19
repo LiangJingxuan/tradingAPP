@@ -22,13 +22,7 @@
 产品概述	goods_summary	varchar(500) ;
 热门商品	nice		tinyint(1) ;
 上下架 state      tinyint(1) ;
-规格外键	standard_id	varchar(100) ;
 类目外键	sid	int ;
-
-规格 standard：
-主键	id	int ;
-规格名	standard_key	char(20) ;
-规格值	standard_val	char(20) ;
 
 新闻 news：
 主键	id		int ;

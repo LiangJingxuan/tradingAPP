@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-07-17 09:04:34
+Date: 2018-07-19 13:56:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,19 +109,17 @@ CREATE TABLE `goods` (
   `goods_point` varchar(100) DEFAULT NULL COMMENT '商品卖点',
   `goods_pic` varchar(300) DEFAULT NULL COMMENT '商品图片',
   `goods_summary` varchar(500) DEFAULT NULL COMMENT '商品概述',
-  `state` tinyint(1) unsigned zerofill NOT NULL COMMENT '商品上下架状态',
-  `nice` tinyint(1) unsigned zerofill NOT NULL COMMENT '热门商品状态',
-  `standard_id` varchar(100) DEFAULT NULL COMMENT '规格外键',
+  `state` tinyint(1) unsigned NOT NULL COMMENT '商品上下架状态',
+  `nice` tinyint(1) unsigned NOT NULL COMMENT '热门商品状态',
   `sid` int(10) unsigned NOT NULL COMMENT '类目外键',
   `goods_time` int(10) unsigned NOT NULL COMMENT '商品添加时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`,`goods_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('11', '测试', '测试', '/uploads/goods/upload_2a5826fdeb3e90899f0ab1de59a724bd.jpg,/uploads/goods/upload_54844ec1e79a3988e987de0c27f17ee0.jpg', '<p>测试</p>\r\n', '1', '0', null, '4', '1531789271');
-INSERT INTO `goods` VALUES ('13', '测试', '测试', '/uploads/goods/upload_1e80377878bee4c841acab28baa93ad9.jpg', '<p>测试</p>\r\n', '1', '0', null, '5', '1531789350');
+INSERT INTO `goods` VALUES ('47', '测试商品', '测试商品', '/uploads/goods/upload_bf1a83c1e0c0416e03530d2195d59f4f.jpg,/uploads/goods/upload_f85150ad273d3de259d8a302404ffae3.jpg', '<p>测试商品</p>\r\n', '1', '1', '5', '1531906558');
 
 -- ----------------------------
 -- Table structure for news
@@ -148,21 +146,6 @@ INSERT INTO `news` VALUES ('27', '热爱世界，热爱野生动物', '153114750
 INSERT INTO `news` VALUES ('28', '守护野生动物，守护大自然', '1531147800', '<p>说说</p>\n', '1', '1', '36');
 INSERT INTO `news` VALUES ('29', '中储粮集团：4月以来未购美国大豆 南美大豆占比已超美国', '1532070300', '<p>近期，中储粮集团公司紧密跟踪中美贸易摩擦相关情况，坚决执行国家对外贸易政策。自今年4月以来，中储粮未再新采购美国大豆，转而全部采购以巴西、阿根廷、乌拉圭为主的南美大豆。</p>\n\n<p>　　本报北京7月10日电 （记者杜海涛）&ldquo;近两年，我们已经主动调整进口来源地，降低集中度过高带来的风险，并已形成稳定成熟的多元化国际贸易渠道。&rdquo;中储粮集团公司相关负责人介绍，从中储粮集团油脂公司的情况看，2017年进口的大豆26.2%来自巴西，43.2%来自阿根廷、乌拉圭，30.6%来自美国。在大豆进口贸易实际操作中，采购方拥有货源地选择权，更倾向于选择贸易关系良好、有稳定政策预期、进口税率更低的大豆主产国。</p>\n\n<p>　　这位负责人表示，近期，中储粮集团公司紧密跟踪中美贸易摩擦相关情况，坚决执行国家对外贸易政策。自今年4月以来，中储粮未再新采购美国大豆，转而全部采购以巴西、阿根廷、乌拉圭为主的南美大豆。</p>\n\n<p>　　根据中国海关统计，我国大豆进口来源呈现多元化趋势，南美大豆供给占比超过美国。2016&mdash;2017年度，我国大豆进口量9349万吨，其中巴西4534万吨，占48.5%，较三年前增加1.7个百分点；美国3684万吨，占39.4%，较三年前下降1个百分点。以南美为主的非美大豆进口已经占到我国大豆进口量的六成以上，且呈稳定增长趋势。未来，南美将越来越成为我国进口大豆供应的主力地区。</p>\n\n<p>　　中储粮集团公司相关负责人表示，当前我国油脂油料储备体系完善，储备资源充足，加工和流通配套能力良好，能够随时响应保证供应、稳定市场的调控指令，储备资源充足，流通能力良好。</p>\n\n<p>　　&ldquo;中储粮集团在布局油脂油料储备时，遵循市场流通的规律，将储备库与加工厂一体布局，形成油脂油料储备和加工基地，使储备轮出到加工的链条缩短、效率提高。目前，中储粮年油脂压榨能力达到650万吨，成为参与市场供应的重要主体。由于与储备结合，在原料供应更有保障的同时，储备投放市场更加高效，维护市场稳定的能力更强。&rdquo;这位负责人说。</p>\n', '2', '0', '36');
 INSERT INTO `news` VALUES ('30', '大自然保护协会', '1531293512', '<p><a href=\"https://www.baidu.com/s?wd=%E5%A4%A7%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8D%8F%E4%BC%9A&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">大自然保护协会</a>The Nature Conservancy (TNC) 是从事生态环境保护的国际民间组织，成立于1951年，总部设在<a href=\"https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%8D%8E%E7%9B%9B%E9%A1%BF&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">美国华盛顿</a>。协会的使命是：通过保护代表地球<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>的动物、植物和自然群落赖以生存的陆地和水域，来实现对这些动物、植物和自然群落的保护。 由于坚持采取合作而非对抗性的策略，以及用科学的原理和方法来指导保护行动，经过50余年的不懈努力，协会已跻身美国十大慈善机构行列，位居全球生态环境保护非营利民间组织前茅。目前仅美国本土而言，协会拥有1600多个自然保护区，总面积达1400万英亩，遍布50个州。并与合作伙伴一起在<a href=\"https://www.baidu.com/s?wd=%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">拉丁美洲</a>、<a href=\"https://www.baidu.com/s?wd=%E5%8A%A0%E5%8B%92%E6%AF%94%E6%B5%B7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">加勒比海</a>，以及亚太等30个国家管护着超过1.02x108英亩的<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>热点地区。协会在全球设有400个办公室，员工人数达3800名，拥有会员上百万，约20000名志愿者参与服务。 1997年，协会开始进入中国。经前期全面考察，并在科学论证的基础上，最终将云南滇西北选定为协会在中国的<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>保护的首要 实施地。在与<a href=\"https://www.baidu.com/s?wd=%E4%BA%91%E5%8D%97%E7%9C%81%E6%94%BF%E5%BA%9C&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">云南省政府</a>合作编制了&ldquo;滇西北保护与发展行动计划&rdquo;之后，协会在滇西北的老君山、拉市海、<a href=\"https://www.baidu.com/s?wd=%E6%A2%85%E9%87%8C%E9%9B%AA%E5%B1%B1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">梅里雪山</a>、<a href=\"https://www.baidu.com/s?wd=%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">香格里拉</a>和<a href=\"https://www.baidu.com/s?wd=%E9%AB%98%E9%BB%8E%E8%B4%A1%E5%B1%B1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">高黎贡山</a>北段开展并实施了一些具体的保护项目。北京办公室的设立，标志着协会在中国更大范围内开展生物多样性保护工作。 经过短短几年的努力，<a href=\"https://www.baidu.com/s?wd=%E5%A4%A7%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8D%8F%E4%BC%9A&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">大自然保护协会</a>在中国逐渐成长壮大，成为民间生态环境保护队伍中的重要力量，为生态环境保护事业做出了贡献。</p>\n', '2', '1', '37');
-
--- ----------------------------
--- Table structure for standard
--- ----------------------------
-DROP TABLE IF EXISTS `standard`;
-CREATE TABLE `standard` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '规格id',
-  `standard_key` char(20) NOT NULL COMMENT '规格名',
-  `standard_val` char(20) NOT NULL COMMENT '规格值',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of standard
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for subcategory
