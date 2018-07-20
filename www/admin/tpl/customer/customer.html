@@ -46,10 +46,10 @@
                         .list-unstyled li:hover button{display: inline-block;}
                     </style>
                     <ul class="list-unstyled activity-list">
-                        <li>
+                        <li ng-repeat="d in customerList.dataList">
                             <i class="lnr lnr-user"></i>
                             <p>
-                                <a>Michael</a>
+                                <a ng-bind="d.name"></a>
                                 <span><span class="lnr lnr-phone-handset"></span> 15100284122</span>
                                 <span><span class="lnr lnr-link"></span> xuan03121994@163.com</span>
                                 <span><span class="lnr lnr-bubble"></span> <span class="txt">守护野生动物，守护大自然</span></span>
@@ -82,9 +82,9 @@
             <nav aria-label="" class="text-right">
                 <paging
                         class="small"
-                        page="newsList.page"
+                        page="customerList.page"
                         page-size="pagesize"
-                        total="newsList.totalRows"
+                        total="customerList.totalRows"
                         scroll-top="{{scrollTop}}"
                         show-prev-next="true"
                         show-first-last="true"

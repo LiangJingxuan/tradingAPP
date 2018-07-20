@@ -43,9 +43,10 @@
 主键	id	int ;
 客户姓名	name	varchar(7) ;
 客户邮箱	email	varchar(40) ;
-客户标题	title		varchar(40) ;	
 客户电话	phone	char(11) ;
 客户留言	content	varchar(150) ;
+联系状态	reply	tinyint(1) ;
+添加时间	time	int ;
 
 公司信息 company：
 主键	id	int ;

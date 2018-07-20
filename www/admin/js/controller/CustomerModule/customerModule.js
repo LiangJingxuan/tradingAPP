@@ -8,40 +8,40 @@ angular.module('app')
 
         // 查询新闻
         var page=G.paging.page, pagesize=G.paging.pagesize,
-            sid=null, title=null;
+            rid=null, phone=null;
 
-        (function queryNews(page,pagesize,sid,title){
+        (function queryNews(page,pagesize,rid,phone){
 
             // 请求查询
-            $http.get('/admin/news/newslist',{
+            $http.get('/admin/customer/customerlist',{
                 params:{
                     page:page,
                     pagesize:pagesize,
-                    sid:sid,
-                    title:title
+                    reply:rid,
+                    phone:phone
                 }
             }).success(function(data){
                 G.expire(data);
-                $scope.newsList=data;
+                $scope.customerList=data;
                 $scope.pagesize=pagesize;
 
                 // 处理删除之后更新数据出现的页数与数据不匹配问题
                 if(page>1 && data.dataList.length===0){
-                    queryNews(1,pagesize,sid,title);
+                    queryNews(1,pagesize,rid,phone);
                 }
             });
 
             // 分页查询
             $scope.PagingAct = function(page,pagesize){
-                queryNews(page,pagesize,sid,title);
+                queryNews(page,pagesize,rid,phone);
             };
 
             // 条件查询
             $scope.filterCond = function(genre,kw){
                 var mark=false;
                 if(genre || kw){
-                    sid=genre; title=kw;
-                    queryNews(1,pagesize,sid,title);
+                    rid=genre; phone=kw;
+                    queryNews(1,pagesize,rid,phone);
                     mark=true;
                 }
                 // 重置查询
@@ -51,7 +51,7 @@ angular.module('app')
                         // 清除视图
                         var selects = $('#genreBox .select2-selection__rendered');
                         selects.text('全部新闻');
-                        selects.attr('title','全部新闻');
+                        selects.attr('phone','全部新闻');
                         // 数据清除
                         $scope.genre=undefined; $scope.kw=undefined;
                         // 查询
@@ -72,7 +72,7 @@ angular.module('app')
                         if(data.i){
                             $scope.Tip = function(){
                                 // 更新数据
-                                queryNews(page,pagesize,sid,title);
+                                queryNews(page,pagesize,rid,phone);
                             }
                         }
 
@@ -80,7 +80,7 @@ angular.module('app')
                 }
             };
 
-        })(page,pagesize,sid,title);
+        })(page,pagesize,rid,phone);
 
 
     }]);

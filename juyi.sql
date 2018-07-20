@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-07-19 17:56:07
+Date: 2018-07-20 15:22:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -90,14 +90,20 @@ CREATE TABLE `customer` (
   `name` varchar(7) DEFAULT NULL COMMENT '客户姓名',
   `email` varchar(40) DEFAULT NULL COMMENT '客户邮箱',
   `phone` char(11) NOT NULL COMMENT '客户电话',
-  `title` varchar(40) DEFAULT NULL COMMENT '客户标题',
   `content` varchar(150) DEFAULT NULL COMMENT '客户留言',
+  `reply` tinyint(1) unsigned NOT NULL COMMENT '联系状态',
+  `time` int(10) unsigned NOT NULL COMMENT '添加用户时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer
 -- ----------------------------
+INSERT INTO `customer` VALUES ('1', '无心', 'xuan03121994@163.com', '15100274122', '热爱世界，保护大自然保护地球保定动物', '0', '1531293512');
+INSERT INTO `customer` VALUES ('2', '岳绮罗', '1403190714@qq.com', '18742179677', '热爱地球，保护大自然，保护家园', '0', '1530498347');
+INSERT INTO `customer` VALUES ('3', '月牙', 'liang4122@127.com', '13341752809', '保护家园，保护野生动物，热爱自然', '0', '1530498355');
+INSERT INTO `customer` VALUES ('4', '顾玄武', 'gudaren8888@163.com', '18122447875', '保护自然热爱世界，热爱动物', '0', '1530498457');
+INSERT INTO `customer` VALUES ('5', '张显宗', 'qiluo5201314@163.com', '15126472819', '保护世界保护大自然保护地球', '0', '1530498579');
 
 -- ----------------------------
 -- Table structure for goods
@@ -115,7 +121,7 @@ CREATE TABLE `goods` (
   `goods_time` int(10) unsigned NOT NULL COMMENT '商品添加时间',
   `i` tinyint(1) unsigned NOT NULL COMMENT '商品类型',
   PRIMARY KEY (`id`,`goods_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods

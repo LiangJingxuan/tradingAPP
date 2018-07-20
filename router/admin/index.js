@@ -33,5 +33,8 @@ router.use('/news',require('./news'));
 // 商品模块
 router.use('/goods',require('./goods'));
 
+// 客户模块
+router.use('/customer',require('./customer'));
+
 
 module.exports=router.routes();
