@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-07-19 13:56:58
+Date: 2018-07-19 17:56:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,8 +38,8 @@ CREATE TABLE `case` (
   `case_title` varchar(20) NOT NULL COMMENT '案例标题',
   `case_time` int(10) unsigned NOT NULL COMMENT '案例时间',
   `case_pic` varchar(300) NOT NULL COMMENT '案例图片',
-  `states` tinyint(1) unsigned zerofill NOT NULL COMMENT '热门案例状态',
-  `cid` int(10) unsigned NOT NULL COMMENT '类目外键',
+  `state` tinyint(1) unsigned NOT NULL COMMENT '热门案例状态',
+  `sid` int(10) unsigned NOT NULL COMMENT '类目外键',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -113,13 +113,13 @@ CREATE TABLE `goods` (
   `nice` tinyint(1) unsigned NOT NULL COMMENT '热门商品状态',
   `sid` int(10) unsigned NOT NULL COMMENT '类目外键',
   `goods_time` int(10) unsigned NOT NULL COMMENT '商品添加时间',
+  `i` tinyint(1) unsigned NOT NULL COMMENT '商品类型',
   PRIMARY KEY (`id`,`goods_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('47', '测试商品', '测试商品', '/uploads/goods/upload_bf1a83c1e0c0416e03530d2195d59f4f.jpg,/uploads/goods/upload_f85150ad273d3de259d8a302404ffae3.jpg', '<p>测试商品</p>\r\n', '1', '1', '5', '1531906558');
 
 -- ----------------------------
 -- Table structure for news
@@ -156,7 +156,7 @@ CREATE TABLE `subcategory` (
   `sname` varchar(20) NOT NULL,
   `cid` int(10) unsigned NOT NULL COMMENT '父类id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of subcategory
@@ -169,6 +169,7 @@ INSERT INTO `subcategory` VALUES ('5', '光伏发电', '1');
 INSERT INTO `subcategory` VALUES ('6', '空气能', '1');
 INSERT INTO `subcategory` VALUES ('7', '太阳能', '1');
 INSERT INTO `subcategory` VALUES ('8', '风机盘管', '1');
+INSERT INTO `subcategory` VALUES ('9', '案例展示', '2');
 
 -- ----------------------------
 -- Table structure for user

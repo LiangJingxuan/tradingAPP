@@ -37,7 +37,7 @@ angular.module('app')
                         $scope.Tip = function(){
                             // 跳转到列表
                             setTimeout(function(){
-                                $state.go('goods')
+                                $state.go('case')
                             },500);
                         }
                     }

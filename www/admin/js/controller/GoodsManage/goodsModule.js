@@ -13,7 +13,7 @@ angular.module('app')
         (function queryNews(page,pagesize,sid,name){
 
             // 请求查询
-            $http.get('/admin/goods/goodslist',{
+            $http.get('/admin/goods/goodslist?i=0',{
                 params:{
                     page:page,
                     pagesize:pagesize,

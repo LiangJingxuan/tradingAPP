@@ -4,27 +4,29 @@ const moment=require('moment');
 module.exports={
 
     // 商品添加
-    goodsAdd(goods_name,goods_point,goods_pic,goods_summary,state,nice,sid,goods_time){
+    goodsAdd(goods_name,goods_point,goods_pic,goods_summary,state,nice,sid,goods_time,i){
 
         // 默认值判断
+        !goods_point?goods_point=``:``;
         !goods_pic?goods_pic=``:``;
         !goods_summary?goods_summary=``:``;
-        !state?state=0:``;
-        !nice?nice=0:``;
+        !state?state=0:state=1;
+        !nice?nice=0:nice=1;
+        !i?i=0:i=1;
 
         // 插入数据
-        return sql.query(`INSERT INTO goods (goods_name,goods_point,goods_pic,goods_summary,state,nice,sid,goods_time) VALUES 
-            ('${goods_name}','${goods_point}','${goods_pic}','${goods_summary}',${state},${nice},${sid},${goods_time});`);
+        return sql.query(`INSERT INTO goods (goods_name,goods_point,goods_pic,goods_summary,state,nice,sid,goods_time,i) VALUES 
+            ('${goods_name}','${goods_point}','${goods_pic}','${goods_summary}',${state},${nice},${sid},${goods_time},${i});`);
     },
 
     // 查询商品列表
-    goodsList(page,pagesize,sid,name){
+    goodsList(page,pagesize,sid,name,i){
 
         // 查询条件设置
-        let condition=``;
-        sid?condition=`WHERE sid=${sid}`:``;
-        name?condition=`WHERE goods_name LIKE '%${name}%'`:``;
-        sid && name?condition=`WHERE sid=${sid} AND goods_name LIKE '%${name}%'`:``;
+        let condition=`WHERE i=${i}`;
+        sid?condition=`WHERE i=${i} AND sid=${sid}`:``;
+        name?condition=`WHERE i=${i} AND goods_name LIKE '%${name}%'`:``;
+        sid && name?condition=`WHERE i=${i} AND sid=${sid} AND goods_name LIKE '%${name}%'`:``;
 
         // 总记录数
         const totalRows=sql.query(`SELECT COUNT(id) AS n FROM goods ${condition};`);

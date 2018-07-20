@@ -13,29 +13,22 @@
                     <div class="panel-body has-error">
                         <span id="genreBox">
                             <select name="sId" class="form-control select2" required>
-                                <option value="">商品分类</option>
-                                <option value="4">地暖</option>
-                                <option value="5">光伏发电</option>
-                                <option value="6">空气能</option>
-                                <option value="7">太阳能</option>
-                                <option value="8">风机盘管</option>
+                                <option value="9">案例展示</option>
                             </select>
                         </span>
                         <br>
                         <br>
                         <input name="goodsName" type="text" class="form-control" placeholder="商品标题" autocomplete="off" required value="{{goods.goods_name}}">
                         <br>
-                        <input name="goodsPoint" type="text" class="form-control" placeholder="商品卖点" autocomplete="off" required value="{{goods.goods_point}}">
-                        <br>
                         <style>
                             .cke_maximized{top: 80px !important;}
                             .select2-container .select2-selection--single{border: 1px solid #a94442;}
                         </style>
-                        <p style="margin-bottom: 5px;">商品概述：</p>
+                        <p style="margin-bottom: 5px;">案例概述：</p>
                         <textarea name="goodsSummary" id="content" class="ckeditor form-control" ng-bind-html="goods.goods_summary"></textarea>
                         <br>
                         <!-- 商品图片 -->
-                        <p style="margin-bottom: 5px;">商品图片：(<span style="color: red">最多上传五张</span>)</p>
+                        <p style="margin-bottom: 5px;">案例图片：(<span style="color: red">最多上传五张</span>)</p>
                         <!-- 商品图片上传 -->
                         <div class="section">
                             <div class="article">
@@ -83,7 +76,7 @@
                             </div>
                         </div>
                         <br>
-                        <p style="margin-bottom: 5px;" ng-if="pic">已上传商品图片列表：</p>
+                        <p style="margin-bottom: 5px;" ng-if="pic">已上传案例图片列表：</p>
                         <div class="row">
                             <div class="col-md-2" ng-repeat="p in pic">
                                 <div class="thumbnail">
@@ -93,8 +86,7 @@
                             </div>
                         </div>
                         <br>
-                        <label class="fancy-checkbox"><input type="checkbox" name="nice" value="1" ng-checked="goods.nice"><span>热门商品</span></label>
-                        <label class="fancy-checkbox"><input type="checkbox" name="state" value="1" ng-checked="goods.state"><span>上架商品</span></label>
+                        <label class="fancy-checkbox"><input type="checkbox" name="state" value="1" ng-checked="goods.state"><span>热门案例</span></label>
                         <br>
                         <br>
                         <div class="text-right">

@@ -8,14 +8,14 @@ const info=require('../../middlewares/info');
 
 router
     // 添加商品
-    .post('/goodsadd', upload.configure('goods'), async (ctx)=>{
+    .post('/goodsadd', upload.configure(), async (ctx)=>{
         const goods=ctx.request.body,
               goodsTime=moment().unix(),
-              pics=upload.pathHandle(ctx,'goodsPic','goods'); // 获取图片路径
+              pics=upload.pathHandle(ctx,'goodsPic'); // 获取图片路径
 
         // 添加操作
         try {
-            const data=await goodsModel.goodsAdd(goods.goodsName,goods.goodsPoint,pics,goods.goodsSummary,goods.state,goods.nice,goods.sId,goodsTime);
+            const data=await goodsModel.goodsAdd(goods.goodsName,goods.goodsPoint,pics,goods.goodsSummary,goods.state,goods.nice,goods.sId,goodsTime,goods.i);
             if(data.affectedRows){
                 // 新增成功
                 ctx.body=info.suc('新增成功！');
@@ -35,7 +35,7 @@ router
         const page=parseInt(params.page);
         const pagesize=parseInt(params.pagesize);
 
-        const data=await goodsModel.goodsList(page,pagesize,params.sid,params.name);
+        const data=await goodsModel.goodsList(page,pagesize,params.sid,params.name,params.i);
         const dataList = await data.list;
         const totalRows = await data.totalRows;
         const totalPage=Math.ceil(totalRows[0].n/pagesize);
@@ -72,10 +72,10 @@ router
     })
 
     // 修改商品
-    .post('/goodsedit', upload.configure('goods'), async (ctx)=>{
+    .post('/goodsedit', upload.configure(), async (ctx)=>{
         let goods=ctx.request.body,
             picList=await goodsModel.goodsPicDel(goods.id).picList(), // 全部图片路径
-            site=upload.fileUpdate(ctx,'goodsPic','goods',picList,'goods_pic'); // 修改图片路径
+            site=upload.fileUpdate(ctx,'goodsPic',picList,'goods_pic'); // 修改图片路径
 
         try {
             const data = await goodsModel.goodsEdit(goods.id,goods.goodsName,goods.goodsPoint,site,goods.goodsSummary,goods.state,goods.nice,goods.sId);

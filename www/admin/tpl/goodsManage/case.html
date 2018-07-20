@@ -15,12 +15,8 @@
                                 <label>分类：</label>
                                 <span id="genreBox">
                                     <select class="form-control select2" ng-model="genre">
-                                        <option value="">全部商品</option>
-                                        <option value="4">地暖</option>
-                                        <option value="5">光伏发电</option>
-                                        <option value="6">空气能</option>
-                                        <option value="7">太阳能</option>
-                                        <option value="8">风机盘管</option>
+                                        <option value="">全部案例</option>
+                                        <option value="9">案例展示</option>
                                     </select>
                                 </span>
                             </div>
@@ -44,8 +40,7 @@
                                         <th>名称</th>
                                         <th>分类</th>
                                         <th>发布时间</th>
-                                        <th>热卖</th>
-                                        <th>状态</th>
+                                        <th>热门案例</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -57,15 +52,9 @@
                                         <td ng-bind="d.sname"></td>
                                         <td ng-bind="d.time"></td>
                                         <td>
-                                            <span ng-class="d.nice?'label-success':'label-default';" class="label">
-                                                <span ng-if="d.nice">是</span>
-                                                <span ng-if="!d.nice">否</span>
-                                            </span>
-                                        </td>
-                                        <td>
                                             <span ng-class="d.state?'label-success':'label-default';" class="label">
-                                                <span ng-if="d.state">已上架</span>
-                                                <span ng-if="!d.state">未上架</span>
+                                                <span ng-if="d.state">是</span>
+                                                <span ng-if="!d.state">否</span>
                                             </span>
                                         </td>
                                         <td>

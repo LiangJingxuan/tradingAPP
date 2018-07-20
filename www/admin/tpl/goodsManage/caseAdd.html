@@ -9,6 +9,7 @@
                     <p class="panel-subtitle">news management</p>
                 </div>
                 <form onkeydown="if(event.keyCode==13)return false;" id="goodsAddId" action="/admin/goods/goodsadd" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="i" value="1">
                     <div class="panel-body has-error">
                         <select name="sId" class="form-control select2" required>
                             <option value="9">案例展示</option>
@@ -72,7 +73,7 @@
                             </div>
                         </div>
                         <br>
-                        <label class="fancy-checkbox"><input type="checkbox" name="nice" value="1"><span>热门案例</span></label>
+                        <label class="fancy-checkbox"><input type="checkbox" name="state" value="1"><span>热门案例</span></label>
                         <br>
                         <br>
                         <div class="text-right">
