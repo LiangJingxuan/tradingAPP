@@ -793,11 +793,16 @@ ul.activity-list > li {
     width: 40px; }
   ul.activity-list > li > p {
     margin-bottom: 0;
-    padding-left: 3.5em; }
+    padding-left: 1.5em;
+    display: inline-block;
+    width: 85%;
+    vertical-align: middle;
+  }
   ul.activity-list > li .timestamp {
     display: block;
     font-size: 13px;
-    color: #a3a3a3; }
+    color: #a3a3a3;
+    margin-top: 10px;}
 
 /* task list */
 .task-list > li {

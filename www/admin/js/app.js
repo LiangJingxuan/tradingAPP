@@ -30,6 +30,16 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 客户信息
+        .state('customer',{
+            url:'/customer',
+            views:{
+                'view':{
+                    controller:'customerCtrl',
+                    templateUrl:'tpl/customer/customer.html'
+                }
+            }
+        })
         // 用户管理
         .state('user',{
             url:'/user',
@@ -76,7 +86,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
             views:{
                 'view':{
                     controller:'goodsCtrl',
-                    templateUrl:'tpl/GoodsManage/goods.html'
+                    templateUrl:'tpl/goodsManage/goods.html'
                 }
             }
         })
@@ -86,7 +96,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
             views:{
                 'view':{
                     controller:'goodsAddCtrl',
-                    templateUrl:'tpl/GoodsManage/goodsAdd.html'
+                    templateUrl:'tpl/goodsManage/goodsAdd.html'
                 }
             }
         })
@@ -96,7 +106,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
             views:{
                 'view':{
                     controller:'goodsEditCtrl',
-                    templateUrl:'tpl/GoodsManage/goodsEdit.html'
+                    templateUrl:'tpl/goodsManage/goodsEdit.html'
                 }
             }
         })
@@ -106,7 +116,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
             views:{
                 'view':{
                     controller:'caseCtrl',
-                    templateUrl:'tpl/GoodsManage/case.html'
+                    templateUrl:'tpl/goodsManage/case.html'
                 }
             }
         })
@@ -116,7 +126,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
             views:{
                 'view':{
                     controller:'caseAddCtrl',
-                    templateUrl:'tpl/GoodsManage/caseAdd.html'
+                    templateUrl:'tpl/goodsManage/caseAdd.html'
                 }
             }
         })
@@ -126,7 +136,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
             views:{
                 'view':{
                     controller:'caseEditCtrl',
-                    templateUrl:'tpl/GoodsManage/caseEdit.html'
+                    templateUrl:'tpl/goodsManage/caseEdit.html'
                 }
             }
         })
