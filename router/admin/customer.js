@@ -21,16 +21,17 @@ router
         ctx.body=info.paging(dataList,page,totalPage,totalRows);
     })
 
-    // 删除新闻
-    .get('/newsdel', async (ctx)=>{
+    // 修改回复状态
+    .get('/upreply', async (ctx)=>{
+        const params=ctx.query;
         try{
-            const data = await newsModel.newsDel(ctx.query.id);
+            const data = await customerModel.replyEdit(parseInt(params.id),parseInt(params.reply));
             if(data.affectedRows){
-                // 删除成功
-                ctx.body=info.suc('删除成功！');
+                // 修改成功
+                ctx.body=info.suc('修改成功！');
             }else{
-                // 删除失败
-                ctx.body=info.err('删除失败，请重试！');
+                // 修改失败
+                ctx.body=info.err('修改失败，请重试！');
             }
         }catch (e) {
             ctx.body=info.err('操作失败，请重试！');

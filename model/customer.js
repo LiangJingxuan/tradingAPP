@@ -1,5 +1,4 @@
 const sql=require('../config/default').sql;
-const moment=require('moment');
 
 module.exports={
 
@@ -27,9 +26,10 @@ module.exports={
         };
     },
 
-    // 删除新闻
-    newsDel(id){
-        return sql.query(`DELETE FROM news WHERE id=${id};`);
+    // 修改回复状态
+    replyEdit(id,reply){
+        reply?reply=0:reply=1;
+        return sql.query(`UPDATE customer SET reply=${reply} WHERE id=${id};`);
     }
 
 };

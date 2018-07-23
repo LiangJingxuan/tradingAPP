@@ -50,29 +50,16 @@
                             <i class="lnr lnr-user"></i>
                             <p>
                                 <a ng-bind="d.name"></a>
-                                <span><span class="lnr lnr-phone-handset"></span> 15100284122</span>
-                                <span><span class="lnr lnr-link"></span> xuan03121994@163.com</span>
-                                <span><span class="lnr lnr-bubble"></span> <span class="txt">守护野生动物，守护大自然</span></span>
+                                <span><span class="lnr lnr-phone-handset"></span> <span ng-bind="d.phone"></span></span>
+                                <span><span class="lnr lnr-link"></span> <span ng-bind="d.email"></span></span>
+                                <span><span class="lnr lnr-bubble"></span> <span class="txt" ng-bind="d.content"></span></span>
                                 <span class="timestamp">
-                                    <span>2018-07-20 10:45:50</span>
-                                    <small class="badge bg-success">已回复</small>
+                                    <span ng-bind="d.time"></span>
+                                    <small class="badge bg-success" ng-if="d.reply">已回复</small>
+                                    <small class="badge bg-danger" ng-if="!d.reply">未回复</small>
                                 </span>
                             </p>
-                            <button class="btn btn-xs btn-primary">修改回复状态</button>
-                        </li>
-                        <li>
-                            <i class="lnr lnr-user"></i>
-                            <p>
-                                <a>Michael</a>
-                                <span><span class="lnr lnr-phone-handset"></span> 15100284122</span>
-                                <span><span class="lnr lnr-link"></span> xuan03121994@163.com</span>
-                                <span><span class="lnr lnr-bubble"></span> <span class="txt">守护野生动物，守护大自然</span></span>
-                                <span class="timestamp">
-                                    <span>2018-07-20 10:45:50</span>
-                                    <small class="badge bg-danger">未回复</small>
-                                </span>
-                            </p>
-                            <button class="btn btn-xs btn-primary">修改回复状态</button>
+                            <button class="btn btn-xs btn-primary" ng-click="upReply(d.id,d.reply)">修改回复状态</button>
                         </li>
                     </ul>
                 </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 7px; position: absolute; top: 56px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 337.409px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
@@ -94,31 +81,6 @@
         </div>
     </div>
     <!-- END MAIN CONTENT -->
-</div>
-<!-- Confirm -->
-<div class="modal fade confirms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                确认删除该新闻？
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-xs btn-danger" ng-click="del()">确认删除</button>
-                <button class="btn btn-xs btn-primary" data-dismiss="modal">放弃</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Alert -->
-<div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body"></div>
-            <div class="modal-footer">
-                <button class="btn btn-xs btn-primary" data-dismiss="modal" ng-click="Tip()">确认</button>
-            </div>
-        </div>
-    </div>
 </div>
 <style>
     .select2-container{width: auto !important;}

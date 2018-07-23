@@ -50,8 +50,8 @@ angular.module('app')
                         mark=false;
                         // 清除视图
                         var selects = $('#genreBox .select2-selection__rendered');
-                        selects.text('全部新闻');
-                        selects.attr('phone','全部新闻');
+                        selects.text('全部状态');
+                        selects.attr('phone','全部状态');
                         // 数据清除
                         $scope.genre=undefined; $scope.kw=undefined;
                         // 查询
@@ -60,24 +60,16 @@ angular.module('app')
                 }
             };
 
-            // 删除新闻
-            $scope.newsDel=function(id){
-                $scope.del=function(){
-                    $http.get('/admin/news/newsdel',{params:{id:id}}).success(function(data){
-                        G.expire(data);
-                        // 提交删除
-                        $('.confirms').modal('hide');
-                        $('.alerts .modal-body').text(data.msg);
-                        $('.alerts').modal('show');
-                        if(data.i){
-                            $scope.Tip = function(){
-                                // 更新数据
-                                queryNews(page,pagesize,rid,phone);
-                            }
-                        }
+            // 修改回复状态
+            $scope.upReply=function(id,reply){
+                $http.get('/admin/customer/upreply',{params:{id:id,reply:reply}}).success(function(data){
+                    G.expire(data);
+                    // 确认修改
+                    if(data.i){
+                        queryNews(page,pagesize,rid,phone);
+                    }
 
-                    });
-                }
+                });
             };
 
         })(page,pagesize,rid,phone);
