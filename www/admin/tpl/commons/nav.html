@@ -10,7 +10,7 @@
         </div>
         <form class="navbar-form navbar-left">
             <div class="input-group">
-                <input type="text" value="" class="form-control" placeholder="Search dashboard...">
+                <input type="text" value="" class="form-control" placeholder="Search dashboard..." autocomplete="off">
                 <span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
             </div>
         </form>
@@ -48,6 +48,7 @@
                         <!--<li><a ><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>-->
                         <!--<li><a ><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>-->
                         <!--<li><a ><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>-->
+                        <li ng-click="companyAct()"><a><i class="lnr lnr-briefcase"></i> <span>公司信息</span></a></li>
                         <li ng-click="signout()"><a><i class="lnr lnr-exit"></i> <span>退出系统</span></a></li>
                     </ul>
                 </li>
@@ -96,7 +97,113 @@
     </div>
 </div>
 <!-- END LEFT SIDEBAR -->
+
+    <!-- 公司信息查看 -->
+    <div class="modal fade companyModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header" ng-bind="c.name"></div>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active">
+                            <ul class="list-unstyled activity-timeline">
+                                <li>
+                                    <i class="lnr lnr-apartment activity-icon"></i>
+                                    <p ng-bind="c.adds"></p>
+                                </li>
+                                <li>
+                                    <i class="lnr lnr-phone activity-icon"></i>
+                                    <p ng-bind="c.phone"></p>
+                                </li>
+                                <li>
+                                    <i class="lnr lnr-link activity-icon"></i>
+                                    <p ng-bind="c.email"></p>
+                                </li>
+                                <li>
+                                    <i class="lnr lnr-map-marker activity-icon"></i>
+                                    <p ng-bind="c.location"></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-danger" data-dismiss="modal" ng-click="companyEditAct()">修改</button>
+                    <button class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 公司信息新增 -->
+    <div class="modal fade companyAddModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    公司信息 (全部为必填选项)
+                </div>
+                <form onkeydown="if(event.keyCode==13)return false;" action="/admin/user/companyadd" method="post" id="companyAddId">
+                    <div class="modal-body has-error">
+                        <div class="tab-content">
+                            <style>label{width: 100%;margin-bottom: 20px;}</style>
+                            <label>名称：<input name="name" required type="text" class="form-control" autocomplete="off"></label>
+                            <label>地址：<input name="adds" required type="text" class="form-control" autocomplete="off"></label>
+                            <label>电话：<input name="phone" required type="text" class="form-control" autocomplete="off"></label>
+                            <label>邮箱：<input name="email" required type="text" class="form-control" autocomplete="off"></label>
+                            <label>坐标(<a target="_blank" href="http://api.map.baidu.com/lbsapi/getpoint/index.html">经纬度选择点击查看</a>)：<input name="location" required type="text" class="form-control" autocomplete="off"></label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-xs btn-danger" ng-click="companyAdd()" ng-disabled="ADDCOIF">确认新增</button>
+                        <button type="reset" class="btn btn-xs btn-primary" data-dismiss="modal">放弃</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 公司信息修改 -->
+    <div class="modal fade companyEditModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    公司信息 (全部为必填选项)
+                </div>
+                <form onkeydown="if(event.keyCode==13)return false;" action="/admin/user/companyedit" method="post" id="companyEditId">
+                    <div class="modal-body has-error">
+                        <div class="tab-content">
+                            <input type="hidden" name="id" ng-value="c.id">
+                            <style>label{width: 100%;margin-bottom: 20px;}</style>
+                            <label>名称：<input name="name" required type="text" class="form-control" ng-value="c.name" autocomplete="off"></label>
+                            <label>地址：<input name="adds" required type="text" class="form-control" ng-value="c.adds" autocomplete="off"></label>
+                            <label>电话：<input name="phone" required type="text" class="form-control" ng-value="c.phone" autocomplete="off"></label>
+                            <label>邮箱：<input name="email" required type="text" class="form-control" ng-value="c.email" autocomplete="off"></label>
+                            <label>坐标(<a target="_blank" href="http://api.map.baidu.com/lbsapi/getpoint/index.html">经纬度选择点击查看</a>)：<input name="location" required type="text" class="form-control" ng-value="c.location" autocomplete="off"></label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-xs btn-danger" ng-click="companyEdit()" ng-disabled="EDITCOIF">确认修改</button>
+                        <button type="reset" class="btn btn-xs btn-primary" data-dismiss="modal">放弃</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert -->
+    <div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-primary" data-dismiss="modal">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
 <script>
     $(document).ready(function() {
 

@@ -50,7 +50,8 @@
 
 公司信息 company：
 主键	id	int ;
+名称	name		varchar(50) ;
 地址	adds		varchar(100) ;
-电话	phone	varchar(100) ; 
+电话	phone	varchar(100) ;
 邮箱	email	varchar(100) ;
 位置	location	varchar(100) ;

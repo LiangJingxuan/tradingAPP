@@ -130,6 +130,46 @@ router
         }
     })
 
+    // 公司信息查询
+    .get('/companyquery', async (ctx)=>{
+        const data=await userModel.companyQuery();
+        data.length!==0?ctx.body=data[0]:ctx.body=false;
+    })
+
+    // 公司信息添加
+    .post('/companyadd', async (ctx)=>{
+        const co=ctx.request.body;
+        try{
+            const data=await userModel.companyAdd(co.name,co.adds,co.phone,co.email,co.location);
+            if(data.affectedRows){
+                // 新增成功
+                ctx.body=info.suc('新增成功！');
+            }else{
+                // 新增失败
+                ctx.body=info.err('新增失败，请重试！');
+            }
+        }catch (e){
+            ctx.body=info.err('操作失败，请重试！');
+        }
+    })
+
+    // 公司信息修改
+    .post('/companyedit', async (ctx)=>{
+        const co=ctx.request.body;
+        try{
+            const data=await userModel.companyEdit(co.id,co.name,co.adds,co.phone,co.email,co.location);
+            if(data.affectedRows){
+                // 修改成功
+                ctx.body=info.suc('修改成功！');
+            }else{
+                // 修改失败
+                ctx.body=info.err('修改失败，请重试！');
+            }
+        }catch (e){
+            ctx.body=info.err('操作失败，请重试！');
+        }
+    })
+
     ;
 
 module.exports=router.routes();
