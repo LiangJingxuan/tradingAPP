@@ -89,7 +89,7 @@ $('.testimonial-active').owlCarousel({
         }
     }
 }) 
-/*------- 
+/*-------
      Single Slide Menu Active 
 ----------------------------------*/
  $('.single-slide-menu').owlCarousel({
