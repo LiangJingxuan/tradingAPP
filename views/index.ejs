@@ -1,117 +1,14 @@
 ﻿<!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Home</title>
-	<meta name="description" content="">
-	<meta name="robots" content="noindex, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="noindex, follow" />
-    <!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="/layout/css/bootstrap.min.css">
-	<!-- Linearicon CSS-->
-    <link rel="stylesheet" href="/layout/css/linearicons.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="/layout/css/font-awesome.min.css">
-
-	<!-- Owl Carousel CSS-->
-	<link rel="stylesheet" href="/layout/css/owl.carousel.min.css">
-	<!-- Slick CSS-->
-	<link rel="stylesheet" href="/layout/css/slick.css">
-	<!-- Style CSS -->
-	<link rel="stylesheet" href="/layout/css/style.css">
-	<!-- Responsive CSS -->
-	<link rel="stylesheet" href="/layout/css/responsive.css">
-	<!-- Modernizr Js -->
-	<script src="/layout/js/modernizr-2.8.3.min.js"></script>
+	<% include meta.ejs %>
 </head>
 <body>
 	<!--[if lt IE 8]>
 	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 	<div class="wrapper">
-		<!--Header Area Start-->
-		<header>
-			<div class="header-container">
-				<div class="header-area header-sticky pt-10 pb-10">
-					<div class="container-fluid pl-50 pr-50">
-						<div class="row">
-							<!--Header Logo Start-->
-							<div class="col-lg-3 col-md-3">
-								<div class="logo-area">
-									<a href="index.ejs">
-										<img src="/layout/img/logo/logo.png" alt="">
-									</a>
-								</div>
-							</div>
-							<!--Header Logo End-->
-							<!--Header Menu And Mini Cart Start-->
-							<div class="col-lg-9 col-md-9 text-lg-right">
-								<!--Main Menu Area Start-->
-								<div class="header-menu">
-									<nav>
-										<ul class="main-menu">
-											<li><a href="index.ejs">主页</a></li>
-											<li><a href="shop.ejs">商品</a></li>
-											<li><a href="single-product.ejs">案例</a></li>
-											<li><a href="single-product.ejs">新闻</a></li>
-											<li><a href="single-product.ejs">关于</a></li>
-										</ul>
-									</nav>
-								</div>
-								<!--Main Menu Area End-->
-								<!--Header Option Start-->
-								<div class="header-option">
-									<div class="mini-cart-search">
-										<div class="header-search">
-											<div class="search-box">
-												<a href="#"><i class="fa fa-search"></i></a>
-												<div class="search-dropdown">
-													<form action="#">
-														<input name="search" id="search" placeholder="" value="Search product..." onblur="if(this.value==''){this.value='Search product...'}" onfocus="if(this.value=='Search product...'){this.value=''}" type="text" autocomplete="off">
-														<button type="submit"><i class="fa fa-search"></i></button>
-													</form>
-												</div>
-											</div>
-										</div>
-										<div class="currency">
-											<div class="currency-box">
-												<a href="#"><i class="fa fa-th"></i></a>
-												<div class="currency-dropdown">
-													<ul class="menu-top-menu">
-														<li><a href="#">地暖</a></li>
-														<li><a href="#">光伏发电</a></li>
-														<li><a href="#">空气能</a></li>
-														<li><a href="#">太阳能</a></li>
-														<li><a href="#">风机盘管</a></li>
-													</ul>
-													<div class="switcher">
-														<div class="language">
-															<span class="switcher-title"><a href="#">联系我们</a></span>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--Header Option End-->
-							</div>
-							<!--Header Menu And Mini Cart End-->
-						</div>
-						<div class="row">
-							<div class="col-12">
-								<!--Mobile Menu Area Start-->
-								<div class="mobile-menu d-lg-none"></div>
-								<!--Mobile Menu Area End-->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</header>
-		<!--Header Area End-->
+		<% include header.ejs %>
 		<!--Slider Area Start-->
 		<div class="slider-area pl-50 pr-50">
 			<div class="hero-slider owl-carousel">
@@ -877,92 +774,7 @@
 		    </div>
 		</div>
 		<!--News Letter Area End-->
-		<!--Footer Area Start-->
-		<footer>
-		    <div class="footer-container">
-		        <!--Footer Middle Area Start-->
-		        <div class="footer-middle-area black-bg">
-		            <div class="container">
-		                <div class="row">
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-logo">
-		                                <a href="index.ejs"><img src="/layout/img/logo/logo-footer.png" alt=""></a>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-info">
-		                                <div class="icon">
-		                                    <i class="fa fa-home"></i>
-		                                </div>
-		                                <p>Address : No 40 Baria Sreet 15/2 NewYork City, NY, United States.</p>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-info">
-		                                <div class="icon">
-		                                    <i class="fa fa-envelope-open-o"></i>
-		                                </div>
-		                                <p>Email: <br>info@yourmail.com</p>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-info">
-		                                <div class="icon">
-		                                    <i class="fa fa-mobile"></i>
-		                                </div>
-		                                <p>Phone: <br>(+68) 123 456 7890</p>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <!--Footer Middle Area End-->
-		        <!--Footer Bottom Area Start-->
-		        <div class="footer-bottom-area black-bg pt-50 pb-50">
-		            <div class="container">
-		                <div class="row">
-		                    <div class="col-md-12">
-		                        <div class="footer-menu text-center">
-		                            <nav>
-		                                <ul>
-		                                    <li><a href="#">产品</a></li>
-		                                    <li><a href="#">案例</a></li>
-		                                    <!--<li><a href="#"></a></li>-->
-		                                    <li><a href="#">新闻</a></li>
-		                                    <li><a href="#">关于</a></li>
-		                                </ul>
-		                            </nav>
-		                        </div>
-		                        <!--Footer Menu End-->
-		                        <!--Footer Copyright Start-->
-		                        <div class="footer-copyright">
-		                            <p>Copyright &copy; 2018.河北聚义商贸有限公司 - 技术 <a href="https://github.com/LiangJingxuan" target="_blank">https://github.com/LiangJingxuan</a></p>
-		                        </div>
-		                        <!--Footer Copyright End-->
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <!--Footer Bottom Area End-->
-		    </div>
-		</footer>
-		<!--Footer Area End-->
+		<% include footer.ejs %>
 		<!-- Modal Area Strat -->
         <div class="modal fade" id="open-modal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -1088,35 +900,7 @@
         </div>
         <!-- Modal Area End -->
 	</div>
-    <!--All Js Here-->
-	<!--Jquery 1.12.4-->
-	<script src="/layout/js/jquery-1.12.4.min.js"></script>
-	<!--Bootstrap-->
-	<script src="/layout/js/bootstrap.min.js"></script>
-	<!--Imagesloaded-->
-	<script src="/layout/js/imagesloaded.pkgd.min.js"></script>
-	<!--Isotope-->
-	<script src="/layout/js/isotope.pkgd.min.js"></script>
-	<!--Counterup-->
-	<script src="/layout/js/jquery.counterup.min.js"></script>
-	<!--Carousel-->
-	<script src="/layout/js/owl.carousel.min.js"></script>
-	<!--Slick-->
-	<script src="/layout/js/slick.min.js"></script>
-	<!--Meanmenu-->
-	<script src="/layout/js/jquery.meanmenu.min.js"></script>
-	<!--Easyzoom-->
-	<script src="/layout/js/easyzoom.min.js"></script>
-	<!--Nice Select-->
-	<script src="/layout/js/jquery.nice-select.min.js"></script>
-	<!--ScrollUp-->
-	<script src="/layout/js/jquery.scrollUp.min.js"></script>
-	<!--Venobox-->
-	<script src="/layout/js/venobox.min.js"></script>
-	<!--Jquery Ui-->
-	<script src="/layout/js/jquery-ui.js"></script>
-	<!--Main Js-->
-	<script src="/layout/js/main.js"></script>
+	<% include script.ejs %>
 </body>
 </html>
 

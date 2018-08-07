@@ -681,7 +681,7 @@ Common Style CSS
     overflow: visible; 
 }
 .vbox-close {
-	background: #abd373 url("close.gif") no-repeat scroll 10px center !important;
+	background: #abd373 ;
 	color: #fff !important;
 	cursor: pointer;
 	display: block;
@@ -1086,7 +1086,7 @@ Common Style CSS
 	font-family: FontAwesome;
 	line-height: 1;
 	font-size: 18px;
-	vertical-align: ;
+	vertical-align: center;
 }
 .cart-quantity {
 	position: absolute;
@@ -1299,7 +1299,7 @@ Common Style CSS
 	height: 62px;
 	color: #000;
 	display: block;
-	text-align: ;
+	text-align: center;
 }
 .currency-box:hover > a{
     color: #abd373;
@@ -1412,7 +1412,6 @@ Common Style CSS
 .switcher-dropdown > li{
     list-style: none;
     display: block;
-    border-bottom: 0 10px;
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -1547,7 +1546,6 @@ Common Style CSS
 	display: block;
 	height: 35px;
 	line-height: 35px;
-	color: ;
 	color: #fff;
 	padding: 0 10px;
     font-size: 12px;
@@ -1858,7 +1856,7 @@ Common Style CSS
 	left: 45px;
 	-webkit-transform: translateY(-50%);
 	        transform: translateY(-50%);
-	background-image: url(img/icon/slider-left.png);
+	background-image: url(../img/icon/slider-left.png);
 	background-repeat: no-repeat;
     font-size: 0;
 	width: 40px;
@@ -1869,10 +1867,10 @@ Common Style CSS
 	transition: all 0.3s ease-in-out;
 }
 .hero-slider.hero-slider-3 .owl-nav > div {
-	background-image: url(img/icon/slider-left-hover.png) !important;
+	background-image: url(../img/icon/slider-left-hover.png) !important;
 }
 .hero-slider.hero-slider-3 .owl-nav > .owl-next{
-    background-image: url(img/icon/slider-right-hover.png) !important;
+    background-image: url(../img/icon/slider-right-hover.png) !important;
 }
 .testimonial-active .owl-nav > div{
     left: 0;
@@ -1888,24 +1886,24 @@ Common Style CSS
 .testimonial-active .owl-nav > .owl-next {
 	right: 45px;
 	left: auto;
-    background-image: url(img/icon/slider-right.png);
+    background-image: url(../img/icon/slider-right.png);
 }
 .testimonial-active .owl-nav > .owl-next{
     right: 0;
 }
 .hero-slider .owl-nav > div:hover,
 .testimonial-active .owl-nav > div:hover{
-    background-image: url(img/icon/slider-left-hover.png);
+    background-image: url(../img/icon/slider-left-hover.png);
 }
 .hero-slider .owl-nav > .owl-next:hover,
 .testimonial-active .owl-nav > .owl-next:hover{
-    background-image: url(img/icon/slider-right-hover.png);
+    background-image: url(../img/icon/slider-right-hover.png);
 }
 /*------------------------
     4. Feature Area CSS
 --------------------------*/
 .feature-history-area {
-	background-image: url(img/bg/bg2.jpg);
+	background-image: url(../img/bg/bg2.jpg);
 	background-position: center center;
 	background-size: cover;
 	padding-top: 120px;
@@ -2330,7 +2328,7 @@ Common Style CSS
     margin: auto;
 }
 .product-countdown-area {
-	background-image: url(img/bg/bg1.jpg);
+	background-image: url(../img/bg/bg1.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -2496,7 +2494,7 @@ Common Style CSS
     position: relative;
 }
 .testimonial-img:before {
-    background: url(img/icon/testimonial-icon.png) center center no-repeat;
+    background: url(../img/icon/testimonial-icon.png) center center no-repeat;
     bottom: 0;
     content: '';
     display: block;
@@ -2840,8 +2838,8 @@ h2.entry-title > a:hover {
 	position: absolute;
 	top: 50%;
 	left: 40px;
-	-webkit-transition: ;
-	transition: ;
+	-webkit-transition: all 0.3s;
+	transition:  all 0.3s;
 	-webkit-transform: translateY(-50%);
 	        transform: translateY(-50%);
 	width: 40px;
@@ -5464,7 +5462,6 @@ input.checkbox {
 	padding: 8px 20px;
 	cursor: pointer;
 	margin: 20px 0;
-	text-align: ;
 	text-align: center;
 	-webkit-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
@@ -5717,7 +5714,7 @@ a.about-btn:hover{
 	margin-bottom: 20px;
 }
 .service-bg {
-	background-image: url(img/bg/service-bg1.jpg);
+	background-image: url(../img/bg/service-bg1.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -5794,7 +5791,7 @@ a.ideas-btn:after {
 }
 a.ideas-btn:hover{
     background-color: #2A2A2A;
-    border-color: ##2A2A2A;
+    border-color: #2A2A2A;
     color: #fff;
 }
 .design-and-code-area {
@@ -5805,7 +5802,7 @@ a.ideas-btn:hover{
 	background-color: #f6f6f6;
 }
 .service-bg-1 {
-	background-image: url(img/bg/service-bg2.jpg);
+	background-image: url(../img/bg/service-bg2.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -5882,7 +5879,7 @@ a.ideas-btn:hover{
 }
 /*What We Do Area CSS */
 .service-bg-2 {
-	background-image: url(img/bg/service-bg3.jpg);
+	background-image: url(../img/bg/service-bg3.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -5930,7 +5927,7 @@ a.ideas-btn:hover{
 }
 /*our service area 3 css*/
 .section-title-img {
-	background-image: url(img/bg/service-bg4.jpg);
+	background-image: url(../img/bg/service-bg4.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -6187,7 +6184,7 @@ a.ideas-btn:hover{
 }
 /*social link css*/
 .social-link-area {
-	background-image: url(img/bg/contact2-social.jpg);
+	background-image: url(../img/bg/contact2-social.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -6361,8 +6358,7 @@ a.ideas-btn:hover{
     color: #fff;
 }
 .content > .portfolio-icon > a:nth-child(1){
-    -webkit-transition-delay: 0;
-            transition-delay: 0;
+            transition-delay: 0.1s;
 }
 .content > .portfolio-icon > a:nth-child(2){
     -webkit-transition-delay: 0.2s;
