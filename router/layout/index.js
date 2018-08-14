@@ -3,6 +3,9 @@ const router=require('koa-router')();
 // 网站主页模块
 router.use(require('./home'));
 
+// 网站公共功能模块
+router.use('common',require('./common'));
+
 // 网站商品模块
 router.use('goods',require('./goods'));
 

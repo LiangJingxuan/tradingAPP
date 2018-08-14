@@ -122,7 +122,7 @@
 		            <div class="col-12">
 		                <div class="section-title text-center mb-35">
 		                    <span>The Best collection</span>
-		                    <h3>产品分类</h3>
+		                    <h3>商品分类</h3>
 		                </div>
 		            </div>
 		            <!--Section Title End-->
@@ -134,7 +134,7 @@
 		                <div class="categories-img img-full mb-30">
 		                    <a href="#"><img src="/layout/img/category/home1-category-1.jpg" alt=""></a>
 		                    <div class="categories-content">
-		                        <h3>太阳能</h3>
+		                        <h3><%=classify[0].sname%></h3>
 		                        <h4>more+</h4>
 		                    </div>
 		                </div>
@@ -145,7 +145,7 @@
                                 <div class="categories-img img-full mb-30">
                                     <a href="#"><img src="/layout/img/category/home1-category-2.jpg" alt=""></a>
                                     <div class="categories-content">
-                                        <h3>空气能</h3>
+                                        <h3><%=classify[1].sname%></h3>
                                         <h4>more+</h4>
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@
                                 <div class="categories-img img-full mb-30">
                                     <a href="#"><img src="/layout/img/category/home1-category-3.jpg" alt=""></a>
                                     <div class="categories-content">
-                                        <h3>风机盘管</h3>
+                                        <h3><%=classify[2].sname%></h3>
                                         <h4>more+</h4>
                                     </div>
                                 </div>
@@ -163,7 +163,7 @@
                                 <div class="categories-img img-full mb-30">
                                     <a href="#"><img src="/layout/img/category/home1-category-4.jpg" alt=""></a>
                                     <div class="categories-content">
-                                        <h3>地暖</h3>
+                                        <h3><%=classify[3].sname%></h3>
                                         <h4>more+</h4>
                                     </div>
                                 </div>
@@ -172,7 +172,7 @@
                                 <div class="categories-img img-full mb-30">
                                     <a href="#"><img src="/layout/img/category/home1-category-5.jpg" alt=""></a>
                                     <div class="categories-content">
-                                        <h3>光伏发电</h3>
+                                        <h3><%=classify[4].sname%></h3>
                                         <h4>more+</h4>
                                     </div>
                                 </div>
@@ -191,350 +191,47 @@
 		            <div class="col-12">
 		                <div class="section-title text-center mb-35">
 		                    <span>The Most Trendy</span>
-		                    <h3>热门产品</h3>
+		                    <h3>热门商品</h3>
 		                </div>
 		            </div>
 		            <!--Section Title End-->
 		        </div>
 		        <div class="row">
 		            <div class="product-slider-active">
-		                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product1.jpg" alt="">
-		                            </a>
-		                            <span class="onsale">Sale!</span>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Eleifend quam</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$115.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product2.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Odio tortor consequat</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$90.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                </div>
-		                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product3.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Commodo dolor</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$80.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product4.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Fusce tempor</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$55.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                </div>
-		                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product5.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Integer eget augue</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$100.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product6.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Egestas dapibus</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$55.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                </div>
-		                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product7.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Auctor sem</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$100.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product8.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Sapien libero</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$82.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                </div>
-		                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product9.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Pharetra sagittis</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$100.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product10.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Turpis et iaculis</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$65.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                </div>
-		                <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product11.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Sit amet felis</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$90.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                    <!--Single Product Start-->
-		                    <div class="single-product mb-25">
-		                        <div class="product-img img-full">
-		                            <a href="single-product.ejs">
-		                                <img src="/layout/img/product/product12.jpg" alt="">
-		                            </a>
-		                            <div class="product-action">
-		                                <ul>
-		                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-		                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-		                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-		                                </ul>
-		                            </div>
-		                        </div>
-		                        <div class="product-content">
-		                            <h2><a href="single-product.ejs">Lacus dignissim</a></h2>
-		                            <div class="product-price">
-		                                <div class="price-box">
-		                                    <span class="regular-price">$80.00</span>
-		                                </div>
-		                                <div class="add-to-cart">
-		                                    <a href="#">Add To Cart</a>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                    <!--Single Product End-->
-		                </div>
+						<% for(let i=0,len=heatGoods.length;i<len;i++){ %>
+						<% let pics = heatGoods[i].goods_pic.split(',') %>
+						<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+							<!--Single Product Start-->
+							<div class="single-product mb-25">
+								<div class="product-img img-full">
+									<a href="single-product.ejs">
+										<!--<img src="/layout/img/product/product1.jpg" alt="">-->
+										<img src="<%=pics[0]%>" alt="热门商品">
+									</a>
+									<span class="onsale">Sale!</span>
+									<div class="product-action">
+										<ul>
+											<li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
+											<li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+											<li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="product-content">
+									<h2><a href="single-product.ejs"><%=heatGoods[i].goods_name%></a></h2>
+									<div class="product-price">
+										<div class="price-box">
+											<span class="regular-price">hot goods</span>
+										</div>
+										<div class="add-to-cart">
+											<a href="#">查看详情+</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Single Product End-->
+						</div>
+						<% } %>
 		            </div>
 		        </div>
 		    </div>
@@ -595,42 +292,20 @@
 		            <!--Section Title End-->
 		        </div>
 		        <div class="row testimonial-active owl-carousel">
+					<% for(let i=0,len=newsQuery.length;i<len;i++){ %>
 		            <div class="col-12">
 		                <!--Single Testimonial Start-->
 		                <div class="single-testimonial text-center">
                             <div class="testimonial-content">
-                                <p>These guys have been absolutely outstanding. Perfect Themes and the best of all that you have many options to choose! Best Support team ever! Very fast responding! Thank you very much! I highly recommend this theme and these people!</p>
+                                <p><%=newsQuery[i].title%></p>
                                 <div class="testimonial-author">
-                                    <h6>Katherine Sullivan <span>Customer</span></h6>
+                                    <h6><%=newsQuery[i].sname%> <span><%=newsQuery[i].time%></span></h6>
                                 </div>
                             </div>
                         </div>
 		                <!--Single Testimonial End-->
 		            </div>
-		            <div class="col-12">
-		                <!--Single Testimonial Start-->
-		                <div class="single-testimonial text-center">
-                            <div class="testimonial-content">
-                                <p>These guys have been absolutely outstanding. Perfect Themes and the best of all that you have many options to choose! Best Support team ever! Very fast responding! Thank you very much! I highly recommend this theme and these people!</p>
-                                <div class="testimonial-author">
-                                    <h6>Md Shohel <span>Customer</span></h6>
-                                </div>
-                            </div>
-                        </div>
-		                <!--Single Testimonial End-->
-		            </div>
-		            <div class="col-12">
-		                <!--Single Testimonial Start-->
-		                <div class="single-testimonial text-center">
-                            <div class="testimonial-content">
-                                <p>These guys have been absolutely outstanding. Perfect Themes and the best of all that you have many options to choose! Best Support team ever! Very fast responding! Thank you very much! I highly recommend this theme and these people!</p>
-                                <div class="testimonial-author">
-                                    <h6>Katherine Sullivan <span>Customer</span></h6>
-                                </div>
-                            </div>
-                        </div>
-		                <!--Single Testimonial End-->
-		            </div>
+					<% } %>
 		        </div>
 		    </div>
 		</div>
@@ -650,101 +325,26 @@
 		        </div>
 		        <div class="row">
                     <div class="blog-slider-active">
+						<% for(let i=0,len=heatCase.length;i<len;i++){ %>
+						<% let casePics = heatGoods[i].goods_pic.split(',') %>
                         <div class="col-md-4">
                             <!--Single Blog Start-->
                             <div class="single-blog">
                                 <div class="blog-img img-full">
                                     <a href="#">
-                                        <img src="/layout/img/blog/blog1.jpg" alt="">
+                                        <img src="<%=casePics[0]%>" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-content">
-                                    <div class="post-date">01/12/2018</div>
-                                    <h3 class="post-title"><a href="#">Blog image post</a></h3>
-                                    <p class="post-description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero</p>
+                                    <div class="post-date"><%=heatCase[i].time%></div>
+                                    <h3 class="post-title"><a href="#"><%=heatCase[i].goods_name%></a></h3>
+                                    <p class="post-description"></p>
                                 </div>
                             </div>
                             <!--Single Blog End-->
                         </div>
-                        <div class="col-md-4">
-                            <!--Single Blog Start-->
-                            <div class="single-blog">
-                                <div class="blog-img img-full">
-                                    <a href="#">
-                                        <img src="/layout/img/blog/blog2.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="post-date">01/12/2018</div>
-                                    <h3 class="post-title"><a href="#">Post with Gallery</a></h3>
-                                    <p class="post-description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero</p>
-                                </div>
-                            </div>
-                            <!--Single Blog End-->
-                        </div>
-                        <div class="col-md-4">
-                            <!--Single Blog Start-->
-                            <div class="single-blog">
-                                <div class="blog-img img-full">
-                                    <a href="#">
-                                        <img src="/layout/img/blog/blog3.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="post-date">01/12/2018</div>
-                                    <h3 class="post-title"><a href="#">Post with Audio</a></h3>
-                                    <p class="post-description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero</p>
-                                </div>
-                            </div>
-                            <!--Single Blog End-->
-                        </div>
-                        <div class="col-md-4">
-                            <!--Single Blog Start-->
-                            <div class="single-blog">
-                                <div class="blog-img img-full">
-                                    <a href="#">
-                                        <img src="/layout/img/blog/blog4.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="post-date">01/12/2018</div>
-                                    <h3 class="post-title"><a href="#">Post with Video</a></h3>
-                                    <p class="post-description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero</p>
-                                </div>
-                            </div>
-                            <!--Single Blog End-->
-                        </div>
-                        <div class="col-md-4">
-                            <!--Single Blog Start-->
-                            <div class="single-blog">
-                                <div class="blog-img img-full">
-                                    <a href="#">
-                                        <img src="/layout/img/blog/blog5.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="post-date">01/12/2018</div>
-                                    <h3 class="post-title"><a href="#">Maecenas ultricies</a></h3>
-                                    <p class="post-description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero</p>
-                                </div>
-                            </div>
-                            <!--Single Blog End-->
-                        </div>
-                        <div class="col-md-4">
-                            <!--Single Blog Start-->
-                            <div class="single-blog">
-                                <div class="blog-img img-full">
-                                    <a href="#">
-                                        <img src="/layout/img/blog/blog1.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="blog-content">
-                                    <div class="post-date">01/12/2018</div>
-                                    <h3 class="post-title"><a href="#">Blog image post</a></h3>
-                                    <p class="post-description">Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero</p>
-                                </div>
-                            </div>
-                            <!--Single Blog End-->
+						<!--Single Blog End-->
+						<% } %>
                         </div>
                     </div>
 		        </div>
