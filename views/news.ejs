@@ -2,46 +2,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Blog || Plantmore</title>
-	<meta name="description" content="">
-	<meta name="robots" content="noindex, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="noindex, follow" />
-	<!-- Place favicon.ico in the root directory -->
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!--All Css Here-->
-    
-    <!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!-- Linearicon CSS-->
-    <link rel="stylesheet" href="css/linearicons.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-	<!-- Animate CSS-->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Owl Carousel CSS-->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<!-- Slick CSS-->
-	<link rel="stylesheet" href="css/slick.css">
-	<!-- Meanmenu CSS-->
-	<link rel="stylesheet" href="css/meanmenu.min.css">
-	<!-- Easyzoom CSS-->
-	<link rel="stylesheet" href="css/easyzoom.css">
-	<!-- Venobox CSS-->
-	<link rel="stylesheet" href="css/venobox.css">
-	<!-- Jquery Ui CSS-->
-	<link rel="stylesheet" href="css/jquery-ui.css">
-	<!-- Nice Select CSS-->
-	<link rel="stylesheet" href="css/nice-select.css">
-	<!-- Style CSS -->
-	<link rel="stylesheet" href="style.css">
-	<!-- Responsive CSS -->
-	<link rel="stylesheet" href="css/responsive.css">
-	<!-- Modernizr Js -->
-	<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	<% include meta.ejs %>
 </head>
 <body>
 
@@ -51,213 +12,7 @@
 	<![endif]-->
 
 	<div class="wrapper">
-		<!--Header Area Start-->
-		<header>
-		    <div class="header-container">
-		        <div class="header-area header-sticky pt-30 pb-30">
-                    <div class="container">
-                        <div class="row">
-                            <!--Header Logo Start-->
-                            <div class="col-lg-3 col-md-3">
-                                <div class="logo-area">
-                                    <a href="index.ejs">
-                                        <img src="img/logo/logo.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <!--Header Logo End-->
-                            <!--Header Menu And Mini Cart Start-->
-                            <div class="col-lg-9 col-md-9 text-lg-right">
-                                <!--Main Menu Area Start-->
-                                <div class="header-menu">
-                                    <nav>
-                                        <ul class="main-menu">
-                                            <li><a href="index.ejs">home</a>
-                                                <!--Dropdown Menu Start-->
-                                                <ul class="dropdown">
-                                                    <li><a href="index.ejs">Home Page One</a></li>
-                                                    <li><a href="index-2.html">Home Page Two</a></li>
-                                                    <li><a href="index-3.html">Home Page Three</a></li>
-                                                    <li><a href="index-4.html">Home Page Four</a></li>
-                                                    <li><a href="index-5.html">Home Page Five</a></li>
-                                                </ul>
-                                                <!--Dropdown Menu End-->
-                                            </li>
-                                            <li><a href="shop.ejs">Shop</a></li>
-                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                            <li><a href="blog.ejs">Blog</a></li>
-                                            <li><a href="blog.ejs">Pages</a>
-                                                <!--Dropdown Menu Start-->
-                                                <ul class="dropdown">
-                                                    <li><a href="single-product.ejs">Single Product</a></li>
-                                                    <li><a href="shop.ejs">Shop</a></li>
-                                                    <li><a href="shop-list.html">Shop List View</a></li>
-                                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                    <li><a href="login-register.html">Log In</a></li>
-                                                </ul>
-                                                <!--Dropdown Menu End-->
-                                            </li>
-                                            <li><a href="#">Features</a>
-                                                <!--Mega Menu Start-->
-                                                <ul class="mega-menu">
-                                                    <li><a href="#" class="item-link">Pages</a>
-                                                        <ul>
-                                                            <li><a href="about.html">About Us</a></li>
-                                                            <li><a href="about-2.html">About Us 02</a></li>
-                                                            <li><a href="contact.ejs">Contact Us</a></li>
-                                                            <li><a href="contact-2.html">Contact Us 02</a></li>
-                                                            <li><a href="service.html">Services</a></li>
-                                                            <li><a href="service-2.html">Services 02</a></li>
-                                                            <li><a href="faq.html">Frequently Questions</a></li>
-                                                            <li><a href="404.html">Error 404</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#" class="item-link">Blog</a>
-                                                        <ul>
-                                                            <li><a href="blog-nosidebar.html">None Sidebar</a></li>
-                                                            <li><a href="blog-left-sidebar.html">Sidebar Left</a></li>
-                                                            <li><a href="single-blog.ejs">Gallery Format</a></li>
-                                                            <li><a href="single-blog.ejs">Audio Format</a></li>
-                                                            <li><a href="single-blog.ejs">Video Format</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#" class="item-link">Shop</a>
-                                                        <ul>
-                                                            <li><a href="shop-full-width.html">Full Width</a></li>
-                                                            <li><a href="shop-right-sidebar.html">Sidebar Right</a></li>
-                                                            <li><a href="shop-list.html">List View</a></li>
-                                                            <li><a href="single-product.ejs">Single Product</a></li>
-                                                            <li><a href="single-product.ejs">Variable Product</a></li>
-                                                            <li><a href="single-product.ejs">Grouped Product</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                                <!--Mega Menu End-->
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!--Main Menu Area End-->
-                                <!--Header Option Start--> 
-                                <div class="header-option">
-                                    <div class="mini-cart-search">
-                                        <div class="mini-cart">
-                                            <a href="#">
-                                                <span class="cart-icon">
-                                                   <span class="cart-quantity">2</span>
-                                                </span>
-                                                <span class="cart-title">Your cart <br><strong>$190.00</strong></span> 
-                                            </a>
-                                           <!--Cart Dropdown Start-->
-                                          <div class="cart-dropdown">
-                                              <ul>
-                                                  <li class="single-cart-item">
-                                                      <div class="cart-img">
-                                                          <a href="single-product.ejs"><img src="img/cart/cart1.jpg" alt=""></a>
-                                                      </div>
-                                                      <div class="cart-content">
-                                                          <h5 class="product-name"><a href="single-product.ejs">Odio tortor consequat</a></h5>
-                                                          <span class="cart-price">1 × $90.00</span>
-                                                      </div>
-                                                      <div class="cart-remove">
-                                                          <a title="Remove" href="#"><i class="fa fa-times"></i></a>
-                                                      </div>
-                                                  </li>
-                                                  <li class="single-cart-item">
-                                                      <div class="cart-img">
-                                                          <a href="single-product.ejs"><img src="img/cart/cart2.jpg" alt=""></a>
-                                                      </div>
-                                                      <div class="cart-content">
-                                                          <h5 class="product-name"><a href="single-product.ejs">Auctor sem</a></h5>
-                                                          <span class="cart-price">1 × $100.00</span>
-                                                      </div>
-                                                      <div class="cart-remove">
-                                                          <a title="Remove" href="#"><i class="fa fa-times"></i></a>
-                                                      </div>
-                                                  </li>
-                                               </ul> 
-                                              <p class="cart-subtotal"><strong>Subtotal:</strong> <span class="float-right">$190.00</span></p> 
-                                              <p class="cart-btn">
-                                                  <a href="cart.html">View cart</a>
-                                                  <a href="checkout.html">Checkout</a>
-                                              </p>
-                                          </div>
-                                           <!--Cart Dropdown End--> 
-                                        </div>
-                                        <div class="header-search">
-                                            <div class="search-box">
-                                                <a href="#"><i class="fa fa-search"></i></a>
-                                                <div class="search-dropdown">
-                                                    <form action="#">
-                                                        <input name="search" id="search" placeholder="" value="Search product..." onblur="if(this.value==''){this.value='Search product...'}" onfocus="if(this.value=='Search product...'){this.value=''}" type="text">
-                                                        <button type="submit"><i class="fa fa-search"></i></button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="currency">
-                                            <div class="currency-box">
-                                                <a href="#"><i class="fa fa-th"></i></a>
-                                                <div class="currency-dropdown">
-                                                    <ul class="menu-top-menu">
-                                                        <li><a href="my-account.html">My Account</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="cart.html">Shopping cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="login-register.html">Log In</a></li>
-                                                    </ul>
-                                                    <div class="switcher">
-                                                        <div class="language">
-                                                            <span class="switcher-title">Language: </span>
-                                                            <div class="switcher-menu">
-                                                                <ul>
-                                                                    <li><a href="#">English</a>
-                                                                        <ul class="switcher-dropdown">
-                                                                            <li><a href="#">German</a></li>
-                                                                            <li><a href="#">French</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="currency">
-                                                            <span class="switcher-title">Currency: </span>
-                                                            <div class="switcher-menu">
-                                                                <ul>
-                                                                    <li><a href="#">$ USD</a>
-                                                                        <ul class="switcher-dropdown">
-                                                                            <li><a href="#">€ EUR</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Header Option End--> 
-                            </div>
-                            <!--Header Menu And Mini Cart End-->
-                        </div>
-                        <div class="row">
-                            <div class="col-12"> 
-                                <!--Mobile Menu Area Start-->
-                                <div class="mobile-menu d-lg-none"></div>
-                                <!--Mobile Menu Area End-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-		    </div>
-		</header>
-		<!--Header Area End-->
+		<% include header.ejs %>
 		<!--Breadcrumb Tow Start-->
 		<div class="breadcrumb-tow mb-120">
             <div class="container">
@@ -290,7 +45,7 @@
                                         <a href="#"> Fashion</a>,<a href="#">WordPress</a>
                                     </span>
                                     <h2 class="entry-title">
-                                        <a href="single-blog.ejs">Blog image post</a>
+                                        <a href="/newsDetail">Blog image post</a>
                                     </h2>
                                     <span class="post-author">
                                     <span class="post-by"> Posts by : </span> admin </span>
@@ -298,8 +53,8 @@
                                     <span class="blog-post-date"><i class="fas fa-calendar-alt"></i>On March 10, 2018 </span>
                                 </header>
                                 <div class="post-thumbnail img-full">
-                                    <a href="single-blog.ejs">
-                                        <img src="img/blog/blog1.jpg" alt="">
+                                    <a href="/newsDetail">
+                                        <img src="/layout/img/blog/blog1.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="postinfo-wrapper">
@@ -307,7 +62,7 @@
                                         <div class="entry-summary">
                                             <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue
                                                 condimentum rhoncus. Praesent ornare tortor</p>
-                                            <a href="single-blog.ejs" class="form-button">Read More</a>
+                                            <a href="/newsDetail" class="form-button">Read More</a>
                                             <div class="social-sharing">
                                                 <div class="widget widget_socialsharing_widget">
                                                     <h3 class="widget-title">Share this post</h3>
@@ -348,7 +103,7 @@
                                         <a href="#"> Fashion</a>,<a href="#">WordPress</a>
                                     </span>
                                     <h2 class="entry-title">
-                                        <a href="single-blog.ejs">Post with Gallery</a>
+                                        <a href="/newsDetail">Post with Gallery</a>
                                     </h2>
                                     <span class="post-author">
                                     <span class="post-by"> Posts by : </span> admin </span>
@@ -357,20 +112,20 @@
                                 </header>
                                 <div class="post-thumbnail img-full">
                                    <div class="post-gallery owl-carousel">
-                                       <a href="single-blog.ejs">
-                                            <img src="img/blog/blog2.jpg" alt="">
+                                       <a href="/newsDetail">
+                                            <img src="/layout/img/blog/blog2.jpg" alt="">
                                         </a>
-                                        <a href="single-blog.ejs">
-                                            <img src="img/blog/blog1.jpg" alt="">
+                                        <a href="/newsDetail">
+                                            <img src="/layout/img/blog/blog1.jpg" alt="">
                                         </a>
-                                        <a href="single-blog.ejs">
-                                            <img src="img/blog/blog3.jpg" alt="">
+                                        <a href="/newsDetail">
+                                            <img src="/layout/img/blog/blog3.jpg" alt="">
                                         </a>
-                                        <a href="single-blog.ejs">
-                                            <img src="img/blog/blog4.jpg" alt="">
+                                        <a href="/newsDetail">
+                                            <img src="/layout/img/blog/blog4.jpg" alt="">
                                         </a>
-                                        <a href="single-blog.ejs">
-                                            <img src="img/blog/blog5.jpg" alt="">
+                                        <a href="/newsDetail">
+                                            <img src="/layout/img/blog/blog5.jpg" alt="">
                                         </a>
                                    </div>
                                 </div>
@@ -379,7 +134,7 @@
                                         <div class="entry-summary">
                                             <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue
                                                 condimentum rhoncus. Praesent ornare tortor</p>
-                                            <a href="single-blog.ejs" class="form-button">Read More</a>
+                                            <a href="/newsDetail" class="form-button">Read More</a>
                                             <div class="social-sharing">
                                                 <div class="widget widget_socialsharing_widget">
                                                     <h3 class="widget-title">Share this post</h3>
@@ -417,7 +172,7 @@
                             <article class="blog_single">
                                 <header class="entry-header">
                                     <span class="post-category">
-                                        <a href="single-blog.ejs"> Fashion</a>,<a href="#">WordPress</a>
+                                        <a href="/newsDetail"> Fashion</a>,<a href="#">WordPress</a>
                                     </span>
                                     <h2 class="entry-title">
                                     <a href="#">Post with Audio</a>
@@ -437,7 +192,7 @@
                                         <div class="entry-summary">
                                             <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue
                                                 condimentum rhoncus. Praesent ornare tortor</p>
-                                            <a href="single-blog.ejs" class="form-button">Read More</a>
+                                            <a href="/newsDetail" class="form-button">Read More</a>
                                             <div class="social-sharing">
                                                 <div class="widget widget_socialsharing_widget">
                                                     <h3 class="widget-title">Share this post</h3>
@@ -475,7 +230,7 @@
                             <article class="blog_single">
                                 <header class="entry-header">
                                     <span class="post-category">
-                                        <a href="single-blog.ejs"> Fashion</a>,<a href="#">WordPress</a>
+                                        <a href="/newsDetail"> Fashion</a>,<a href="#">WordPress</a>
                                     </span>
                                     <h2 class="entry-title">
                                     <a href="#">Post with Video</a>
@@ -495,7 +250,7 @@
                                         <div class="entry-summary">
                                             <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue
                                                 condimentum rhoncus. Praesent ornare tortor</p>
-                                            <a href="single-blog.ejs" class="form-button">Read More</a>
+                                            <a href="/newsDetail" class="form-button">Read More</a>
                                             <div class="social-sharing">
                                                 <div class="widget widget_socialsharing_widget">
                                                     <h3 class="widget-title">Share this post</h3>
@@ -537,7 +292,7 @@
                                         <a href="#">WordPress</a>
                                     </span>
                                     <h2 class="entry-title">
-                                        <a href="single-blog.ejs">Blog image post</a>
+                                        <a href="/newsDetail">Blog image post</a>
                                     </h2>
                                     <span class="post-author">
                                     <span class="post-by"> Posts by : </span> admin </span>
@@ -545,8 +300,8 @@
                                     <span class="blog-post-date"><i class="fas fa-calendar-alt"></i>On March 10, 2018 </span>
                                 </header>
                                 <div class="post-thumbnail img-full">
-                                    <a href="single-blog.ejs">
-                                        <img src="img/blog/blog3.jpg" alt="">
+                                    <a href="/newsDetail">
+                                        <img src="/layout/img/blog/blog3.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="postinfo-wrapper ">
@@ -554,7 +309,7 @@
                                         <div class="entry-summary">
                                             <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue
                                                 condimentum rhoncus. Praesent ornare tortor</p>
-                                            <a href="single-blog.ejs" class="form-button">Read More</a>
+                                            <a href="/newsDetail" class="form-button">Read More</a>
                                             <div class="social-sharing">
                                                 <div class="widget widget_socialsharing_widget">
                                                     <h3 class="widget-title">Share this post</h3>
@@ -657,7 +412,7 @@
                                     <div class="product-filter  mb-35">
                                         <div class="sidebar-banner single-banner">
                                             <div class="banner-img">
-                                                <a href="#"><img src="img/banner/shop-sidebar.jpg" alt=""></a>
+                                                <a href="#"><img src="/layout/img/banner/shop-sidebar.jpg" alt=""></a>
                                             </div>
                                         </div>
                                     </div>
@@ -688,230 +443,7 @@
 		    </div>
 		</div>
 		<!--Blog Area End-->
-		<!--Brand Area Start-->
-		<div class="brand-area mb-105">
-		    <div class="container">
-		        <div class="row">
-		            <div class="col-12">
-		                <div class="brand-active">
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand1.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand2.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand3.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand4.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand5.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand3.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand4.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                    <!--Single Brand Start-->
-		                    <div class="single-brand img-full">
-		                      <a href="#"><img src="img/brand/brand5.png" alt=""></a>
-		                    </div>
-		                    <!--Single Brand End-->
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-		<!--Brand Area End-->
-		<!--Footer Area Start-->
-		<footer>
-		    <div class="footer-container">
-		        <!--Footer Top Area Start-->
-		        <div class="footer-top-area black-bg">
-		            <div class="container">
-		                <div class="row">
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-40">
-		                            <div class="footer-title">
-		                                <h3>My Account</h3>
-		                            </div>
-		                            <ul class="link-widget">
-		                                <li><a href="about.html">About Us</a></li>
-		                                <li><a href="#">Team Member</a></li>
-		                                <li><a href="#">Career</a></li>
-		                                <li><a href="#">Specials</a></li>
-		                                <li><a href="shop.ejs">Best sellers</a></li>
-		                                <li><a href="#">Our stores</a></li>
-		                                <li><a href="contact.ejs">Contact us</a></li>
-		                            </ul>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-40">
-		                            <div class="footer-title">
-		                                <h3>Information</h3>
-		                            </div>
-		                            <ul class="link-widget">
-		                                <li><a href="about.html">About Us</a></li>
-		                                <li><a href="contact.ejs">Contact Us</a></li>
-		                                <li><a href="#">My orders</a></li>
-		                                <li><a href="#">Terms & Conditions</a></li>
-		                                <li><a href="#">Returns & Exchanges</a></li>
-		                                <li><a href="#">Shipping & Delivery</a></li>
-		                                <li><a href="#">Privacy Policy</a></li>
-		                            </ul>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-40">
-		                            <div class="footer-title">
-		                                <h3>Quick Links</h3>
-		                            </div>
-		                            <ul class="link-widget">
-		                                <li><a href="#">Support Center</a></li>
-		                                <li><a href="#">Term & Conditions</a></li>
-		                                <li><a href="#">Shipping</a></li>
-		                                <li><a href="#">Privacy Policy</a></li>
-		                                <li><a href="#">Help</a></li>
-		                                <li><a href="#">Products Return</a></li>
-		                                <li><a href="faq.html">FAQS</a></li>
-		                            </ul>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-40">
-		                            <div class="footer-title">
-		                                <h3>Categories</h3>
-		                            </div>
-		                            <ul class="link-widget">
-		                                <li><a href="#">Bedroom</a></li>
-		                                <li><a href="#">Furniture</a></li>
-		                                <li><a href="#">Livingroom</a></li>
-		                                <li><a href="#">Mobiles & Tablets</a></li>
-		                                <li><a href="#">Men</a></li>
-		                                <li><a href="#">Women</a></li>
-		                                <li><a href="#">Accessories</a></li>
-		                            </ul>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <!--Footer Top Area End-->
-		        <!--Footer Middle Area Start-->
-		        <div class="footer-middle-area black-bg">
-		            <div class="container">
-		                <div class="row">
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-logo">
-		                                <a href="index.ejs"><img src="img/logo/logo-footer.png" alt=""></a>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-info">
-		                                <div class="icon">
-		                                    <i class="fa fa-home"></i>
-		                                </div>
-		                                <p>Address : No 40 Baria Sreet 15/2 NewYork City, NY, United States.</p>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-info">
-		                                <div class="icon">
-		                                    <i class="fa fa-envelope-open-o"></i>
-		                                </div>
-		                                <p>Email: <br>info@yourmail.com</p>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                    <div class="col-lg-3 col-md-6">
-		                        <!--Single Footer Widget Start-->
-		                        <div class="single-footer-widget mb-30">
-		                            <div class="footer-info">
-		                                <div class="icon">
-		                                    <i class="fa fa-mobile"></i>
-		                                </div>
-		                                <p>Phone: <br>(+68) 123 456 7890</p>
-		                            </div>
-		                        </div>
-		                        <!--Single Footer Widget End-->
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <!--Footer Middle Area End-->
-		        <!--Footer Bottom Area Start-->
-		        <div class="footer-bottom-area black-bg pt-50 pb-50">
-		            <div class="container">
-		                <div class="row">
-		                    <div class="col-md-12">
-                                <!--Footer Payment Start-->
-		                        <div class="footer-payments-image">
-		                            <img src="img/payment/payment-icon.png" alt="">
-		                        </div>
-		                        <!--Footer Payment End-->
-		                        <!--Footer Menu Start-->
-		                        <div class="footer-menu text-center">
-		                            <nav>
-		                                <ul>
-		                                    <li><a href="#">Site Map</a></li>
-		                                    <li><a href="#">Search Terms</a></li>
-		                                    <li><a href="#">Advanced Search</a></li>
-		                                    <li><a href="#">Orders and Returns</a></li>
-		                                    <li><a href="#">Contact Us</a></li>
-		                                </ul>
-		                            </nav>
-		                        </div>
-		                        <!--Footer Menu End-->
-		                        <!--Footer Copyright Start-->
-		                        <div class="footer-copyright">
-		                            <p>Copyright © <a href="#">Plantmore</a> All Rights Reserved</p>
-		                        </div>
-		                        <!--Footer Copyright End-->
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		        <!--Footer Bottom Area End-->
-		    </div>
-		</footer>
-		<!--Footer Area End-->
+		<% include footer.ejs %>
 		<!-- Modal Area Strat -->
         <div class="modal fade" id="open-modal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -928,42 +460,42 @@
                           <div class="tab-pane fade show active" id="single-slide1" role="tabpanel" aria-labelledby="single-slide-tab-1">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product1.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product1.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide2" role="tabpanel" aria-labelledby="single-slide-tab-2">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product2.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product2.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide3" role="tabpanel" aria-labelledby="single-slide-tab-3">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product3.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product3.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide4" role="tabpanel" aria-labelledby="single-slide-tab-4">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product4.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product4.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide5" role="tabpanel" aria-labelledby="single-slide-tab-4">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product5.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product5.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide6" role="tabpanel" aria-labelledby="single-slide-tab-4">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product6.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product6.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
@@ -973,22 +505,22 @@
                         <div class="single-product-menu">
                             <div class="nav single-slide-menu owl-carousel" role="tablist">
                                 <div class="single-tab-menu img-full">
-                                    <a class="active" data-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img src="img/single-product/small/single-product1.jpg" alt=""></a>
+                                    <a class="active" data-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img src="/layout/img/single-product/small/single-product1.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img src="img/single-product/small/single-product2.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img src="/layout/img/single-product/small/single-product2.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img src="img/single-product/small/single-product3.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img src="/layout/img/single-product/small/single-product3.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
                                     <a data-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img src="img/single-product/small/single-product4.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-5" href="#single-slide5"><img src="img/single-product/small/single-product5.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-5" href="#single-slide5"><img src="/layout/img/single-product/small/single-product5.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-6" href="#single-slide6"><img src="img/single-product/small/single-product6.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-6" href="#single-slide6"><img src="/layout/img/single-product/small/single-product6.jpg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -1037,50 +569,6 @@
         </div>
         <!-- Modal Area End -->
 	</div>
-
-
-
-
-
-   <!--All Js Here-->
-    
-	<!--Jquery 1.12.4-->
-	<script src="js/vendor/jquery-1.12.4.min.js"></script>
-	<!--Popper-->
-	<script src="js/popper.min.js"></script>
-	<!--Bootstrap-->
-	<script src="js/bootstrap.min.js"></script>
-	<!--Imagesloaded-->
-	<script src="js/imagesloaded.pkgd.min.js"></script> 
-	<!--Isotope-->
-	<script src="js/isotope.pkgd.min.js"></script>
-	<!--Waypoints-->
-	<script src="js/waypoints.min.js"></script>
-	<!--Counterup-->
-	<script src="js/jquery.counterup.min.js"></script>
-	<!--Carousel-->
-	<script src="js/owl.carousel.min.js"></script>
-	<!--Slick-->
-	<script src="js/slick.min.js"></script>
-	<!--Meanmenu-->
-	<script src="js/jquery.meanmenu.min.js"></script>
-	<!--Easyzoom-->
-	<script src="js/easyzoom.min.js"></script>
-	<!--Nice Select-->
-	<script src="js/jquery.nice-select.min.js"></script>
-	<!--ScrollUp-->
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<!--Wow-->
-	<script src="js/wow.min.js"></script>
-	<!--Venobox-->
-	<script src="js/venobox.min.js"></script>
-	<!--Jquery Ui-->
-	<script src="js/jquery-ui.js"></script>
-	<!--Countdown-->
-	<script src="js/jquery.countdown.min.js"></script>
-	<!--Plugins-->
-	<script src="js/plugins.js"></script>
-	<!--Main Js-->
-	<script src="js/main.js"></script>
+   <% include script.ejs %>
 </body>
 </html>

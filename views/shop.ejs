@@ -1,44 +1,7 @@
 ﻿<!doctype html>
 <html class="no-js" lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Shop</title>
-	<meta name="description" content="">
-	<meta name="robots" content="noindex, follow" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="robots" content="noindex, follow" />
-    <!--All Css Here-->
-    
-    <!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!-- Linearicon CSS-->
-    <link rel="stylesheet" href="css/linearicons.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-	<!-- Animate CSS-->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Owl Carousel CSS-->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<!-- Slick CSS-->
-	<link rel="stylesheet" href="css/slick.css">
-	<!-- Meanmenu CSS-->
-	<link rel="stylesheet" href="css/meanmenu.min.css">
-	<!-- Easyzoom CSS-->
-	<link rel="stylesheet" href="css/easyzoom.css">
-	<!-- Venobox CSS-->
-	<link rel="stylesheet" href="css/venobox.css">
-	<!-- Jquery Ui CSS-->
-	<link rel="stylesheet" href="css/jquery-ui.css">
-	<!-- Nice Select CSS-->
-	<link rel="stylesheet" href="css/nice-select.css">
-	<!-- Style CSS -->
-	<link rel="stylesheet" href="style.css">
-	<!-- Responsive CSS -->
-	<link rel="stylesheet" href="css/responsive.css">
-	<!-- Modernizr Js -->
-	<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	<% include meta.ejs %>
 </head>
 <body>
 
@@ -49,108 +12,7 @@
 	<![endif]-->
 
 	<div class="wrapper">
-		<!--Header Area Start-->
-        <header>
-            <div class="header-container">
-                <div class="header-area header-sticky pt-10 pb-10">
-                    <div class="container-fluid pl-50 pr-50">
-                        <div class="row">
-                            <!--Header Logo Start-->
-                            <div class="col-lg-3 col-md-3">
-                                <div class="logo-area">
-                                    <a href="index.ejs">
-                                        <img src="img/logo/logo.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <!--Header Logo End-->
-                            <!--Header Menu And Mini Cart Start-->
-                            <div class="col-lg-9 col-md-9 text-lg-right">
-                                <!--Main Menu Area Start-->
-                                <div class="header-menu">
-                                    <nav>
-                                        <ul class="main-menu">
-                                            <li><a href="index.ejs">主页</a></li>
-                                            <li><a href="shop.ejs">商品</a></li>
-                                            <li><a href="single-product.ejs">案例</a></li>
-                                            <li><a href="single-product.ejs">新闻</a></li>
-                                            <li><a href="single-product.ejs">关于</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!--Main Menu Area End-->
-                                <!--Header Option Start-->
-                                <div class="header-option">
-                                    <div class="mini-cart-search">
-                                        <div class="header-search">
-                                            <div class="search-box">
-                                                <a href="#"><i class="fa fa-search"></i></a>
-                                                <div class="search-dropdown">
-                                                    <form action="#">
-                                                        <input name="search" id="search" placeholder="" value="Search product..." onblur="if(this.value==''){this.value='Search product...'}" onfocus="if(this.value=='Search product...'){this.value=''}" type="text" autocomplete="off">
-                                                        <button type="submit"><i class="fa fa-search"></i></button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="currency">
-                                            <div class="currency-box">
-                                                <a href="#"><i class="fa fa-th"></i></a>
-                                                <div class="currency-dropdown">
-                                                    <ul class="menu-top-menu">
-                                                        <li><a href="#">地暖</a></li>
-                                                        <li><a href="#">光伏发电</a></li>
-                                                        <li><a href="#">空气能</a></li>
-                                                        <li><a href="#">太阳能</a></li>
-                                                        <li><a href="#">风机盘管</a></li>
-                                                    </ul>
-                                                    <div class="switcher">
-                                                        <div class="language">
-                                                            <span class="switcher-title"><a href="#">联系我们</a></span>
-                                                            <!--<div class="switcher-menu">
-                                                                <ul>
-                                                                    <li><a href="#">联系我们</a>
-                                                                        <ul class="switcher-dropdown">
-                                                                            <li><a href="#">联系我们</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>-->
-                                                        </div>
-                                                        <!--<div class="currency">
-                                                            <span class="switcher-title">Currency: </span>
-                                                            <div class="switcher-menu">
-                                                                <ul>
-                                                                    <li><a href="#">$ USD</a>
-                                                                        <ul class="switcher-dropdown">
-                                                                            <li><a href="#">€ EUR</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Header Option End-->
-                            </div>
-                            <!--Header Menu And Mini Cart End-->
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <!--Mobile Menu Area Start-->
-                                <div class="mobile-menu d-lg-none"></div>
-                                <!--Mobile Menu Area End-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-		<!--Header Area End-->
+        <% include header.ejs %>
 		<!--Shop Area Start-->
 		<div class="shop-area mb-70">
 		    <div class="container">
@@ -192,10 +54,10 @@
 		                        <ul>
 		                            <li>
 		                                <div class="rc-product-thumb img-full">
-		                                    <a href="single-product.ejs"><img src="img/product/product13.jpg" alt=""></a>
+		                                    <a href="/goodsDetail"><img src="/layout/img/product/product13.jpg" alt=""></a>
 		                                </div>
 		                                <div class="rc-product-content">
-		                                    <h6><a href="single-product.ejs">Ornare sed consequat</a></h6>
+		                                    <h6><a href="/goodsDetail">Ornare sed consequat</a></h6>
 		                                    <div class="rc-product-review">
 		                                        <i class="fa fa-star"></i>
 		                                        <i class="fa fa-star"></i>
@@ -210,10 +72,10 @@
 		                            </li>
 		                            <li>
 		                                <div class="rc-product-thumb img-full">
-		                                    <a href="single-product.ejs"><img src="img/product/product12.jpg" alt=""></a>
+		                                    <a href="/goodsDetail"><img src="/layout/img/product/product12.jpg" alt=""></a>
 		                                </div>
 		                                <div class="rc-product-content">
-		                                    <h6><a href="single-product.ejs">Condimentum posuere</a></h6>
+		                                    <h6><a href="/goodsDetail">Condimentum posuere</a></h6>
 		                                    <div class="rc-product-review">
 		                                        <i class="fa fa-star"></i>
 		                                        <i class="fa fa-star"></i>
@@ -228,10 +90,10 @@
 		                            </li>
 		                            <li>
 		                                <div class="rc-product-thumb img-full">
-		                                    <a href="single-product.ejs"><img src="img/product/product12.jpg" alt=""></a>
+		                                    <a href="/goodsDetail"><img src="/layout/img/product/product12.jpg" alt=""></a>
 		                                </div>
 		                                <div class="rc-product-content">
-		                                    <h6><a href="single-product.ejs">Condimentum posuere</a></h6>
+		                                    <h6><a href="/goodsDetail">Condimentum posuere</a></h6>
 		                                    <div class="rc-product-review">
 		                                        <i class="fa fa-star"></i>
 		                                        <i class="fa fa-star"></i>
@@ -252,7 +114,7 @@
 		                <div class="shop-sidebar">
                             <div class="sidebar-banner single-banner">
 		                        <div class="banner-img">
-		                            <a href="#"><img src="img/banner/shop-sidebar.jpg" alt=""></a>
+		                            <a href="#"><img src="/layout/img/banner/shop-sidebar.jpg" alt=""></a>
 		                        </div>
 		                    </div>
 		                </div>
@@ -277,11 +139,11 @@
                            <!--Breadcrumb One Start-->
                             <div class="breadcrumb-one mb-120">
                                 <div class="breadcrumb-img">
-                                    <img src="img/page-banner/shop-banner-1.jpg" alt="">
+                                    <img src="/layout/img/page-banner/shop-banner-1.jpg" alt="">
                                 </div>
                                 <div class="breadcrumb-content">
                                     <ul>
-                                        <li><a href="index.ejs">Home</a></li>
+                                        <li><a href="/">Home</a></li>
                                         <li class="active">Shop</li>
                                     </ul>
                                 </div>
@@ -327,8 +189,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product1.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product1.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -340,7 +202,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Eleifend quam</a></h2>
+                                                            <h2><a href="/goodsDetail">Eleifend quam</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$115.00</span>
@@ -357,8 +219,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product2.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product2.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -370,7 +232,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Aliquam lobortis</a></h2>
+                                                            <h2><a href="/goodsDetail">Aliquam lobortis</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="price">$148.00</span>
@@ -388,8 +250,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product24.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product24.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -401,7 +263,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Aliquam sit amet</a></h2>
+                                                            <h2><a href="/goodsDetail">Aliquam sit amet</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="price">$110.00</span>
@@ -419,8 +281,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product23.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product23.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -432,7 +294,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Aliquet auctor sem</a></h2>
+                                                            <h2><a href="/goodsDetail">Aliquet auctor sem</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$80.00</span>
@@ -449,8 +311,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product22.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product22.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -462,7 +324,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Aliquet auctor sem</a></h2>
+                                                            <h2><a href="/goodsDetail">Aliquet auctor sem</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$115.00</span>
@@ -479,8 +341,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product1.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product1.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -492,7 +354,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Eleifend quam</a></h2>
+                                                            <h2><a href="/goodsDetail">Eleifend quam</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$115.00</span>
@@ -509,8 +371,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product23.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product23.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -522,7 +384,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Condimentum posuere</a></h2>
+                                                            <h2><a href="/goodsDetail">Condimentum posuere</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$120.00</span>
@@ -539,8 +401,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product20.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product20.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -552,7 +414,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Convallis furniture</a></h2>
+                                                            <h2><a href="/goodsDetail">Convallis furniture</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$75.00</span>
@@ -569,8 +431,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product19.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product19.jpg" alt="">
                                                             </a>
                                                             <div class="product-action">
                                                                 <ul>
@@ -581,7 +443,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Eleifend quam</a></h2>
+                                                            <h2><a href="/goodsDetail">Eleifend quam</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$95.00</span>
@@ -598,8 +460,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product18.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product18.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -611,7 +473,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Curabitur a purus</a></h2>
+                                                            <h2><a href="/goodsDetail">Curabitur a purus</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$82.00</span>
@@ -628,8 +490,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product17.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product17.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -641,7 +503,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Diam vel neque</a></h2>
+                                                            <h2><a href="/goodsDetail">Diam vel neque</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$40.00</span>
@@ -658,8 +520,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product16.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product16.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -671,7 +533,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Dignissim furniture</a></h2>
+                                                            <h2><a href="/goodsDetail">Dignissim furniture</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$80.00</span>
@@ -688,8 +550,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product15.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product15.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -701,7 +563,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Dignissim venenatis</a></h2>
+                                                            <h2><a href="/goodsDetail">Dignissim venenatis</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$70.00</span>
@@ -718,8 +580,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product14.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product14.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -731,7 +593,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Auctor sem</a></h2>
+                                                            <h2><a href="/goodsDetail">Auctor sem</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$100.00</span>
@@ -748,8 +610,8 @@
 		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="single-product.ejs">
-                                                                <img src="img/product/product1.jpg" alt="">
+                                                            <a href="/goodsDetail">
+                                                                <img src="/layout/img/product/product1.jpg" alt="">
                                                             </a>
                                                             <span class="onsale">Sale!</span>
                                                             <div class="product-action">
@@ -761,7 +623,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="single-product.ejs">Convallis quam sit</a></h2>
+                                                            <h2><a href="/goodsDetail">Convallis quam sit</a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">$130.00</span>
@@ -785,8 +647,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product9.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product9.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -794,7 +656,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Aliquam furniture</a></h2>
+		                                                    <h2><a href="/goodsDetail">Aliquam furniture</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -832,8 +694,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product14.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product14.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -841,7 +703,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Aliquam sit amet</a></h2>
+		                                                    <h2><a href="/goodsDetail">Aliquam sit amet</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -879,8 +741,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product15.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product15.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -888,7 +750,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Aliquam sit amet</a></h2>
+		                                                    <h2><a href="/goodsDetail">Aliquam sit amet</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -925,8 +787,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product10.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product10.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -934,7 +796,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Aliquet auctor sem</a></h2>
+		                                                    <h2><a href="/goodsDetail">Aliquet auctor sem</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -972,8 +834,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product16.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product16.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -981,7 +843,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Auctor gravida enim</a></h2>
+		                                                    <h2><a href="/goodsDetail">Auctor gravida enim</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1019,8 +881,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product7.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product7.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1028,7 +890,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Auctor sem</a></h2>
+		                                                    <h2><a href="/goodsDetail">Auctor sem</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1065,8 +927,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product2.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product2.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1074,7 +936,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Commodo dolor</a></h2>
+		                                                    <h2><a href="/goodsDetail">Commodo dolor</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1111,8 +973,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product18.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product18.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1120,7 +982,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Condimentum furniture</a></h2>
+		                                                    <h2><a href="/goodsDetail">Condimentum furniture</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1157,8 +1019,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product19.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product19.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1166,7 +1028,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Condimentum posuere</a></h2>
+		                                                    <h2><a href="/goodsDetail">Condimentum posuere</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1204,8 +1066,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product3.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product3.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1213,7 +1075,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Convallis furniture</a></h2>
+		                                                    <h2><a href="/goodsDetail">Convallis furniture</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1250,8 +1112,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product20.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product20.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1259,7 +1121,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Convallis quam sit</a></h2>
+		                                                    <h2><a href="/goodsDetail">Convallis quam sit</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1296,8 +1158,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product21.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product21.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1305,7 +1167,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Curabitur a purus</a></h2>
+		                                                    <h2><a href="/goodsDetail">Curabitur a purus</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1342,15 +1204,15 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product11.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product11.jpg" alt="">
                                                                 </a>
 		                                                    </div>
 		                                                </div>
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Diam vel neque</a></h2>
+		                                                    <h2><a href="/goodsDetail">Diam vel neque</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1387,8 +1249,8 @@
 		                                            <div class="col-md-4">
 		                                                <div class="single-product">
 		                                                    <div class="product-img img-full">
-		                                                        <a href="single-product.ejs">
-                                                                    <img src="img/product/product23.jpg" alt="">
+		                                                        <a href="/goodsDetail">
+                                                                    <img src="/layout/img/product/product23.jpg" alt="">
                                                                 </a>
                                                                 <span class="onsale">Sale!</span>
 		                                                    </div>
@@ -1396,7 +1258,7 @@
 		                                            </div>
 		                                            <div class="col-md-8">
 		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="single-product.ejs">Dignissim furniture</a></h2>
+		                                                    <h2><a href="/goodsDetail">Dignissim furniture</a></h2>
 		                                                    <div class="product-reviews">
                                                                 <i class="fa fa-star"></i>
                                                                 <i class="fa fa-star"></i>
@@ -1451,92 +1313,7 @@
 		    </div>
 		</div>
 		<!--Shop Area End-->
-		<!--Footer Area Start-->
-        <footer>
-            <div class="footer-container">
-                <!--Footer Middle Area Start-->
-                <div class="footer-middle-area black-bg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6">
-                                <!--Single Footer Widget Start-->
-                                <div class="single-footer-widget mb-30">
-                                    <div class="footer-logo">
-                                        <a href="index.ejs"><img src="img/logo/logo-footer.png" alt=""></a>
-                                    </div>
-                                </div>
-                                <!--Single Footer Widget End-->
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <!--Single Footer Widget Start-->
-                                <div class="single-footer-widget mb-30">
-                                    <div class="footer-info">
-                                        <div class="icon">
-                                            <i class="fa fa-home"></i>
-                                        </div>
-                                        <p>Address : No 40 Baria Sreet 15/2 NewYork City, NY, United States.</p>
-                                    </div>
-                                </div>
-                                <!--Single Footer Widget End-->
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <!--Single Footer Widget Start-->
-                                <div class="single-footer-widget mb-30">
-                                    <div class="footer-info">
-                                        <div class="icon">
-                                            <i class="fa fa-envelope-open-o"></i>
-                                        </div>
-                                        <p>Email: <br>info@yourmail.com</p>
-                                    </div>
-                                </div>
-                                <!--Single Footer Widget End-->
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <!--Single Footer Widget Start-->
-                                <div class="single-footer-widget mb-30">
-                                    <div class="footer-info">
-                                        <div class="icon">
-                                            <i class="fa fa-mobile"></i>
-                                        </div>
-                                        <p>Phone: <br>(+68) 123 456 7890</p>
-                                    </div>
-                                </div>
-                                <!--Single Footer Widget End-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Footer Middle Area End-->
-                <!--Footer Bottom Area Start-->
-                <div class="footer-bottom-area black-bg pt-50 pb-50">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="footer-menu text-center">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="#">产品</a></li>
-                                            <li><a href="#">案例</a></li>
-                                            <!--<li><a href="#"></a></li>-->
-                                            <li><a href="#">新闻</a></li>
-                                            <li><a href="#">关于</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!--Footer Menu End-->
-                                <!--Footer Copyright Start-->
-                                <div class="footer-copyright">
-                                    <p>Copyright &copy; 2018.河北聚义商贸有限公司 - 技术 <a href="https://github.com/LiangJingxuan" target="_blank">https://github.com/LiangJingxuan</a></p>
-                                </div>
-                                <!--Footer Copyright End-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Footer Bottom Area End-->
-            </div>
-        </footer>
-		<!--Footer Area End-->
+        <% include footer.ejs %>
 		<!-- Modal Area Strat -->
         <div class="modal fade" id="open-modal" tabindex="-1" role="dialog" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -1553,42 +1330,42 @@
                           <div class="tab-pane fade show active" id="single-slide1" role="tabpanel" aria-labelledby="single-slide-tab-1">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product1.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product1.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide2" role="tabpanel" aria-labelledby="single-slide-tab-2">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product2.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product2.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide3" role="tabpanel" aria-labelledby="single-slide-tab-3">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product3.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product3.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide4" role="tabpanel" aria-labelledby="single-slide-tab-4">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product4.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product4.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide5" role="tabpanel" aria-labelledby="single-slide-tab-4">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product5.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product5.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
                           <div class="tab-pane fade" id="single-slide6" role="tabpanel" aria-labelledby="single-slide-tab-4">
                               <!--Single Product Image Start-->
                               <div class="single-product-img img-full">
-                                <img src="img/single-product/large/single-product6.jpg" alt="">
+                                <img src="/layout/img/single-product/large/single-product6.jpg" alt="">
                               </div>
                               <!--Single Product Image End-->
                           </div>
@@ -1598,22 +1375,22 @@
                         <div class="single-product-menu">
                             <div class="nav single-slide-menu owl-carousel" role="tablist">
                                 <div class="single-tab-menu img-full">
-                                    <a class="active" data-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img src="img/single-product/small/single-product1.jpg" alt=""></a>
+                                    <a class="active" data-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img src="/layout/img/single-product/small/single-product1.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img src="img/single-product/small/single-product2.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img src="/layout/img/single-product/small/single-product2.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img src="img/single-product/small/single-product3.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img src="/layout/img/single-product/small/single-product3.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img src="img/single-product/small/single-product4.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img src="/layout/img/single-product/small/single-product4.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-5" href="#single-slide5"><img src="img/single-product/small/single-product5.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-5" href="#single-slide5"><img src="/layout/img/single-product/small/single-product5.jpg" alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-toggle="tab" id="single-slide-tab-6" href="#single-slide6"><img src="img/single-product/small/single-product6.jpg" alt=""></a>
+                                    <a data-toggle="tab" id="single-slide-tab-6" href="#single-slide6"><img src="/layout/img/single-product/small/single-product6.jpg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -1628,7 +1405,7 @@
                                <span class="old-price">$74.00</span>
                                <span class="new-price">$69.00</span>
                            </div>
-                           <a href="single-product.ejs" class="see-all">See all features</a>
+                           <a href="/goodsDetail" class="see-all">See all features</a>
                            <div class="add-to-cart quantity">
                                 <form class="add-quantity" action="#">
                                      <div class="modal-quantity">
@@ -1662,51 +1439,7 @@
         </div>
         <!-- Modal Area End -->
 	</div>
-
-
-
-
-
-    <!--All Js Here-->
-    
-	<!--Jquery 1.12.4-->
-	<script src="js/vendor/jquery-1.12.4.min.js"></script>
-	<!--Popper-->
-	<script src="js/popper.min.js"></script>
-	<!--Bootstrap-->
-	<script src="js/bootstrap.min.js"></script>
-	<!--Imagesloaded-->
-	<script src="js/imagesloaded.pkgd.min.js"></script> 
-	<!--Isotope-->
-	<script src="js/isotope.pkgd.min.js"></script>
-	<!--Waypoints-->
-	<script src="js/waypoints.min.js"></script>
-	<!--Counterup-->
-	<script src="js/jquery.counterup.min.js"></script>
-	<!--Carousel-->
-	<script src="js/owl.carousel.min.js"></script>
-	<!--Slick-->
-	<script src="js/slick.min.js"></script>
-	<!--Meanmenu-->
-	<script src="js/jquery.meanmenu.min.js"></script>
-	<!--Easyzoom-->
-	<script src="js/easyzoom.min.js"></script>
-	<!--Nice Select-->
-	<script src="js/jquery.nice-select.min.js"></script>
-	<!--ScrollUp-->
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<!--Wow-->
-	<script src="js/wow.min.js"></script>
-	<!--Venobox-->
-	<script src="js/venobox.min.js"></script>
-	<!--Jquery Ui-->
-	<script src="js/jquery-ui.js"></script>
-	<!--Countdown-->
-	<script src="js/jquery.countdown.min.js"></script>
-	<!--Plugins-->
-	<script src="js/plugins.js"></script>
-	<!--Main Js-->
-	<script src="js/main.js"></script>
+    <% include script.ejs %>
 </body>
 </html>
 

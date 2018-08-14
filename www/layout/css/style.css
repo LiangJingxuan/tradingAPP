@@ -681,7 +681,8 @@ Common Style CSS
     overflow: visible; 
 }
 .vbox-close {
-	background: #abd373 ;
+    /*background: #abd373 url("../img/close.gif") no-repeat scroll 10px center !important;*/
+    background: #abd373;
 	color: #fff !important;
 	cursor: pointer;
 	display: block;
@@ -1412,6 +1413,7 @@ Common Style CSS
 .switcher-dropdown > li{
     list-style: none;
     display: block;
+    border-bottom: 10px;
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -2839,7 +2841,7 @@ h2.entry-title > a:hover {
 	top: 50%;
 	left: 40px;
 	-webkit-transition: all 0.3s;
-	transition:  all 0.3s;
+	transition: all 0.3s;
 	-webkit-transform: translateY(-50%);
 	        transform: translateY(-50%);
 	width: 40px;
@@ -6358,7 +6360,8 @@ a.ideas-btn:hover{
     color: #fff;
 }
 .content > .portfolio-icon > a:nth-child(1){
-            transition-delay: 0.1s;
+    -webkit-transition-delay: 1ms;
+            transition-delay: 1ms;
 }
 .content > .portfolio-icon > a:nth-child(2){
     -webkit-transition-delay: 0.2s;
