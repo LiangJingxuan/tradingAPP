@@ -6513,3 +6513,11 @@ a.ideas-btn:hover{
 .error-button a:hover{
     background: #333;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{
+    -moz-appearance: textfield;
+}
