@@ -4241,7 +4241,7 @@ li.right-menu .cat-mega-menu > li {
 	text-align: right;
 	padding-top: 30px;
 	margin-bottom: 40px;
-	border-top: 1px solid #e5e5e5;
+	/*border-top: 1px solid #e5e5e5;*/
 }
 .product-pagination > ul > li {
 	display: inline-block;

@@ -13,25 +13,6 @@
 
 	<div class="wrapper">
 		<% include header.ejs %>
-		<!--Breadcrumb Tow Start-->
-		<div class="breadcrumb-tow">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb-title">
-                            <h1>Contact Us</h1>
-                        </div>
-                        <div class="breadcrumb-content breadcrumb-content-tow">
-                            <ul>
-                                <li><a href="index.ejs">Home</a></li>
-                                <li class="active">Contact Us</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<!--Breadcrumb Tow End-->
 		<!--Google Map Area Start-->
         <div class="google-map-area">
             <div id="googleMap"></div>
@@ -43,52 +24,46 @@
                 <div class="row no-gutters">
                     <div class="col-md-12 col-lg-6">
                         <div class="contact-form-wrap">
-                            <h2 class="contact-title">TELL US YOUR PROJECT</h2>
-                            <form id="contact-form" action="mail.php" method="post">
+                            <h2 class="contact-title">告诉我们你的想法</h2>
+                            <form id="consultFromId" action="/common/consult" method="post">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="contact-form-style mb-20">
-                                            <input name="firstname" placeholder="First Name*" type="text">
+                                            <input name="name" placeholder="称呼" type="text" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="contact-form-style mb-20">
-                                            <input name="lastname" placeholder="Last Name*" type="text">
+                                            <input name="email" placeholder="邮箱" type="text" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="contact-form-style mb-20">
-                                            <input name="email" placeholder="Email*" type="email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="contact-form-style mb-20">
-                                            <input name="subject" placeholder="Subject*" type="text">
+                                            <input name="phone" placeholder="电话" type="text" required autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="contact-form-style">
-                                            <textarea name="message" placeholder="Type your message here.."></textarea>
-                                            <button class="form-button" type="submit"><span>Send Email</span></button>
+                                            <textarea name="content" placeholder="想对我们说..."></textarea>
+                                            <button class="form-button" type="submit" id="aboutSubmitId"><span>确认发送</span></button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
-                            <p class="form-messege"></p>
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-6">
                         <div class="plantmore-address">
-                            <h2 class="contact-title">CONTACT US</h2>
-                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human.</p>
+                            <h2 class="contact-title">联系方式</h2>
+                            <!--<p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human.</p>-->
                             <ul>
-                                <li><i class="fa fa-fax"></i> Address : No 40 Baria Sreet 133/2 NewYork City</li>
-                                <li><i class="fa fa-phone"></i> +1 222 3333</li>
-                                <li><i class="fa fa-envelope-o"></i> info@example.com</li>
+                                <li><i class="fa fa-fax"></i> 地址 : <%=about.adds%></li>
+                                <li><i class="fa fa-phone"></i> 电话 : <%=about.phone%></li>
+                                <li><i class="fa fa-envelope-o"></i> 邮箱 : <%=about.email%> </li>
                             </ul>
                             <div class="working-time">
-                                <h3><strong>Working hours</strong></h3>
-                                <p><strong>Monday – Saturday</strong>: &nbsp;08AM – 22PM</p>
+                                <h3><strong>工作时间</strong></h3>
+                                <p><strong>周一至周六</strong>: &nbsp;08AM – 22PM</p>
                             </div>
                         </div>
                     </div>
@@ -221,54 +196,47 @@
           </div>
         </div>
         <!-- Modal Area End -->
+        <div class="alert alert-success" role="alert" id="alertModel" style="width: 100%;height: 86px;line-height: 55px;position: fixed;top: 0;z-index: 9999;display: none;"></div>
 	</div>
     <% include script.ejs %>
-	<!--Google Map Active-->
-	<script>
-        function myMap() {
-        var mapProp= {
-            center: new google.maps.LatLng(22.697733,90.361605),
-            zoom: 16,
-            scrollwheel: false,
-            styles: 
-                [
-                    {
-                        "featureType": "administrative.country",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "visibility": "simplified"
-                            },
-                            {
-                                "hue": "#ff0000"
-                            }
-                        ]
-                    }
-                ]
+	<!--baidu map ak-->
+    <script src="http://cdn.bootcss.com/jquery.form/3.50/jquery.form.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZtWL7jXYA7XcIAIebUWxhYL4wZ3A0sgw"></script>
+    <script type="text/javascript">
 
-        };
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        var marker = new google.maps.Marker({
-        position: map.getCenter(),
-        animation:google.maps,
-        animation:google.maps.Animation.BOUNCE,
-        icon: 'img/map-icon.png',
-        map: map
+        // 百度地图API功能
+        var map = new BMap.Map("googleMap"), pointAll='<%=about.location%>'.split(','),
+            lat = parseFloat(pointAll[0]), lng = parseFloat(pointAll[1]), point = new BMap.Point(lat,lng);
+        map.centerAndZoom(point, 16);
+        map.addControl(new BMap.NavigationControl());
+        var circle = new BMap.Circle(point,1000,{fillColor:"#ccc", strokeWeight: 1 ,fillOpacity: 0.2, strokeOpacity: 0.2});
+        map.addOverlay(circle);
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+
+        // 告诉我们你的想法
+        var subBtn=$('#aboutSubmitId'), fromId=$('#consultFromId'), tip=$('#alertModel');
+        subBtn.click(function(){
+            var options={
+                beforeSend:function(){
+                    subBtn.attr({disabled: 'disabled'});
+                },
+                success:function(data){
+                    subBtn.removeAttr('disabled');
+                    tip.text(data.msg);
+                    tip.css({'display':'block'});
+                    setTimeout(function(){
+                        tip.css({'display':'none'});
+                        fromId[0].reset();
+                    },3000)
+                }
+            };
+            fromId.ajaxForm(options);
         });
-        var contentString = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<div id="bodyContent">'+
-        '<p>Barisal Polytechnic Institute, </br>Street Name, </br>Barisal, Bangladesh</p>'+       
-        '</div>'+
-        '</div>';
-        var infowindow = new google.maps.InfoWindow({
-        content: contentString,
-        });
-        infowindow.open(map, marker);
-        }
     </script>
-	<!--Google Map-->
-    <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyCfmCVTjRI007pC1Yk2o2d_EhgkjTsFVN8&callback=myMap"></script>
+    <style>
+        .anchorBL{display: none;}
+    </style>
 </body>
 </html>

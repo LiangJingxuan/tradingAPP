@@ -2,7 +2,7 @@
 
 const router=require('koa-router')();
 const moment=require('moment');
-const layout=require('../../model/layout');
+const layout=require('../../model/layoutCommon');
 const info=require('../../middlewares/info');
 
 router

@@ -2,9 +2,13 @@ const sql=require('../config/default').sql;
 
 module.exports={
 
+    /**
+     * home model data
+     */
+
     // 产品分类查询
-    classify(){
-        return sql.query(`SELECT id,sname FROM subcategory WHERE cid=(SELECT id FROM category WHERE cname='公司产品');`);
+    classify(className){
+        return sql.query(`SELECT id,sname FROM subcategory WHERE cid=(SELECT id FROM category WHERE cname='${className}');`);
     },
 
     // 热门商品查询
@@ -24,5 +28,11 @@ module.exports={
     heatCase(){
         return sql.query(`SELECT id,goods_name,goods_pic,FROM_UNIXTIME(goods_time,'%Y-%m-%d %H:%i:%S') AS time FROM goods WHERE nice=0 AND i=1 ORDER BY time DESC;`);
     }
+
+    /**
+     * news model data
+     */
+
+
 
 };

@@ -726,15 +726,13 @@ $('.protfolio-active').imagesLoaded( function() {
 ------------------------------------*/   
 var $easyzoom = $('.easyzoom').easyZoom();
 
-
-    // 公共信息查询
-    $.get("/common/company", function(res){
-        // 公司信息
-        $('#AddressId').text(res.adds);
-        $('#EmailId').text(res.email);
-        $('#PhoneId').text(res.phone);
-        $('#CopyrightId').text(res.name);
-    });
-
+// 公共信息查询
+$.get("/common/company", function(res){
+    // 公司信息
+    $('#AddressId').text(res.adds);
+    $('#EmailId').text(res.email);
+    $('#PhoneId').text(res.phone);
+    $('.CopyrightId').text(res.name);
+});
 
 })(jQuery);
