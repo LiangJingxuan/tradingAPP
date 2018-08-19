@@ -51,7 +51,8 @@ module.exports={
 
     // 查询新闻详情
     newsOnly(id){
-        return sql.query(`SELECT id,title,FROM_UNIXTIME(time,'%Y-%m-%d %H:%i:%S') AS time,content,sid,state,uid FROM news WHERE id=${id};`);
+        return sql.query(`SELECT news.id,title,FROM_UNIXTIME(time,'%Y-%m-%d %H:%i:%S') AS time,content,sname,sid,state,uid 
+        FROM news LEFT JOIN subcategory ON sid=subcategory.id WHERE news.id=${id};`);
     },
 
     // 修改新闻

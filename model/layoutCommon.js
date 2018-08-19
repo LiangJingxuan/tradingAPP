@@ -10,5 +10,10 @@ module.exports={
     // 公司信息查询
     companyInfo(){
         return sql.query(`SELECT * FROM company`);
+    },
+
+    // 热门产品最新三条数据查询
+    hotGoods(){
+        return sql.query(`SELECT id,goods_name,goods_pic FROM goods WHERE nice=1 AND i=0 ORDER BY goods_time DESC LIMIT 3;`);
     }
 };

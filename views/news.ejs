@@ -24,11 +24,11 @@
                             <article class="blog_single" style="text-align: left;">
                                 <header class="entry-header">
                                     <h2 class="entry-title" style="font-size: 20px;">
-                                        <a href="/newsDetail"><%=newsList.dataList[i].title%></a>
+                                        <a href="/newsDetail?id=<%=newsList.dataList[i].id%>"><%=newsList.dataList[i].title%></a>
                                     </h2>
                                 </header>
                                 <!--start comment in post page -->
-                                <a class="comment" href="/news?sid=<%=newsList.dataList[i].sid%>" style="display: inline-block;"><%=newsList.dataList[i].sname%></a>
+                                <a class="comment" href="/news?page=1&sid=<%=newsList.dataList[i].sid%>" style="display: inline-block;"><%=newsList.dataList[i].sname%></a>
                                 <span> | 发布时间：<%=newsList.dataList[i].time%></span>
                                 <!--start comment in post page -->
                             </article>
@@ -66,7 +66,7 @@
                                             <ul>
                                                 <li><a href="/news">全部分类</a></li>
                                                 <% for(let i=0,len=classify.length;i<len;i++){ %>
-                                                <li><a href="/news?sid=<%=classify[i].id%>"><%=classify[i].sname%></a></li>
+                                                <li><a href="/news?page=1&sid=<%=classify[i].id%>"><%=classify[i].sname%></a></li>
                                                 <% } %>
                                             </ul>
                                       </div>
@@ -222,6 +222,8 @@
         .active a:hover{color: #ffffff !important;}
     </style>
     <script>
+        var sid='';
+        location.href.search('sid')>-1?sid=location.href.split('sid')[1].split('=')[1]:sid='';
         $('#jqpaginatorId').jqPaginator({
             totalPages: parseInt('<%=newsList.totalPage%>'),
             totalCounts: parseInt('<%=newsList.totalRows%>'),
@@ -230,11 +232,11 @@
             activeClass: 'active',
             disableClass: 'active',
 
-            first: '<li class="first"><a href="/news">首页</a></li>',
-            prev: '<li class="prev""><a href="/news?page={{page}}">上一页</a></li>',
-            next: '<li class="next"><a href="/news?page={{page}}">下一页</a></li>',
-            last: '<li class="last"><a href="/news?page={{totalPages}}">尾页</a></li>',
-            page: '<li class="page"><a href="/news?page={{page}}">{{page}}</a></li>',
+            first: '<li class="first"><a href="/news?page=1&sid='+sid+'">首页</a></li>',
+            prev: '<li class="prev""><a href="/news?page={{page}}&sid='+sid+'">上一页</a></li>',
+            next: '<li class="next"><a href="/news?page={{page}}&sid='+sid+'">下一页</a></li>',
+            last: '<li class="last"><a href="/news?page={{totalPages}}&sid='+sid+'">尾页</a></li>',
+            page: '<li class="page"><a href="/news?page={{page}}&sid='+sid+'">{{page}}</a></li>',
             onPageChange: function (num) {
                 // $('#text').html('当前第' + num + '页');
                 $('.active a').removeAttr('href');

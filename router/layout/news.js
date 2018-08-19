@@ -1,8 +1,7 @@
 /* 网站新闻模块 */
 
 const router=require('koa-router')();
-const newsCommon=require('../../model/news');
-const newsModel=require('../../model/layoutModel');
+const newsModel=require('../../model/news');
 const homeModel=require('../../model/layoutModel');
 const info=require('../../middlewares/info');
 
@@ -11,12 +10,12 @@ router
     .get('/', async (ctx)=>{
 
         // 全部已发布新闻分页查询
-        newsCommon.newsTiming(); // 定时发布新闻
+        newsModel.newsTiming(); // 定时发布新闻
         const params=ctx.query;
         const page=parseInt(params.page) || 1;
         const pagesize=parseInt(params.pagesize) || 10;
 
-        const data=await newsCommon.newsList(page,pagesize,params.sid,params.title,1);
+        const data=await newsModel.newsList(page,pagesize,params.sid,params.title,1);
         const dataList = await data.list;
 
         const totalRows = await data.totalRows;
