@@ -20,21 +20,25 @@ module.exports={
     },
 
     // 查询商品列表
-    goodsList(page,pagesize,sid,name,i){
+    goodsList(page,pagesize,sid,name,i,state){
 
         // 查询条件设置
         let condition=`WHERE i=${i}`;
+        state===1?condition=`WHERE i=${i} AND state=1`:``;
         sid?condition=`WHERE i=${i} AND sid=${sid}`:``;
         name?condition=`WHERE i=${i} AND goods_name LIKE '%${name}%'`:``;
         sid && name?condition=`WHERE i=${i} AND sid=${sid} AND goods_name LIKE '%${name}%'`:``;
+        sid && name && state===1?condition=`WHERE i=${i} AND sid=${sid} AND goods_name LIKE '%${name}%' AND state=1`:``;
+        sid && state===1?condition=`WHERE i=${i} AND sid=${sid} AND state=1`:``;
+        name && state===1?condition=`WHERE i=${i} AND goods_name LIKE '%${name}%' AND state=1`:``;
 
         // 总记录数
         const totalRows=sql.query(`SELECT COUNT(id) AS n FROM goods ${condition};`);
 
         // 查询语句
         const list=sql.query(
-            `SELECT goods.id,FROM_UNIXTIME(goods_time,'%Y-%m-%d %H:%i:%S') AS time,goods_name,state,nice,sname FROM goods 
-            LEFT JOIN subcategory ON goods.sid=subcategory.id ${condition} ORDER BY goods.id DESC LIMIT ${(page-1)*pagesize},${pagesize};`
+            `SELECT goods.id,FROM_UNIXTIME(goods_time,'%Y-%m-%d %H:%i:%S') AS time,goods_name,goods_point,goods_pic,state,nice,sname,goods.sid FROM goods 
+            LEFT JOIN subcategory ON goods.sid=subcategory.id ${condition} ORDER BY goods_time DESC LIMIT ${(page-1)*pagesize},${pagesize};`
         );
 
         return {

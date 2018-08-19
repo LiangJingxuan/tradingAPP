@@ -19,120 +19,29 @@
 		        <div class="row">
 		            <div class="col-lg-3 order-2 order-lg-1">
 		                <!--Color Category Widget Start-->
-		                <div class="shop-sidebar">
-		                    <h4>类别</h4>
-		                    <div class="categori-checkbox">
-		                        <form action="#">
-		                            <ul>
-		                                <li><input name="product-categori" type="checkbox"><a href="#">Gold</a><span class="count">(1)</span></li>
-		                                <li><input name="product-categori" type="checkbox"><a href="#">Green</a><span class="count">(4)</span></li>
-		                                <li><input name="product-categori" type="checkbox"><a href="#">White</a><span class="count">(5)</span></li>
-		                            </ul>
-		                        </form>
-		                    </div>
-		                </div>
-		                <!--Color Category Widget End-->
-		                <!--Price Filter Widget Start-->
-		                <!--<div class="shop-sidebar">
-		                    <h4>Filter by price</h4>
-		                    <div class="price-filter">
-                                <div id="slider-range"></div>
-                                <div class="price-slider-amount">
-                                    <div class="label-input">
-                                        <label>price : </label>
-                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" />
-                                    </div>
-                                    <button type="button">Filter</button> 
-                                </div>
-                            </div>
-		                </div>-->
-		                <!--Price Filter Widget End-->
+                        <div class="shop-sidebar"></div>
 		                <!--Recent Product Widget Start-->
 		                <div class="shop-sidebar">
 		                    <h4>热门商品</h4>
 		                    <div class="rc-product">
 		                        <ul>
+                                    <% for(let i=0,len=hotGoods.length;i<len;i++){ %>
 		                            <li>
 		                                <div class="rc-product-thumb img-full">
-		                                    <a href="/goodsDetail"><img src="/layout/img/product/product13.jpg" alt=""></a>
+		                                    <a href="/goodsDetail?id=<%=hotGoods[i].id%>"><img src="<%=hotGoods[i].goods_pic.split(',')[0]%>" alt=""></a>
 		                                </div>
 		                                <div class="rc-product-content">
-		                                    <h6><a href="/goodsDetail">Ornare sed consequat</a></h6>
-		                                    <div class="rc-product-review">
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                    </div>
+		                                    <h6><a href="/goodsDetail?id=<%=hotGoods[i].id%>"><%=hotGoods[i].goods_name%></a></h6>
 		                                    <div class="rc-product-price">
-                                                <span class="price">$66.00</span>
+                                                <a href="/goodsDetail?id=<%=hotGoods[i].id%>"><span class="">+详情</span></a>
                                             </div>
 		                                </div>
 		                            </li>
-		                            <li>
-		                                <div class="rc-product-thumb img-full">
-		                                    <a href="/goodsDetail"><img src="/layout/img/product/product12.jpg" alt=""></a>
-		                                </div>
-		                                <div class="rc-product-content">
-		                                    <h6><a href="/goodsDetail">Condimentum posuere</a></h6>
-		                                    <div class="rc-product-review">
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                    </div>
-		                                    <div class="rc-product-price">
-                                                <span class="price">$72.00</span>
-                                            </div>
-		                                </div>
-		                            </li>
-		                            <li>
-		                                <div class="rc-product-thumb img-full">
-		                                    <a href="/goodsDetail"><img src="/layout/img/product/product12.jpg" alt=""></a>
-		                                </div>
-		                                <div class="rc-product-content">
-		                                    <h6><a href="/goodsDetail">Condimentum posuere</a></h6>
-		                                    <div class="rc-product-review">
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                        <i class="fa fa-star"></i>
-		                                    </div>
-		                                    <div class="rc-product-price">
-                                                <span class="price">$72.00</span>
-                                            </div>
-		                                </div>
-		                            </li>
+                                    <% } %>
 		                        </ul>
 		                    </div>
 		                </div>
 		                <!--Recent Product Widget End-->
-		                <!--Banner Widget Start-->
-		                <div class="shop-sidebar">
-                            <div class="sidebar-banner single-banner">
-		                        <div class="banner-img">
-		                            <a href="#"><img src="/layout/img/banner/shop-sidebar.jpg" alt=""></a>
-		                        </div>
-		                    </div>
-		                </div>
-		                <!--Banner Widget End-->
-		                <!--Product Tags Widget Start-->
-		                <div class="shop-sidebar">
-		                    <h4>商品标签</h4>
-		                    <div class="product-tag">
-		                        <ul>
-		                            <li><a href="#">blouse</a></li>
-		                            <li><a href="#">clothes</a></li>
-		                            <li><a href="#">fashion</a></li>
-		                            <li><a href="#">handbag</a></li>
-		                            <li><a href="#">laptop</a></li>
-		                        </ul>
-		                    </div>
-		                </div>
-		                <!--Product Tags Widget End-->
 		            </div>
 		            <div class="col-lg-9 order-1 order-lg-2">
 		                <div class="shop-layout">
@@ -153,28 +62,21 @@
 		                    <div class="shop-topbar-wrapper d-md-flex justify-content-md-between align-items-center">
 		                        <div class="grid-list-option">
 		                             <ul class="nav">
-                                      <li>
-                                        <a class="active" data-toggle="tab" href="#grid"><i class="fa fa-th-large"></i></a>
-                                      </li>
-                                      <li>
-                                        <a data-toggle="tab" href="#list"><i class="fa fa-th-list"></i></a>
-                                      </li>
+                                         <li><a class="active" data-toggle="tab" href="#list"><i class="fa fa-th-list"></i></a></li>
+                                         <!--<li><a data-toggle="tab" href="#grid"><i class="fa fa-th-large"></i></a></li>-->
                                     </ul>
 		                         </div>
 		                         <!--Toolbar Short Area Start-->
 		                         <div class="toolbar-short-area d-md-flex align-items-center">
                                      <div class="toolbar-shorter ">
-                                        <label>Sort By:</label>
-                                         <select class="wide">
-                                             <option data-display="Select">Nothing</option>
-                                             <option value="Relevance">Relevance</option>
-                                             <option value="Name, A to Z">Name, A to Z</option>
-                                             <option value="Name, Z to A">Name, Z to A</option>
-                                             <option value="Price, low to high">Price, low to high</option>
-                                             <option value="Price, high to low">Price, high to low</option>
+                                        <label>类别选择：</label>
+                                         <select class="wide" onchange="javascript:location.href=this.value;" id="wideSelect">
+                                             <option value="/goods">全部类别</option>
+                                             <% for(let i=0,len=classify.length;i<len;i++){ %>
+                                             <option value="/goods?page=1&sid=<%=classify[i].id%>"><%=classify[i].sname%></option>
+                                             <% } %>
                                          </select>
                                      </div>
-                                     <p class="show-product">Showing 1–9 of 42 results</p>
                                  </div>
 		                         <!--Toolbar Short Area End-->
 		                    </div>
@@ -182,1126 +84,81 @@
 		                    <!--Shop Product Start-->
 		                    <div class="shop-product">
 		                        <div id="myTabContent-2" class="tab-content">
-		                            <div id="grid" class="tab-pane fade show active">
+                                    <div id="list" class="tab-pane fade show active">
+                                        <div class="product-list-view">
+                                            <% for(let i=0,len=goodsList.dataList.length;i<len;i++){ %>
+                                            <div class="product-list-item mb-40">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="single-product">
+                                                            <div class="product-img img-full">
+                                                                <a href="/goodsDetail?id=<%=goodsList.dataList[i].id%>">
+                                                                    <img src="<%=goodsList.dataList[i].goods_pic.split(',')[0]%>" alt="">
+                                                                </a>
+                                                                <% if(goodsList.dataList[i].nice){ %>
+                                                                <span class="onsale">hot</span>
+                                                                <% } %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="product-content shop-list">
+                                                            <h2><a href="/goodsDetail?id=<%=goodsList.dataList[i].id%>"><%=goodsList.dataList[i].goods_name%></a></h2>
+                                                            <div class="product-description">
+                                                                <p><%=goodsList.dataList[i].goods_point%></p>
+                                                            </div>
+                                                            <div class="product-price">
+                                                                <div class="price-box">
+                                                                    <span class="regular-price">类别：<a href="/goods?page=1&sid=<%=goodsList.dataList[i].sid%>" style="color:#a43d21;"><%=goodsList.dataList[i].sname%></a></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-list-action">
+                                                                <div class="add-btn">
+                                                                    <a href="/goodsDetail?id=<%=goodsList.dataList[i].id%>">+查看详情</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div id="info" style="display: none">当前类目下暂无数据！</div>
+		                            <div id="grid" class="tab-pane fade">
 		                                <div class="product-grid-view">
 		                                    <div class="row">
+                                                <% for(let i=0,len=goodsList.dataList.length;i<len;i++){ %>
 		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
                                                     <div class="single-product mb-25">
                                                         <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product1.jpg" alt="">
+                                                            <a href="/goodsDetail?id=<%=goodsList.dataList[i].id%>">
+                                                                <img src="<%=goodsList.dataList[i].goods_pic.split(',')[0]%>" alt="">
                                                             </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
+                                                            <% if(goodsList.dataList[i].nice){ %>
+                                                            <span class="onsale">hot</span>
+                                                            <% } %>
                                                         </div>
                                                         <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Eleifend quam</a></h2>
+                                                            <h2><a href="/goodsDetail?id=<%=goodsList.dataList[i].id%>"><%=goodsList.dataList[i].goods_name%></a></h2>
                                                             <div class="product-price">
                                                                 <div class="price-box">
-                                                                    <span class="regular-price">$115.00</span>
+                                                                    <span class="regular-price"><%=goodsList.dataList[i].sname%></span>
                                                                 </div>
                                                                 <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
+                                                                    <a href="/goodsDetail?id=<%=goodsList.dataList[i].id%>">+查看详情</a>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--Single Product End-->
 		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product2.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Aliquam lobortis</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$148.00</span>
-                                                                    <span class="regular-price">$145.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product24.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Aliquam sit amet</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$110.00</span>
-                                                                    <span class="regular-price">$90.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product23.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Aliquet auctor sem</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$80.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product22.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Aliquet auctor sem</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$115.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product1.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Eleifend quam</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$115.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product23.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Condimentum posuere</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$120.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product20.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Convallis furniture</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$75.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product19.jpg" alt="">
-                                                            </a>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Eleifend quam</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$95.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product18.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Curabitur a purus</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$82.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product17.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Diam vel neque</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$40.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product16.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Dignissim furniture</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$80.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product15.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Dignissim venenatis</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$70.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product14.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Auctor sem</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$100.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                        <div class="col-md-4">
-		                                            <!--Single Product Start-->
-                                                    <div class="single-product mb-25">
-                                                        <div class="product-img img-full">
-                                                            <a href="/goodsDetail">
-                                                                <img src="/layout/img/product/product1.jpg" alt="">
-                                                            </a>
-                                                            <span class="onsale">Sale!</span>
-                                                            <div class="product-action">
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h2><a href="/goodsDetail">Convallis quam sit</a></h2>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$130.00</span>
-                                                                </div>
-                                                                <div class="add-to-cart">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!--Single Product End-->
-		                                        </div>
-		                                    </div>
-		                                </div>
-		                            </div>
-		                            <div id="list" class="tab-pane fade">
-		                                <div class="product-list-view">
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product9.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Aliquam furniture</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$125.00</span>
-                                                                    <span class="regular-price">$115.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product14.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Aliquam sit amet</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$100.00</span>
-                                                                    <span class="regular-price">$90.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product15.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Aliquam sit amet</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$90.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product10.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Aliquet auctor sem</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$75.00</span>
-                                                                    <span class="regular-price">$50.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product16.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Auctor gravida enim</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$85.00</span>
-                                                                    <span class="regular-price">$60.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product7.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Auctor sem</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$100.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product2.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Commodo dolor</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$80.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product18.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Condimentum furniture</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$115.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product19.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Condimentum posuere</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$125.00</span>
-                                                                    <span class="regular-price">$115.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product3.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Convallis furniture</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$75.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product20.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Convallis quam sit</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$95.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product21.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Curabitur a purus</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$115.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product11.jpg" alt="">
-                                                                </a>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Diam vel neque</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="regular-price">$40.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
-		                                    </div>
-		                                    <div class="product-list-item mb-40">
-		                                        <div class="row">
-		                                            <!--Single List Product Start-->
-		                                            <div class="col-md-4">
-		                                                <div class="single-product">
-		                                                    <div class="product-img img-full">
-		                                                        <a href="/goodsDetail">
-                                                                    <img src="/layout/img/product/product23.jpg" alt="">
-                                                                </a>
-                                                                <span class="onsale">Sale!</span>
-		                                                    </div>
-		                                                </div>
-		                                            </div>
-		                                            <div class="col-md-8">
-		                                                <div class="product-content shop-list">
-		                                                    <h2><a href="/goodsDetail">Dignissim furniture</a></h2>
-		                                                    <div class="product-reviews">
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star"></i>
-                                                                <i class="fa fa-star-o"></i>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
-                                                            </div>
-                                                            <div class="product-price">
-                                                                <div class="price-box">
-                                                                    <span class="price">$175.00</span>
-                                                                    <span class="regular-price">$150.00</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-list-action">
-                                                               <div class="add-btn">
-                                                                    <a href="#">Add To Cart</a>
-                                                                </div>
-                                                                <ul>
-                                                                    <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i class="fa fa-search"></i></a></li>
-                                                                    <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
-                                                                    <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
-                                                                </ul>
-                                                            </div>
-		                                                </div>
-		                                            </div>
-		                                            <!--Single List Product End-->
-		                                        </div>
+                                                <% } %>
 		                                    </div>
 		                                </div>
 		                            </div>
 		                            <!--Pagination Start-->
 		                            <div class="product-pagination">
-		                                <ul>
-		                                    <li class="active"><a href="#">1</a></li>
-		                                    <li><a href="#">2</a></li>
-		                                    <li><a href="#">3</a></li>
-		                                    <li><a href="#">4</a></li>
-		                                    <li><a href="#">5</a></li>
-		                                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-		                                </ul>
+		                                <ul id="jqpaginatorId"></ul>
 		                            </div>
 		                            <!--Pagination End-->
 		                        </div>
@@ -1440,6 +297,52 @@
         <!-- Modal Area End -->
 	</div>
     <% include script.ejs %>
+    <script src="/layout/js/jqpaginator.min.js"></script>
+    <style>
+        .first a,.prev a,.next a,.last a{width: 64px !important;}
+        .actives a{cursor: text}
+        .actives a:hover{color: #ffffff !important;}
+    </style>
+    <script>
+        var sid='';
+        location.href.search('sid')>-1?sid=location.href.split('sid')[1].split('=')[1]:sid='';
+
+        // 分页及参数设置
+        try {
+            $('#jqpaginatorId').jqPaginator({
+                totalPages: parseInt('<%=goodsList.totalPage%>'),
+                totalCounts: parseInt('<%=goodsList.totalRows%>'),
+                visiblePages: 5,
+                currentPage: parseInt('<%=goodsList.page%>'),
+                activeClass: 'actives',
+                disableClass: 'actives',
+
+                first: '<li class="first"><a href="/goods?page=1&sid='+sid+'">首页</a></li>',
+                prev: '<li class="prev""><a href="/goods?page={{page}}&sid='+sid+'">上一页</a></li>',
+                next: '<li class="next"><a href="/goods?page={{page}}&sid='+sid+'">下一页</a></li>',
+                last: '<li class="last"><a href="/goods?page={{totalPages}}&sid='+sid+'">尾页</a></li>',
+                page: '<li class="page"><a href="/goods?page={{page}}&sid='+sid+'">{{page}}</a></li>',
+                onPageChange: function (num) {
+                    // $('#text').html('当前第' + num + '页');
+                    $('.actives a').removeAttr('href');
+                }
+            });
+        }catch (e) {
+            $('#info').css({'display':'block'})
+        }
+        // 类别默认选中设置
+        if(sid){
+            var item=$('.list li[data-value="/goods?page=1&sid='+sid+'"]');
+            $('#wideSelect option[value="/goods?page=1&sid='+sid+'"]').attr('selected',true);
+            item.addClass('selected').siblings('li').removeClass('selected');
+            $('.nice-select .current').text(item.text());
+        }else{
+            var itemIndex=$('.list li[data-value="/goods"]');
+            $('#wideSelect option[value="/goods"]').attr('selected',true);
+            itemIndex.addClass('selected').siblings('li').removeClass('selected');
+            $('.nice-select .current').text(itemIndex.text());
+        }
+    </script>
 </body>
 </html>
 

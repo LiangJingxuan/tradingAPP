@@ -199,14 +199,13 @@
 		        <div class="row">
 		            <div class="product-slider-active">
 						<% for(let i=0,len=heatGoods.length;i<len;i++){ %>
-						<% let pics = heatGoods[i].goods_pic.split(',') %>
 						<div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
 							<!--Single Product Start-->
 							<div class="single-product mb-25">
 								<div class="product-img img-full">
 									<a href="single-product.ejs">
 										<!--<img src="/layout/img/product/product1.jpg" alt="">-->
-										<img src="<%=pics[0]%>" alt="热门商品">
+										<img src="<%=heatGoods[i].goods_pic.split(',')[0]%>" alt="热门商品">
 									</a>
 									<span class="onsale">Sale!</span>
 									<div class="product-action">
@@ -326,13 +325,12 @@
 		        <div class="row">
                     <div class="blog-slider-active">
 						<% for(let i=0,len=heatCase.length;i<len;i++){ %>
-						<% let casePics = heatGoods[i].goods_pic.split(',') %>
                         <div class="col-md-4">
                             <!--Single Blog Start-->
                             <div class="single-blog">
                                 <div class="blog-img img-full">
                                     <a href="#">
-                                        <img src="<%=casePics[0]%>" alt="">
+                                        <img src="<%=heatCase[i].goods_pic.split(',')[0]%>" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-content">
