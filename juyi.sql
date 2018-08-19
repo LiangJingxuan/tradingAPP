@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-07-24 09:38:43
+Date: 2018-08-19 10:42:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -96,7 +96,7 @@ CREATE TABLE `customer` (
   `reply` tinyint(1) unsigned NOT NULL COMMENT '联系状态',
   `time` int(10) unsigned NOT NULL COMMENT '添加用户时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer
@@ -106,6 +106,29 @@ INSERT INTO `customer` VALUES ('2', '岳绮罗', '1403190714@qq.com', '187421796
 INSERT INTO `customer` VALUES ('3', '月牙', 'liang4122@127.com', '13341752809', '保护家园，保护野生动物，热爱自然', '0', '1530498355');
 INSERT INTO `customer` VALUES ('4', '顾玄武', 'gudaren8888@163.com', '18122447875', '保护自然热爱世界，热爱动物', '0', '1530498457');
 INSERT INTO `customer` VALUES ('5', '张显宗', 'qiluo5201314@163.com', '15126472819', '保护世界保护大自然保护地球', '0', '1530498579');
+INSERT INTO `customer` VALUES ('6', '', '', '15566374567', '', '0', '1534296411');
+INSERT INTO `customer` VALUES ('7', '', '', '17752584521', '', '0', '1534297079');
+INSERT INTO `customer` VALUES ('8', '', '', '15151515515', '', '0', '1534297101');
+INSERT INTO `customer` VALUES ('9', '', '', '15100284122', '', '0', '1534297130');
+INSERT INTO `customer` VALUES ('10', '', '', '15100287412', '', '0', '1534300363');
+INSERT INTO `customer` VALUES ('11', '', '', '', '', '0', '1534470808');
+INSERT INTO `customer` VALUES ('12', '梁景', 'xuan03121994@163.com', '15100284122', '', '0', '1534471081');
+INSERT INTO `customer` VALUES ('13', '梁景', '1403190714@qq.com', '15100284122', '测试1234', '0', '1534471131');
+INSERT INTO `customer` VALUES ('14', '梁', 'xuan03121', '15100285412', '测试测试1122', '0', '1534499422');
+INSERT INTO `customer` VALUES ('15', '测试', '测试', '测试', '1234565', '0', '1534499514');
+INSERT INTO `customer` VALUES ('16', '', '', '15100284122', '', '0', '1534554457');
+INSERT INTO `customer` VALUES ('17', '', '', '15100284122', '', '0', '1534555007');
+INSERT INTO `customer` VALUES ('18', '', '', '15100284122', '', '0', '1534555154');
+INSERT INTO `customer` VALUES ('19', '', '', '15100284122', '', '0', '1534555363');
+INSERT INTO `customer` VALUES ('20', '', '', '15100', '', '0', '1534555450');
+INSERT INTO `customer` VALUES ('21', '', '', '15100', '', '0', '1534555519');
+INSERT INTO `customer` VALUES ('22', '', '', '1510028', '', '0', '1534555540');
+INSERT INTO `customer` VALUES ('23', '', '', '1515151515', '', '0', '1534555777');
+INSERT INTO `customer` VALUES ('24', '', '', '151515', '', '0', '1534555812');
+INSERT INTO `customer` VALUES ('25', '', '', '151500', '', '0', '1534555841');
+INSERT INTO `customer` VALUES ('26', '', '', '15151', '', '0', '1534555935');
+INSERT INTO `customer` VALUES ('27', '', '', '15151515', '', '0', '1534556001');
+INSERT INTO `customer` VALUES ('28', '', '', '151515', '', '0', '1534556306');
 
 -- ----------------------------
 -- Table structure for goods
@@ -123,11 +146,19 @@ CREATE TABLE `goods` (
   `goods_time` int(10) unsigned NOT NULL COMMENT '商品添加时间',
   `i` tinyint(1) unsigned NOT NULL COMMENT '商品类型',
   PRIMARY KEY (`id`,`goods_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
+INSERT INTO `goods` VALUES ('1', '空调大2P', '【咨询客服更优惠】空调大2P 智能除湿 静音 定频冷暖 KFR-51LW/DY-YA400(D3)', '/uploads/upload_3aa9a3712240d7924375cbf598ca9f73.jpg,/uploads/upload_690dd698034a966ccb14aaa6a9fbefd5.jpg,/uploads/upload_fce4aa48b72aee7640a5ad4d845f44ec.jpg', '<p>【咨询客服更优惠】空调大2P 智能除湿 静音 定频冷暖 KFR-51LW/DY-YA400(D3)</p>\r\n', '1', '1', '6', '1534230487', '0');
+INSERT INTO `goods` VALUES ('2', '电热水器', '【双重抑菌】电热水器 60升预约定时 F6021-X1(S)', '/uploads/upload_60b4dd254826414881bda6eefc05b899.jpg,/uploads/upload_23817f7b0874cf000f5f25d6916b25fd.jpg,/uploads/upload_311814e091d1c09c6ed98b887902922e.jpg,/uploads/upload_8b4ff03a3729c457101cde4fb0188b83.jpg', '<p>【双重抑菌】电热水器 60升预约定时 F6021-X1(S)</p>\r\n', '1', '1', '7', '1534230682', '0');
+INSERT INTO `goods` VALUES ('3', '移动空调单冷家用一体机', '美的 移动空调单冷家用一体机1匹免安装免排水 KY-25/N1Y-PH', '/uploads/upload_de22d0437dc5be6da9f86de86da94979.jpg,/uploads/upload_e19a1cd663e7531b546683f4fddaf1b0.jpg,/uploads/upload_3dbc9a13a53fb776fdeb0281fe6c993b.jpg', '<p>美的 移动空调单冷家用一体机1匹免安装免排水 KY-25/N1Y-PH</p>\r\n', '1', '1', '7', '1534232283', '0');
+INSERT INTO `goods` VALUES ('4', '智能冷暖壁挂式', '空调大1.5匹定速挂机 智能冷暖壁挂式 KFR-35GW/WDAD3@', '/uploads/upload_c529d4bc2701e9b624b8b36c4856c814.jpg,/uploads/upload_a494b68f307e405fca225b13240a62de.jpg', '<p>空调大1.5匹定速挂机 智能冷暖壁挂式 KFR-35GW/WDAD3@</p>\r\n', '1', '1', '6', '1534232456', '0');
+INSERT INTO `goods` VALUES ('5', '测试案例1', '', '/uploads/upload_22577b138c3a3f594da2a9e8b714b8f7.jpg,/uploads/upload_9fe0786559dc51071ef1ccafe5c9d296.jpg', '', '1', '0', '9', '1534235732', '1');
+INSERT INTO `goods` VALUES ('6', '测试案例2', '', '/uploads/upload_0beb49abd99115bf1a31dfdf28193823.jpg', '', '1', '0', '9', '1534235756', '1');
+INSERT INTO `goods` VALUES ('7', '测试案例3', '', '/uploads/upload_665d5a966e01fc95f599ec863302eda9.jpg,/uploads/upload_397ddb13077ebab02e6d8cde81ff56ed.jpg', '', '1', '0', '9', '1534235774', '1');
+INSERT INTO `goods` VALUES ('8', '测试案例4', '', '/uploads/upload_73b0e44d6c6dc53ac186aae373d74b6a.jpg,/uploads/upload_daf816e5a558512063931881e5fe85e6.jpg', '', '1', '0', '9', '1534235818', '1');
 
 -- ----------------------------
 -- Table structure for news
@@ -142,7 +173,7 @@ CREATE TABLE `news` (
   `state` tinyint(1) unsigned NOT NULL COMMENT '发布状态',
   `uid` int(10) unsigned NOT NULL COMMENT '用户id',
   PRIMARY KEY (`id`,`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news
@@ -152,8 +183,8 @@ INSERT INTO `news` VALUES ('25', '保护野生动物，热爱世界', '153146670
 INSERT INTO `news` VALUES ('26', '热爱大自然，保护野生动物', '1531147200', '<p>121212</p>\n', '2', '1', '36');
 INSERT INTO `news` VALUES ('27', '热爱世界，热爱野生动物', '1531147500', '<p>说说</p>\n', '2', '1', '36');
 INSERT INTO `news` VALUES ('28', '守护野生动物，守护大自然', '1531147800', '<p>说说</p>\n', '1', '1', '36');
-INSERT INTO `news` VALUES ('29', '中储粮集团：4月以来未购美国大豆 南美大豆占比已超美国', '1532070300', '<p>近期，中储粮集团公司紧密跟踪中美贸易摩擦相关情况，坚决执行国家对外贸易政策。自今年4月以来，中储粮未再新采购美国大豆，转而全部采购以巴西、阿根廷、乌拉圭为主的南美大豆。</p>\n\n<p>　　本报北京7月10日电 （记者杜海涛）&ldquo;近两年，我们已经主动调整进口来源地，降低集中度过高带来的风险，并已形成稳定成熟的多元化国际贸易渠道。&rdquo;中储粮集团公司相关负责人介绍，从中储粮集团油脂公司的情况看，2017年进口的大豆26.2%来自巴西，43.2%来自阿根廷、乌拉圭，30.6%来自美国。在大豆进口贸易实际操作中，采购方拥有货源地选择权，更倾向于选择贸易关系良好、有稳定政策预期、进口税率更低的大豆主产国。</p>\n\n<p>　　这位负责人表示，近期，中储粮集团公司紧密跟踪中美贸易摩擦相关情况，坚决执行国家对外贸易政策。自今年4月以来，中储粮未再新采购美国大豆，转而全部采购以巴西、阿根廷、乌拉圭为主的南美大豆。</p>\n\n<p>　　根据中国海关统计，我国大豆进口来源呈现多元化趋势，南美大豆供给占比超过美国。2016&mdash;2017年度，我国大豆进口量9349万吨，其中巴西4534万吨，占48.5%，较三年前增加1.7个百分点；美国3684万吨，占39.4%，较三年前下降1个百分点。以南美为主的非美大豆进口已经占到我国大豆进口量的六成以上，且呈稳定增长趋势。未来，南美将越来越成为我国进口大豆供应的主力地区。</p>\n\n<p>　　中储粮集团公司相关负责人表示，当前我国油脂油料储备体系完善，储备资源充足，加工和流通配套能力良好，能够随时响应保证供应、稳定市场的调控指令，储备资源充足，流通能力良好。</p>\n\n<p>　　&ldquo;中储粮集团在布局油脂油料储备时，遵循市场流通的规律，将储备库与加工厂一体布局，形成油脂油料储备和加工基地，使储备轮出到加工的链条缩短、效率提高。目前，中储粮年油脂压榨能力达到650万吨，成为参与市场供应的重要主体。由于与储备结合，在原料供应更有保障的同时，储备投放市场更加高效，维护市场稳定的能力更强。&rdquo;这位负责人说。</p>\n', '2', '1', '36');
-INSERT INTO `news` VALUES ('30', '大自然保护协会', '1531293512', '<p><a href=\"https://www.baidu.com/s?wd=%E5%A4%A7%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8D%8F%E4%BC%9A&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">大自然保护协会</a>The Nature Conservancy (TNC) 是从事生态环境保护的国际民间组织，成立于1951年，总部设在<a href=\"https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%8D%8E%E7%9B%9B%E9%A1%BF&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">美国华盛顿</a>。协会的使命是：通过保护代表地球<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>的动物、植物和自然群落赖以生存的陆地和水域，来实现对这些动物、植物和自然群落的保护。 由于坚持采取合作而非对抗性的策略，以及用科学的原理和方法来指导保护行动，经过50余年的不懈努力，协会已跻身美国十大慈善机构行列，位居全球生态环境保护非营利民间组织前茅。目前仅美国本土而言，协会拥有1600多个自然保护区，总面积达1400万英亩，遍布50个州。并与合作伙伴一起在<a href=\"https://www.baidu.com/s?wd=%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">拉丁美洲</a>、<a href=\"https://www.baidu.com/s?wd=%E5%8A%A0%E5%8B%92%E6%AF%94%E6%B5%B7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">加勒比海</a>，以及亚太等30个国家管护着超过1.02x108英亩的<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>热点地区。协会在全球设有400个办公室，员工人数达3800名，拥有会员上百万，约20000名志愿者参与服务。 1997年，协会开始进入中国。经前期全面考察，并在科学论证的基础上，最终将云南滇西北选定为协会在中国的<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>保护的首要 实施地。在与<a href=\"https://www.baidu.com/s?wd=%E4%BA%91%E5%8D%97%E7%9C%81%E6%94%BF%E5%BA%9C&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">云南省政府</a>合作编制了&ldquo;滇西北保护与发展行动计划&rdquo;之后，协会在滇西北的老君山、拉市海、<a href=\"https://www.baidu.com/s?wd=%E6%A2%85%E9%87%8C%E9%9B%AA%E5%B1%B1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">梅里雪山</a>、<a href=\"https://www.baidu.com/s?wd=%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">香格里拉</a>和<a href=\"https://www.baidu.com/s?wd=%E9%AB%98%E9%BB%8E%E8%B4%A1%E5%B1%B1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">高黎贡山</a>北段开展并实施了一些具体的保护项目。北京办公室的设立，标志着协会在中国更大范围内开展生物多样性保护工作。 经过短短几年的努力，<a href=\"https://www.baidu.com/s?wd=%E5%A4%A7%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8D%8F%E4%BC%9A&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">大自然保护协会</a>在中国逐渐成长壮大，成为民间生态环境保护队伍中的重要力量，为生态环境保护事业做出了贡献。</p>\n', '2', '1', '37');
+INSERT INTO `news` VALUES ('29', '中储粮集团：4月以来未购美国大豆 南美大豆占比已超美国', '1532070300', '<p>近期，中储粮集团公司紧密跟踪中美贸易摩擦相关情况，坚决执行国家对外贸易政策。自今年4月以来，中储粮未再新采购美国大豆，转而全部采购以巴西、阿根廷、乌拉圭为主的南美大豆。</p>\n\n<p>　　本报北京7月10日电 （记者杜海涛）&ldquo;近两年，我们已经主动调整进口来源地，降低集中度过高带来的风险，并已形成稳定成熟的多元化国际贸易渠道。&rdquo;中储粮集团公司相关负责人介绍，从中储粮集团油脂公司的情况看，2017年进口的大豆26.2%来自巴西，43.2%来自阿根廷、乌拉圭，30.6%来自美国。在大豆进口贸易实际操作中，采购方拥有货源地选择权，更倾向于选择贸易关系良好、有稳定政策预期、进口税率更低的大豆主产国。</p>\n\n<p>　　这位负责人表示，近期，中储粮集团公司紧密跟踪中美贸易摩擦相关情况，坚决执行国家对外贸易政策。自今年4月以来，中储粮未再新采购美国大豆，转而全部采购以巴西、阿根廷、乌拉圭为主的南美大豆。</p>\n\n<p>　　根据中国海关统计，我国大豆进口来源呈现多元化趋势，南美大豆供给占比超过美国。2016&mdash;2017年度，我国大豆进口量9349万吨，其中巴西4534万吨，占48.5%，较三年前增加1.7个百分点；美国3684万吨，占39.4%，较三年前下降1个百分点。以南美为主的非美大豆进口已经占到我国大豆进口量的六成以上，且呈稳定增长趋势。未来，南美将越来越成为我国进口大豆供应的主力地区。</p>\n\n<p>　　中储粮集团公司相关负责人表示，当前我国油脂油料储备体系完善，储备资源充足，加工和流通配套能力良好，能够随时响应保证供应、稳定市场的调控指令，储备资源充足，流通能力良好。</p>\n\n<p>　　&ldquo;中储粮集团在布局油脂油料储备时，遵循市场流通的规律，将储备库与加工厂一体布局，形成油脂油料储备和加工基地，使储备轮出到加工的链条缩短、效率提高。目前，中储粮年油脂压榨能力达到650万吨，成为参与市场供应的重要主体。由于与储备结合，在原料供应更有保障的同时，储备投放市场更加高效，维护市场稳定的能力更强。&rdquo;这位负责人说。</p>\n', '3', '1', '36');
+INSERT INTO `news` VALUES ('30', '大自然保护协会', '1531293512', '<p><a href=\"https://www.baidu.com/s?wd=%E5%A4%A7%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8D%8F%E4%BC%9A&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">大自然保护协会</a>The Nature Conservancy (TNC) 是从事生态环境保护的国际民间组织，成立于1951年，总部设在<a href=\"https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%8D%8E%E7%9B%9B%E9%A1%BF&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">美国华盛顿</a>。协会的使命是：通过保护代表地球<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>的动物、植物和自然群落赖以生存的陆地和水域，来实现对这些动物、植物和自然群落的保护。 由于坚持采取合作而非对抗性的策略，以及用科学的原理和方法来指导保护行动，经过50余年的不懈努力，协会已跻身美国十大慈善机构行列，位居全球生态环境保护非营利民间组织前茅。目前仅美国本土而言，协会拥有1600多个自然保护区，总面积达1400万英亩，遍布50个州。并与合作伙伴一起在<a href=\"https://www.baidu.com/s?wd=%E6%8B%89%E4%B8%81%E7%BE%8E%E6%B4%B2&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">拉丁美洲</a>、<a href=\"https://www.baidu.com/s?wd=%E5%8A%A0%E5%8B%92%E6%AF%94%E6%B5%B7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">加勒比海</a>，以及亚太等30个国家管护着超过1.02x108英亩的<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>热点地区。协会在全球设有400个办公室，员工人数达3800名，拥有会员上百万，约20000名志愿者参与服务。 1997年，协会开始进入中国。经前期全面考察，并在科学论证的基础上，最终将云南滇西北选定为协会在中国的<a href=\"https://www.baidu.com/s?wd=%E7%94%9F%E7%89%A9%E5%A4%9A%E6%A0%B7%E6%80%A7&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">生物多样性</a>保护的首要 实施地。在与<a href=\"https://www.baidu.com/s?wd=%E4%BA%91%E5%8D%97%E7%9C%81%E6%94%BF%E5%BA%9C&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">云南省政府</a>合作编制了&ldquo;滇西北保护与发展行动计划&rdquo;之后，协会在滇西北的老君山、拉市海、<a href=\"https://www.baidu.com/s?wd=%E6%A2%85%E9%87%8C%E9%9B%AA%E5%B1%B1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">梅里雪山</a>、<a href=\"https://www.baidu.com/s?wd=%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">香格里拉</a>和<a href=\"https://www.baidu.com/s?wd=%E9%AB%98%E9%BB%8E%E8%B4%A1%E5%B1%B1&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">高黎贡山</a>北段开展并实施了一些具体的保护项目。北京办公室的设立，标志着协会在中国更大范围内开展生物多样性保护工作。 经过短短几年的努力，<a href=\"https://www.baidu.com/s?wd=%E5%A4%A7%E8%87%AA%E7%84%B6%E4%BF%9D%E6%8A%A4%E5%8D%8F%E4%BC%9A&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao\" target=\"_blank\">大自然保护协会</a>在中国逐渐成长壮大，成为民间生态环境保护队伍中的重要力量，为生态环境保护事业做出了贡献。</p>\n', '3', '1', '37');
 
 -- ----------------------------
 -- Table structure for subcategory
