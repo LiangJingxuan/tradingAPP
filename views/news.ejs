@@ -34,6 +34,7 @@
                             </article>
                             <% } %>
                         </div>
+                        <div id="info" style="display: none">当前类目下暂无数据！</div>
                         <div class="row">
                             <div class="col-12">
                                 <!--Pagination Start-->
@@ -224,24 +225,28 @@
     <script>
         var sid='';
         location.href.search('sid')>-1?sid=location.href.split('sid')[1].split('=')[1]:sid='';
-        $('#jqpaginatorId').jqPaginator({
-            totalPages: parseInt('<%=newsList.totalPage%>'),
-            totalCounts: parseInt('<%=newsList.totalRows%>'),
-            visiblePages: 5,
-            currentPage: parseInt('<%=newsList.page%>'),
-            activeClass: 'active',
-            disableClass: 'active',
+        try {
+            $('#jqpaginatorId').jqPaginator({
+                totalPages: parseInt('<%=newsList.totalPage%>'),
+                totalCounts: parseInt('<%=newsList.totalRows%>'),
+                visiblePages: 5,
+                currentPage: parseInt('<%=newsList.page%>'),
+                activeClass: 'active',
+                disableClass: 'active',
 
-            first: '<li class="first"><a href="/news?page=1&sid='+sid+'">首页</a></li>',
-            prev: '<li class="prev""><a href="/news?page={{page}}&sid='+sid+'">上一页</a></li>',
-            next: '<li class="next"><a href="/news?page={{page}}&sid='+sid+'">下一页</a></li>',
-            last: '<li class="last"><a href="/news?page={{totalPages}}&sid='+sid+'">尾页</a></li>',
-            page: '<li class="page"><a href="/news?page={{page}}&sid='+sid+'">{{page}}</a></li>',
-            onPageChange: function (num) {
-                // $('#text').html('当前第' + num + '页');
-                $('.active a').removeAttr('href');
-            }
-        });
+                first: '<li class="first"><a href="/news?page=1&sid='+sid+'">首页</a></li>',
+                prev: '<li class="prev""><a href="/news?page={{page}}&sid='+sid+'">上一页</a></li>',
+                next: '<li class="next"><a href="/news?page={{page}}&sid='+sid+'">下一页</a></li>',
+                last: '<li class="last"><a href="/news?page={{totalPages}}&sid='+sid+'">尾页</a></li>',
+                page: '<li class="page"><a href="/news?page={{page}}&sid='+sid+'">{{page}}</a></li>',
+                onPageChange: function (num) {
+                    // $('#text').html('当前第' + num + '页');
+                    $('.active a').removeAttr('href');
+                }
+            });
+        }catch (e) {
+            $('#info').css({'display':'block'})
+        }
     </script>
 </body>
 </html>
