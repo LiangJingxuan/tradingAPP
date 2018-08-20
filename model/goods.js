@@ -54,7 +54,7 @@ module.exports={
 
     // 查询商品详情
     goodsOnly(id){
-        return sql.query(`SELECT id,goods_name,goods_point,goods_pic,goods_summary,state,nice,sid FROM goods WHERE id=${id};`);
+        return sql.query(`SELECT goods.id,goods_name,goods_point,goods_pic,goods_summary,state,nice,sid,sname FROM goods LEFT JOIN subcategory ON sid=subcategory.id WHERE goods.id=${id};`);
     },
 
     // 修改商品
