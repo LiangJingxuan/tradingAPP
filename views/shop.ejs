@@ -22,7 +22,7 @@
                         <div class="shop-sidebar"></div>
 		                <!--Recent Product Widget Start-->
 		                <div class="shop-sidebar">
-		                    <h4>热门商品</h4>
+		                    <h4>热门推荐</h4>
 		                    <div class="rc-product">
 		                        <ul>
                                     <% for(let i=0,len=hotGoods.length;i<len;i++){ %>
@@ -71,9 +71,16 @@
                                      <div class="toolbar-shorter ">
                                         <label>类别选择：</label>
                                          <select class="wide" onchange="javascript:location.href=this.value;" id="wideSelect">
-                                             <option value="/goods">全部类别</option>
-                                             <% for(let i=0,len=classify.length;i<len;i++){ %>
-                                             <option value="/goods?page=1&sid=<%=classify[i].id%>"><%=classify[i].sname%></option>
+                                             <% if(signId==='shop'){ %>
+                                                 <option value="/goods">全部类别</option>
+                                                 <% for(let i=0,len=classify.length;i<len;i++){ %>
+                                                 <option value="/goods?page=1&sid=<%=classify[i].id%>"><%=classify[i].sname%></option>
+                                                 <% } %>
+                                             <% }else {%>
+                                                 <option value="/product">全部类别</option>
+                                                 <% for(let i=0,len=classify.length;i<len;i++){ %>
+                                                 <option value="/product?page=1&sid=<%=classify[i].id%>"><%=classify[i].sname%></option>
+                                                 <% } %>
                                              <% } %>
                                          </select>
                                      </div>
@@ -109,7 +116,13 @@
                                                             </div>
                                                             <div class="product-price">
                                                                 <div class="price-box">
-                                                                    <span class="regular-price">类别：<a href="/goods?page=1&sid=<%=goodsList.dataList[i].sid%>" style="color:#a43d21;"><%=goodsList.dataList[i].sname%></a></span>
+                                                                    <span class="regular-price">类别：
+                                                                        <% if(signId==='shop'){ %>
+                                                                            <a href="/goods?page=1&sid=<%=goodsList.dataList[i].sid%>" style="color:#a43d21;"><%=goodsList.dataList[i].sname%></a>
+                                                                        <% }else { %>
+                                                                            <a href="/product?page=1&sid=<%=goodsList.dataList[i].sid%>" style="color:#a43d21;"><%=goodsList.dataList[i].sname%></a>
+                                                                        <% } %>
+                                                                    </span>
                                                                 </div>
                                                             </div>
                                                             <div class="product-list-action">
@@ -304,8 +317,11 @@
         .actives a:hover{color: #ffffff !important;}
     </style>
     <script>
-        var sid='';
+        var signId='<%=signId%>', sid='', hrefId='';
         location.href.search('sid')>-1?sid=location.href.split('sid')[1].split('=')[1]:sid='';
+
+        // 设置跳转地址
+        signId==='goods'?hrefId='/goods':hrefId='/product';
 
         // 分页及参数设置
         try {
@@ -317,11 +333,11 @@
                 activeClass: 'actives',
                 disableClass: 'actives',
 
-                first: '<li class="first"><a href="/goods?page=1&sid='+sid+'">首页</a></li>',
-                prev: '<li class="prev""><a href="/goods?page={{page}}&sid='+sid+'">上一页</a></li>',
-                next: '<li class="next"><a href="/goods?page={{page}}&sid='+sid+'">下一页</a></li>',
-                last: '<li class="last"><a href="/goods?page={{totalPages}}&sid='+sid+'">尾页</a></li>',
-                page: '<li class="page"><a href="/goods?page={{page}}&sid='+sid+'">{{page}}</a></li>',
+                first: '<li class="first"><a href='+hrefId+'"?page=1&sid='+sid+'">首页</a></li>',
+                prev: '<li class="prev""><a href='+hrefId+'"?page={{page}}&sid='+sid+'">上一页</a></li>',
+                next: '<li class="next"><a href='+hrefId+'"?page={{page}}&sid='+sid+'">下一页</a></li>',
+                last: '<li class="last"><a href='+hrefId+'"?page={{totalPages}}&sid='+sid+'">尾页</a></li>',
+                page: '<li class="page"><a href='+hrefId+'"?page={{page}}&sid='+sid+'">{{page}}</a></li>',
                 onPageChange: function (num) {
                     // $('#text').html('当前第' + num + '页');
                     $('.actives a').removeAttr('href');
@@ -332,13 +348,13 @@
         }
         // 类别默认选中设置
         if(sid){
-            var item=$('.list li[data-value="/goods?page=1&sid='+sid+'"]');
-            $('#wideSelect option[value="/goods?page=1&sid='+sid+'"]').attr('selected',true);
+            var item=$('.list li[data-value="'+hrefId+'""?page=1&sid='+sid+'"]');
+            $('#wideSelect option[value="'+hrefId+'""?page=1&sid='+sid+'"]').attr('selected',true);
             item.addClass('selected').siblings('li').removeClass('selected');
             $('.nice-select .current').text(item.text());
         }else{
-            var itemIndex=$('.list li[data-value="/goods"]');
-            $('#wideSelect option[value="/goods"]').attr('selected',true);
+            var itemIndex=$('.list li[data-value="'+hrefId+'"]');
+            $('#wideSelect option[value="'+hrefId+'"]').attr('selected',true);
             itemIndex.addClass('selected').siblings('li').removeClass('selected');
             $('.nice-select .current').text(itemIndex.text());
         }

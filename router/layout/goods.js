@@ -27,6 +27,7 @@ router
 
         // 输出模板
         await ctx.render('shop',{
+            signId: 'goods', // 商品及案例区别标志
             classify, // 商品类别数据
             hotGoods, // 热门产品数据
             goodsList: info.paging(dataList,page,totalPage,totalRows) // 商品列表
