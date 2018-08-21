@@ -52,8 +52,12 @@
                                 </div>
                                 <div class="breadcrumb-content">
                                     <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li class="active">Shop</li>
+                                        <li><a href="/">主页</a></li>
+                                        <% if(signId==='goods'){ %>
+                                        <li class="active">商品</li>
+                                        <% }else{ %>
+                                        <li class="active">案例</li>
+                                        <% } %>
                                     </ul>
                                 </div>
                             </div>
@@ -71,7 +75,7 @@
                                      <div class="toolbar-shorter ">
                                         <label>类别选择：</label>
                                          <select class="wide" onchange="javascript:location.href=this.value;" id="wideSelect">
-                                             <% if(signId==='shop'){ %>
+                                             <% if(signId==='goods'){ %>
                                                  <option value="/goods">全部类别</option>
                                                  <% for(let i=0,len=classify.length;i<len;i++){ %>
                                                  <option value="/goods?page=1&sid=<%=classify[i].id%>"><%=classify[i].sname%></option>
@@ -323,6 +327,8 @@
         // 设置跳转地址
         signId==='goods'?hrefId='/goods':hrefId='/product';
 
+        console.log(hrefId)
+
         // 分页及参数设置
         try {
             $('#jqpaginatorId').jqPaginator({
@@ -348,8 +354,8 @@
         }
         // 类别默认选中设置
         if(sid){
-            var item=$('.list li[data-value="'+hrefId+'""?page=1&sid='+sid+'"]');
-            $('#wideSelect option[value="'+hrefId+'""?page=1&sid='+sid+'"]').attr('selected',true);
+            var item=$('.list li[data-value="'+hrefId+'?page=1&sid='+sid+'"]');
+            $('#wideSelect option[value="'+hrefId+'?page=1&sid='+sid+'"]').attr('selected',true);
             item.addClass('selected').siblings('li').removeClass('selected');
             $('.nice-select .current').text(item.text());
         }else{
