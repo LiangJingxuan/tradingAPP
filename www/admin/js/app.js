@@ -140,5 +140,15 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
                 }
             }
         })
+        // 网站编辑
+        .state('website',{
+            url:'/websiteEdit',
+            views:{
+                'view':{
+                    controller:'websiteCtrl',
+                    templateUrl:'tpl/website/websiteEdit.html'
+                }
+            }
+        })
 
 }]);

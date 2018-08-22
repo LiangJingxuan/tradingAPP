@@ -31,8 +31,8 @@ angular.module('app')
                 success:function(data){
                     G.expire(data);
                     $scope.ADDGOODSIF = false;
-                    $('.alerts .modal-body').text(data.msg);
-                    $('.alerts').modal('show');
+                    $('#alerts .modal-body').text(data.msg);
+                    $('#alerts').modal('show');
                     if(data.i){
                         $scope.Tip = function(){
                             // 跳转到列表

@@ -67,8 +67,8 @@ angular.module('app')
                         G.expire(data);
                         // 提交删除
                         $('.confirms').modal('hide');
-                        $('.alerts .modal-body').text(data.msg);
-                        $('.alerts').modal('show');
+                        $('#alerts .modal-body').text(data.msg);
+                        $('#alerts').modal('show');
                         if(data.i){
                             $scope.Tip = function(){
                                 // 更新数据

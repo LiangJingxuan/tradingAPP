@@ -4,9 +4,6 @@
 	<% include meta.ejs %>
 </head>
 <body>
-	<!--[if lt IE 8]>
-	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
 	<div class="wrapper">
 		<% include header.ejs %>
 		<!--Slider Area Start-->
@@ -132,7 +129,7 @@
 		        <div class="row">
 		            <div class="cat-1 col-md-4">
 		                <div class="categories-img img-full mb-30">
-		                    <a href="#"><img src="/layout/img/category/home1-category-1.jpg" alt=""></a>
+		                    <a href="/goods?page=1&sid=<%=classify[0].id%>"><img src="/layout/img/category/home1-category-1.jpg" alt=""></a>
 		                    <div class="categories-content">
 		                        <h3><%=classify[0].sname%></h3>
 		                        <h4>more+</h4>
@@ -143,7 +140,7 @@
 		                <div class="row">
 		                    <div class="cat-3 col-md-7">
                                 <div class="categories-img img-full mb-30">
-                                    <a href="#"><img src="/layout/img/category/home1-category-2.jpg" alt=""></a>
+                                    <a href="/goods?page=1&sid=<%=classify[1].id%>"><img src="/layout/img/category/home1-category-2.jpg" alt=""></a>
                                     <div class="categories-content">
                                         <h3><%=classify[1].sname%></h3>
                                         <h4>more+</h4>
@@ -152,7 +149,7 @@
 		                    </div>
 		                    <div class="cat-4 col-md-5">
                                 <div class="categories-img img-full mb-30">
-                                    <a href="#"><img src="/layout/img/category/home1-category-3.jpg" alt=""></a>
+                                    <a href="/goods?page=1&sid=<%=classify[2].id%>"><img src="/layout/img/category/home1-category-3.jpg" alt=""></a>
                                     <div class="categories-content">
                                         <h3><%=classify[2].sname%></h3>
                                         <h4>more+</h4>
@@ -161,7 +158,7 @@
 		                    </div>
 		                    <div class="cat-5 col-md-4">
                                 <div class="categories-img img-full mb-30">
-                                    <a href="#"><img src="/layout/img/category/home1-category-4.jpg" alt=""></a>
+                                    <a href="/goods?page=1&sid=<%=classify[3].id%>"><img src="/layout/img/category/home1-category-4.jpg" alt=""></a>
                                     <div class="categories-content">
                                         <h3><%=classify[3].sname%></h3>
                                         <h4>more+</h4>
@@ -170,7 +167,7 @@
 		                    </div>
 		                    <div class="cat-6 col-md-8">
                                 <div class="categories-img img-full mb-30">
-                                    <a href="#"><img src="/layout/img/category/home1-category-5.jpg" alt=""></a>
+                                    <a href="/goods?page=1&sid=<%=classify[4].id%>"><img src="/layout/img/category/home1-category-5.jpg" alt=""></a>
                                     <div class="categories-content">
                                         <h3><%=classify[4].sname%></h3>
                                         <h4>more+</h4>
@@ -203,7 +200,7 @@
 							<!--Single Product Start-->
 							<div class="single-product mb-25">
 								<div class="product-img img-full">
-									<a href="single-product.ejs">
+									<a href="/goodsDetail?id=<%=heatGoods[i].id%>">
 										<!--<img src="/layout/img/product/product1.jpg" alt="">-->
 										<img src="<%=heatGoods[i].goods_pic.split(',')[0]%>" alt="热门商品">
 									</a>
@@ -217,13 +214,13 @@
 									</div>
 								</div>
 								<div class="product-content">
-									<h2><a href="single-product.ejs"><%=heatGoods[i].goods_name%></a></h2>
+									<h2><a href="/goodsDetail?id=<%=heatGoods[i].id%>"><%=heatGoods[i].goods_name%></a></h2>
 									<div class="product-price">
 										<div class="price-box">
 											<span class="regular-price">hot goods</span>
 										</div>
 										<div class="add-to-cart">
-											<a href="#">查看详情+</a>
+											<a href="/goodsDetail?id=<%=heatGoods[i].id%>">查看详情+</a>
 										</div>
 									</div>
 								</div>
@@ -296,9 +293,9 @@
 		                <!--Single Testimonial Start-->
 		                <div class="single-testimonial text-center">
                             <div class="testimonial-content">
-                                <p><%=newsQuery[i].title%></p>
+                                <p><a href="/newsDetail?id=<%=newsQuery[i].id%>"><%=newsQuery[i].title%></a></p>
                                 <div class="testimonial-author">
-                                    <h6><%=newsQuery[i].sname%> <span><%=newsQuery[i].time%></span></h6>
+                                    <h6><a href="/news?page=1&sid=<%=newsQuery[i].sid%>"><%=newsQuery[i].sname%></a> <span><%=newsQuery[i].time%></span></h6>
                                 </div>
                             </div>
                         </div>
@@ -329,13 +326,13 @@
                             <!--Single Blog Start-->
                             <div class="single-blog">
                                 <div class="blog-img img-full">
-                                    <a href="#">
+                                    <a href="/goodsDetail?id=<%=heatCase[i].id%>">
                                         <img src="<%=heatCase[i].goods_pic.split(',')[0]%>" alt="">
                                     </a>
                                 </div>
                                 <div class="blog-content">
                                     <div class="post-date"><%=heatCase[i].time%></div>
-                                    <h3 class="post-title"><a href="#"><%=heatCase[i].goods_name%></a></h3>
+                                    <h3 class="post-title"><a href="/goodsDetail?id=<%=heatCase[i].id%>"><%=heatCase[i].goods_name%></a></h3>
                                     <p class="post-description"></p>
                                 </div>
                             </div>

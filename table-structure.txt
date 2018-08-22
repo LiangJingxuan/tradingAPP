@@ -55,3 +55,22 @@
 电话	phone	varchar(100) ;
 邮箱	email	varchar(100) ;
 位置	location	varchar(100) ;
+
+网站信息 websiteinfo
+主键	id	int ;
+logo图片	logo	varchar(300) ;
+品牌介绍	brand	varchar(500) ;
+活动图片	salse	varchar(300) ;
+
+轮播图信息 advertisement
+主键	id	int ;
+标题	ad_title	varchar(50) ;
+信息	ad_info 	varchar(100) ;
+图片	ad_pic   	varchar(300) ;
+地址	ad_href   	varchar(20) ;
+
+网站修改日志 websitelog
+主键	id	   int ;
+用户 uid    int ;
+修改内容 info   varchar(100);
+修改时间 time   int ;

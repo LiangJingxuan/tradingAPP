@@ -47,8 +47,8 @@ angular.module('app')
                     $scope.del = function(){
                         $http.get('/admin/goods/goodspicdel',{params:{id:$stateParams.id,path:path}}).success(function(data){
                             $('.confirms').modal('hide');
-                            $('.alerts .modal-body').text(data.msg);
-                            $('.alerts').modal('show');
+                            $('#alerts .modal-body').text(data.msg);
+                            $('#alerts').modal('show');
                             if(data.i){
                                 $scope.Tip = function(){
                                     // 更新数据
@@ -68,8 +68,8 @@ angular.module('app')
                         success:function(data){
                             G.expire(data);
                             $scope.EDITGOODSIF = false;
-                            $('.alerts .modal-body').text(data.msg);
-                            $('.alerts').modal('show');
+                            $('#alerts .modal-body').text(data.msg);
+                            $('#alerts').modal('show');
                             if(data.i){
                                 $scope.Tip = function(){
                                     // 跳转到列表

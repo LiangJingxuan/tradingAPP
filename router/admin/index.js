@@ -2,13 +2,16 @@ const router=require('koa-router')();
 
 // session失效设置
 router.use(async (ctx,next)=>{
-    await next();
     try{
         // 过滤登录请求
         if (ctx.request.path !== '/admin/user/signin') {
             if(!(ctx.session.uid)){
                 ctx.body={ex:true};
+            }else {
+                await next();
             }
+        }else {
+            await next();
         }
     }catch (e) {
 
@@ -35,6 +38,9 @@ router.use('/goods',require('./goods'));
 
 // 客户模块
 router.use('/customer',require('./customer'));
+
+// 网站编辑模块
+router.use('/website',require('./website'));
 
 
 module.exports=router.routes();

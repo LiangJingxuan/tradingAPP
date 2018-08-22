@@ -1,0 +1,164 @@
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- OVERVIEW -->
+            <div class="panel panel-headline">
+                <div class="panel-heading">
+                    <h3 class="panel-title">网站编辑</h3>
+                    <p class="panel-subtitle">website management</p>
+                </div>
+                <div class="panel-body">
+                    <div class="">
+                        <!-- AWARDS -->
+                        <div class="awards">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="award-item" data-toggle="modal" data-target=".webLogoModel">
+                                        <div class="hexagon">
+                                            <span class="lnr lnr-sun award-icon"></span>
+                                        </div>
+                                        <span>网站logo</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="award-item" data-toggle="modal" data-target=".webAdModel">
+                                        <div class="hexagon">
+                                            <span class="lnr lnr-smile award-icon"></span>
+                                        </div>
+                                        <span>轮播展示</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="award-item" data-toggle="modal" data-target=".webBrandModel">
+                                        <div class="hexagon">
+                                            <span class="lnr lnr-magic-wand award-icon"></span>
+                                        </div>
+                                        <span>品牌介绍</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="award-item" data-toggle="modal" data-target=".webSalesModel">
+                                        <div class="hexagon">
+                                            <span class="lnr lnr-volume-medium award-icon"></span>
+                                        </div>
+                                        <span>活动宣传</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END AWARDS -->
+                        <!-- TABBED CONTENT -->
+                        <div class="custom-tabs-line tabs-line-bottom left-aligned">
+                            <ul class="nav" role="tablist">
+                                <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">日志信息</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab-bottom-left1">
+                                <ul class="list-unstyled activity-timeline">
+                                    <li>
+                                        <i class="lnr lnr-history activity-icon"></i>
+                                        <p>Commented on post <a href="#">Prototyping</a> <span class="timestamp">2 minutes ago</span></p>
+                                    </li>
+                                    <li>
+                                        <i class="lnr lnr-history activity-icon"></i>
+                                        <p>Uploaded new file <a href="#">Proposal.docx</a> to project <a href="#">New Year Campaign</a> <span class="timestamp">7 hours ago</span></p>
+                                    </li>
+                                    <li>
+                                        <i class="lnr lnr-history activity-icon"></i>
+                                        <p>Added <a href="#">Martin</a> and <a href="#">3 others colleagues</a> to project repository <span class="timestamp">Yesterday</span></p>
+                                    </li>
+                                    <li>
+                                        <i class="lnr lnr-history activity-icon"></i>
+                                        <p>Finished 80% of all <a href="#">assigned tasks</a> <span class="timestamp">1 day ago</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- END TABBED CONTENT -->
+                    </div>
+                </div>
+            </div>
+            <!-- END OVERVIEW -->
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+
+    <!-- 网站logo编辑 -->
+    <div class="modal fade webLogoModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">网站logo编辑</div>
+                <form onkeydown="if(event.keyCode==13)return false;" action="/admin/website/logoedit" method="post" id="logoEditId" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="file" name="logo" id="selectLogoPicId" accept="image/*" style="display: none;">
+                        <div class="webLogoPic" ng-click="selectLogoPic()">
+                            <p>选择图片上传</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-xs btn-danger" ng-click="logoEdit()" ng-disabled="EDITLOGOIF">确认修改</button>
+                        <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 网站轮播图编辑 -->
+    <div class="modal fade webAdModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">网站轮播图编辑</div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-danger" data-dismiss="modal" ng-click="">确认修改</button>
+                    <button class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 品牌介绍编辑 -->
+    <div class="modal fade webBrandModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">品牌介绍编辑</div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-danger" data-dismiss="modal" ng-click="">确认修改</button>
+                    <button class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 网站宣传活动编辑 -->
+    <div class="modal fade webSalesModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">网站宣传活动编辑</div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-xs btn-danger" data-dismiss="modal" ng-click="">确认修改</button>
+                    <button class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Alert -->
+    <div class="modal fade bs-example-modal-sm" id="alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-dismiss="modal" ng-click="Tip()">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

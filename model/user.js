@@ -41,5 +41,9 @@ module.exports={
     // 公司信息修改
     companyEdit(id,name,adds,phone,email,location){
         return sql.query(`UPDATE company SET name='${name}',adds='${adds}',phone='${phone}',email='${email}',location='${location}' WHERE id=${id};`);
+    },
+    // 公司logo图片地址查询
+    companyLogo(){
+        return sql.query(`SELECT logo FROM websiteinfo;`);
     }
 };

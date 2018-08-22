@@ -2,7 +2,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="brand">
-        <a ><img src="/admin/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+        <a ><img ng-src={{logoUrl}} alt="Klorofil Logo" class="img-responsive logo" width="136" height="59"></a>
     </div>
     <div class="container-fluid">
         <div class="navbar-btn">
@@ -75,6 +75,7 @@
                         </ul>
                     </div>
                 </li>
+                <li><a ui-sref="website" ng-class="{'active':state.current.name.indexOf('website') != -1}" class=""><i class="lnr lnr-pencil"></i> <span>网站编辑</span></a></li>
                 <li><a ui-sref="user" ui-sref-active="active" class=""><i class="lnr lnr-users"></i> <span>用户管理</span></a></li>
                 <!--<li><a class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
                 <li><a class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
@@ -99,7 +100,7 @@
 <!-- END LEFT SIDEBAR -->
 
     <!-- 公司信息查看 -->
-    <div class="modal fade companyModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade companyModel" id="companyModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header" ng-bind="c.name"></div>
@@ -136,7 +137,7 @@
     </div>
 
     <!-- 公司信息新增 -->
-    <div class="modal fade companyAddModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade companyAddModel" id="companyAddModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -163,7 +164,7 @@
     </div>
 
     <!-- 公司信息修改 -->
-    <div class="modal fade companyEditModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade companyEditModel" id="companyEditModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -191,7 +192,7 @@
     </div>
 
     <!-- Alert -->
-    <div class="modal fade alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade alerts" id="alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-body"></div>

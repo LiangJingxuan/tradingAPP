@@ -72,8 +72,8 @@ angular.module('app')
                         success:function(data){
                             G.expire(data);
                             $scope.EDITNEWSIF = false;
-                            $('.alerts .modal-body').text(data.msg);
-                            $('.alerts').modal('show');
+                            $('#alerts .modal-body').text(data.msg);
+                            $('#alerts').modal('show');
                             if(data.i){
                                 $scope.Tip = function(){
                                     // 跳转到列表

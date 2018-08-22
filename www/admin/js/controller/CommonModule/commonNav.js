@@ -21,6 +21,11 @@ angular.module('app')
             });
         };
 
+        // 公司logo
+        $http.get('/admin/user/companylogo').success(function(data){
+            $scope.logoUrl=data.logo;
+        });
+
         // 公司信息
 
         /**
@@ -36,10 +41,10 @@ angular.module('app')
             $http.get('/admin/user/companyquery').success(function(data){
                 G.expire(data);
                 if (data.id) {
-                    $('.companyModel').modal('show');
+                    $('#companyModel').modal('show');
                     $scope.c=data;
                 } else {
-                    $('.companyAddModel').modal('show');
+                    $('#companyAddModel').modal('show');
                 }
             });
         };
@@ -55,8 +60,8 @@ angular.module('app')
                     $scope.ADDCOIF = false;
 
                     $('.companyAddModel').modal('hide');
-                    $('.alerts .modal-body').text(data.msg);
-                    $('.alerts').modal('show');
+                    $('#alerts .modal-body').text(data.msg);
+                    $('#alerts').modal('show');
                     document.getElementById("companyAddId").reset();
                 }
             });
@@ -64,7 +69,7 @@ angular.module('app')
 
         // 修改
         $scope.companyEditAct=function(){
-            $('.companyEditModel').modal('show');
+            $('#companyEditModel').modal('show');
         };
         $scope.companyEdit=function(){
             $('#companyEditId').ajaxForm({
@@ -76,8 +81,8 @@ angular.module('app')
                     $scope.EDITCOIF = false;
 
                     $('.companyEditModel').modal('hide');
-                    $('.alerts .modal-body').text(data.msg);
-                    $('.alerts').modal('show');
+                    $('#alerts .modal-body').text(data.msg);
+                    $('#alerts').modal('show');
                     document.getElementById("companyEditId").reset();
                 }
             });

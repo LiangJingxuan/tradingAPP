@@ -23,8 +23,8 @@ angular.module('app')
                     $scope.ADDUSERIF = false;
 
                     $('.addUserModel').modal('hide');
-                    $('.alerts .modal-body').text(data.msg);
-                    $('.alerts').modal('show');
+                    $('#alerts .modal-body').text(data.msg);
+                    $('#alerts').modal('show');
                     document.getElementById("userAddId").reset();
                     if(data.i){
                         $scope.Tip = function(){
@@ -45,8 +45,8 @@ angular.module('app')
                     G.expire(data);
                     // 提交删除
                     $('.confirms').modal('hide');
-                    $('.alerts .modal-body').text(data.msg);
-                    $('.alerts').modal('show');
+                    $('#alerts .modal-body').text(data.msg);
+                    $('#alerts').modal('show');
                     if(data.i){
                         $scope.Tip = function(){
                             // 更新数据
@@ -81,8 +81,8 @@ angular.module('app')
                     $scope.EDITUSERIF = false;
 
                     $('.editUserModel').modal('hide');
-                    $('.alerts .modal-body').text(data.msg);
-                    $('.alerts').modal('show');
+                    $('#alerts .modal-body').text(data.msg);
+                    $('#alerts').modal('show');
                     document.getElementById("userEditId").reset();
                     if(data.i){
                         $scope.Tip = function(){

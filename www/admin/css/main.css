@@ -216,7 +216,7 @@ html.fullscreen-bg #wrapper {
     background-color: #f8f8f8; }
   .navbar-default .brand {
     float: left;
-    padding: 30px 39px;
+    padding: 12px 39px;
     background-color: #fff; }
   @media screen and (max-width: 1024px) {
     .navbar-default .brand {
@@ -1720,6 +1720,7 @@ ul.activity-list > li {
     text-align: center; }
 
 .award-item {
+  cursor: pointer;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
@@ -1880,3 +1881,13 @@ ul.activity-timeline > li {
   /*IE4-IE9*/
   filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
+.webLogoPic{
+  border: 1px dashed #000;
+  width: 136px;
+  height: 59px;
+  cursor: pointer;
+  margin: auto;
+  background-size: 100%;
+  overflow: hidden;
+}
+.webLogoPic p{text-align: center;line-height: 59px;color: #000;background: #ffffffa3;}
