@@ -170,12 +170,6 @@ router
         }
     })
 
-    // 公司logo图片地址查询
-    .get('/companylogo', async (ctx)=>{
-        const data=await userModel.companyLogo();
-        ctx.body=data[0];
-    })
-
     ;
 
 module.exports=router.routes();

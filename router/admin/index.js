@@ -1,5 +1,14 @@
 const router=require('koa-router')();
 
+// 静态页面展示
+router.get('/', async (ctx)=>{
+    if(ctx.session.uid){
+        ctx.redirect('/admin/app.html');
+    }else{
+        ctx.redirect('/admin/signin.html');
+    }
+});
+
 // session失效设置
 router.use(async (ctx,next)=>{
     try{
@@ -15,15 +24,6 @@ router.use(async (ctx,next)=>{
         }
     }catch (e) {
 
-    }
-});
-
-// 静态页面展示
-router.get('/', async (ctx)=>{
-    if(ctx.session.uid){
-        ctx.redirect('/admin/app.html');
-    }else{
-        ctx.redirect('/admin/signin.html');
     }
 });
 

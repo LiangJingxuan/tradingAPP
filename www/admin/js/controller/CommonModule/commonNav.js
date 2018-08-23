@@ -22,7 +22,7 @@ angular.module('app')
         };
 
         // 公司logo
-        $http.get('/admin/user/companylogo').success(function(data){
+        $http.get('/common/webinfoquery').success(function(data){
             $scope.logoUrl=data.logo;
         });
 

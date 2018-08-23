@@ -3,6 +3,7 @@
 const router=require('koa-router')();
 const moment=require('moment');
 const layout=require('../../model/layoutCommon');
+const homeModel=require('../../model/layoutModel');
 const info=require('../../middlewares/info');
 
 router
@@ -29,6 +30,17 @@ router
     .get('/company', async (ctx)=>{
         const data=await layout.companyInfo();
         ctx.body=data[0];
+    })
+
+    // website信息查询
+    .get('/webinfoquery', async (ctx)=>{
+        const data=await layout.webInfoQuery();
+        ctx.body=data[0];
+    })
+
+    // 获取产品类目
+    .get('/classify', async (ctx)=>{
+        ctx.body=await homeModel.classify('公司产品');
     })
 
     ;

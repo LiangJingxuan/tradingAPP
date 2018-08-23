@@ -1881,7 +1881,7 @@ ul.activity-timeline > li {
   /*IE4-IE9*/
   filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
-.webLogoPic{
+.webLogoPic,.webSalesPic{
   border: 1px dashed #000;
   width: 136px;
   height: 59px;
@@ -1890,4 +1890,4 @@ ul.activity-timeline > li {
   background-size: 100%;
   overflow: hidden;
 }
-.webLogoPic p{text-align: center;line-height: 59px;color: #000;background: #ffffffa3;}
+.webLogoPic p,.webSalesPic p{text-align: center;line-height: 59px;color: #000;background: #ffffffa3;}

@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-sm-6">
-                                    <div class="award-item" data-toggle="modal" data-target=".webBrandModel">
+                                    <div class="award-item" data-toggle="modal" data-target=".webBrandModel" ng-click="brandInfoQuery()">
                                         <div class="hexagon">
                                             <span class="lnr lnr-magic-wand award-icon"></span>
                                         </div>
@@ -89,16 +89,17 @@
     <div class="modal fade webLogoModel" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
-                <div class="modal-header">网站logo编辑</div>
-                <form onkeydown="if(event.keyCode==13)return false;" action="/admin/website/logoedit" method="post" id="logoEditId" enctype="multipart/form-data">
+                <div class="modal-header">网站logo编辑(要求: 宽136px,高59px)</div>
+                <form onkeydown="if(event.keyCode==13)return false;" action="/admin/website/websiteup" method="post" id="logoEditId" enctype="multipart/form-data">
+                    <input type="hidden" name="i" value="1">
                     <div class="modal-body">
-                        <input type="file" name="logo" id="selectLogoPicId" accept="image/*" style="display: none;">
-                        <div class="webLogoPic" ng-click="selectLogoPic()">
+                        <input type="file" name="logo" id="selectWebPic1" accept="image/*" style="display: none;">
+                        <div class="webLogoPic" ng-click="selectWebPicId1()">
                             <p>选择图片上传</p>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-xs btn-danger" ng-click="logoEdit()" ng-disabled="EDITLOGOIF">确认修改</button>
+                        <button type="submit" class="btn btn-xs btn-danger" id="logoSubmitBtnId" ng-disabled="EDITUPIF">确认修改</button>
                         <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
                     </div>
                 </form>
@@ -125,13 +126,19 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">品牌介绍编辑</div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-xs btn-danger" data-dismiss="modal" ng-click="">确认修改</button>
-                    <button class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
-                </div>
+                <form onkeydown="if(event.keyCode==13)return false;" action="/admin/website/websiteup" method="post" id="brandEditId" enctype="multipart/form-data">
+                    <input type="hidden" name="i" value="2">
+                    <div class="modal-body">
+                        <label>公司品牌介绍：</label>
+                        <textarea name="brandInfo" cols="30" rows="5" class="form-control" ng-model="brandInfoModel"></textarea>
+                        <label style="margin-top: 30px;">商品项目介绍：</label>
+                        <textarea name="goodsInfo" cols="30" rows="5" class="form-control" ng-model="goodsInfoModel"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-xs btn-danger" ng-click="brandEdit()" ng-disabled="!brandInfoModel || !goodsInfoModel">确认修改</button>
+                        <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -139,19 +146,27 @@
     <div class="modal fade webSalesModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">网站宣传活动编辑</div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-xs btn-danger" data-dismiss="modal" ng-click="">确认修改</button>
-                    <button class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
-                </div>
+                <div class="modal-header">网站宣传活动编辑(要求: 宽404px,高303px)</div>
+                <form onkeydown="if(event.keyCode==13)return false;" action="/admin/website/websiteup" method="post" id="salesEditId" enctype="multipart/form-data">
+                    <input type="hidden" name="i" value="3">
+                    <div class="modal-body">
+                        <input type="file" name="sales" id="selectWebPicId2" accept="image/*" style="display: none;">
+                        <input type="file" name="sales" id="selectWebPicId3" accept="image/*" style="display: none;">
+                        <input type="file" name="sales" id="selectWebPicId4" accept="image/*" style="display: none;">
+                        <div class="webSalesPic" style="display: inline-block;margin-right: 20px;"><p>选择图片上传</p></div>
+                        <div class="webSalesPic" style="display: inline-block;margin-right: 20px;"><p>选择图片上传</p></div>
+                        <div class="webSalesPic" style="display: inline-block;margin-right: 20px;"><p>选择图片上传</p></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-xs btn-danger" id="salesSubmitBtnId" ng-disabled="EDITUPIF">确认修改</button>
+                        <button type="button" class="btn btn-xs btn-primary" data-dismiss="modal">关闭</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     <!-- Alert -->
-    <div class="modal fade bs-example-modal-sm" id="alerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade" id="webAlerts" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-body"></div>

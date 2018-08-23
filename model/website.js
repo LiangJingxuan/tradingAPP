@@ -8,14 +8,19 @@ module.exports={
     },
 
     // 添加logo图片路径操作
-    logoAdd(logo){
-        return sql.query(`INSERT INTO websiteinfo (logo) VALUES ('${logo}');`);
+    upAdd(field,value){
+        return sql.query(`INSERT INTO websiteinfo (${field}) VALUES ('${value}');`);
     },
 
     // 修改logo图片路径操作
-    logoUp(logo){
-        return sql.query(`UPDATE websiteinfo SET logo='${logo}';`);
+    upEdit(field,value){
+        return sql.query(`UPDATE websiteinfo SET ${field}='${value}';`);
     },
+
+    // 品牌介绍编辑操作
+    bradnEdit(brand='',goods=''){
+        return sql.query(`UPDATE websiteinfo SET brand='{"brandInfo":"${brand.trim()}","goodsInfo":"${goods.trim()}"}';`);
+    }
 
 
 

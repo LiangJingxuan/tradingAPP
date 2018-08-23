@@ -15,5 +15,10 @@ module.exports={
     // 热门产品最新三条数据查询
     hotGoods(item=0,i=3){
         return sql.query(`SELECT id,goods_name,goods_pic FROM goods WHERE nice=1 AND i=${item} ORDER BY goods_time DESC LIMIT ${i};`);
+    },
+
+    // website信息查询
+    webInfoQuery(){
+        return sql.query(`SELECT logo,brand,sales FROM websiteinfo;`);
     }
 };

@@ -1940,10 +1940,10 @@ Common Style CSS
 	vertical-align: middle;
 	margin-right: 40px;
 }
-.single-feature:hover .feature-icon > span{
+/*.single-feature:hover .feature-icon > span{
      -webkit-animation: crFlipX 2s ease-in-out infinite backwards;
              animation: crFlipX 2s ease-in-out infinite backwards;
-}
+}*/
 .feature-content > h3 {
 	font-size: 15px;
 	font-weight: 500;

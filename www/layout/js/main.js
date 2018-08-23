@@ -735,5 +735,39 @@ $.get("/common/company", function(res){
     $('.PhoneIdLink').attr('href','tel:'+res.phone);
     $('.CopyrightId').text(res.name);
 });
+// website信息查询
+$.get("/common/webinfoquery", function(res){
+    // logo图片路径查询
+    $('#logoUrlId').attr('src',res.logo);
+    // 品牌介绍信息查询
+    try {
+        $('#brandInfoId').text(JSON.parse(res.brand).brandInfo);
+        $('#goodsInfoId').text(JSON.parse(res.brand).goodsInfo);
+    }catch (e) {
+
+    }
+    // 活动图片路径查询
+    var sales = res.sales.split(','), tag='';
+    for(var i=0,len=sales.length;i<len;i++){
+        tag+=
+            '<div class="col-md-4">\n' +
+            '<div class="single-banner mb-35">\n' +
+            '<div class="banner-img">\n' +
+            '<img src="'+sales[i]+'" alt="">\n' +
+            '</div>\n' +
+            '</div>\n' +
+            '</div>';
+    }
+    $('#banner-area-id').html(tag);
+});
+
+// 商品类目导航查询
+$.get('/common/classify', function(res){
+    var nav='';
+    $.each(res,function(i,v){
+        nav+='<li><a href="/goods?page=1&sid='+v.id+'">'+v.sname+'</a></li>';
+    });
+    $('#menuTop').html(nav);
+})
 
 })(jQuery);
