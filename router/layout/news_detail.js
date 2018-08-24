@@ -18,12 +18,14 @@ router
 
             // 新闻详情数据
             const newsDetail=await newsModel.newsOnly(ctx.query.id);
+            const I=await layout.webI();
 
             // 输出模板
             await ctx.render('single-blog',{
                 classify, // 新闻分类数据
                 hotGoods, // 热门产品数据
                 newsDetail: newsDetail[0], // 新闻详情数据
+                I:I[0] // logo
             });
         }
     });

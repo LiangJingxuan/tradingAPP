@@ -11,12 +11,14 @@ router
         const hotCase=await layout.hotGoods(1,6); // 热门案例推荐
 
         const goodsDetail=await goodsModel.goodsOnly(ctx.query.id); // 商品详情数据
+        const I=await layout.webI();
 
         // 输出模板
         await ctx.render('single-product',{
             hotGoods, // 热门商品推荐
             hotCase, // 热门案例推荐
-            goodsDetail: goodsDetail[0] // 商品详情数据
+            goodsDetail: goodsDetail[0], // 商品详情数据
+            I:I[0] // logo
         });
 
     });

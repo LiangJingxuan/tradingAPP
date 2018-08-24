@@ -29,10 +29,4 @@ module.exports={
         return sql.query(`SELECT id,goods_name,goods_pic,FROM_UNIXTIME(goods_time,'%Y-%m-%d %H:%i:%S') AS time FROM goods WHERE nice=1 AND i=1 ORDER BY time DESC;`);
     }
 
-    /**
-     * news model data
-     */
-
-
-
 };

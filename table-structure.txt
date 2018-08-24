@@ -61,13 +61,8 @@
 logo图片	logo	varchar(300) ;
 品牌介绍	brand	varchar(500) ;
 活动图片	salse	varchar(300) ;
-
-轮播图信息 advertisement
-主键	id	int ;
-标题	ad_title	varchar(50) ;
-信息	ad_info 	varchar(100) ;
-图片	ad_pic   	varchar(300) ;
-地址	ad_href   	varchar(20) ;
+轮播信息	adinfo	varchar(1000) ;
+轮播图片	adpics	varchar(300) ;
 
 网站修改日志 websitelog
 主键	id	   int ;

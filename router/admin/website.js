@@ -20,16 +20,11 @@ router
                     let item=await websiteModel.webPicList('logo'), // 全部logo图片路径
                         pics=upload.pathHandle(ctx,'logo'); // 获取图片路径logo
 
-                    // 如果没有logo新增路径，否则修改路径
-                    if(item.length>0){
-                        // 修改
-                        data=await websiteModel.upEdit('logo',pics);
-                        // 删除之前logo
-                        upload.fileDelete(item,'logo');
-                    }else{
-                        // 新增
-                        data=await websiteModel.upAdd('logo',pics);
-                    }
+                    // 修改
+                    data=await websiteModel.upEdit('logo',pics);
+
+                    // 删除之前logo
+                    item.length>0 && item[0].logo?upload.fileDelete(item,'logo'):'';
                 }
                     break;
 
@@ -47,16 +42,32 @@ router
                     let item=await websiteModel.webPicList('sales'), // 全部sales图片路径
                         pics=upload.pathHandle(ctx,'sales'); // 获取图片路径sales
 
-                    // 如果没有sales新增路径，否则修改路径
-                    if(item.length>0){
-                        // 修改
-                        data=await websiteModel.upEdit('sales',pics);
-                        // 删除之前logo
-                        upload.fileDelete(item,'sales');
-                    }else{
-                        // 新增
-                        data=await websiteModel.upAdd('sales',pics);
+                    // 修改
+                    data=await websiteModel.upEdit('sales',pics);
+
+                    // // 删除之前sales
+                    item.length>0 && item[0].sales?upload.fileDelete(item,'sales'):'';
+                }
+                    break;
+
+                // 轮播图编辑操作
+                case 4 :
+                {
+                    let item=await websiteModel.webPicList('adpics'), // 全部sales图片路径
+                        pics=upload.pathHandle(ctx,'ad'), // 获取图片路径sales
+                        str=''; // 存储json字符串
+
+                    // 修改
+                    data=await websiteModel.upEdit('adpics',pics);
+
+                    // 删除之前轮播图
+                    item.length>0 && item[0].adpics?upload.fileDelete(item,'adpics'):'';
+
+                    // 信息处理
+                    for(let i=0,len=params.title.length;i<len;i++){
+                        str+=`{"id":"${i}","title":"${params.title[i]}","info":"${params.info[i]}","href":"${params.href[i]}","pic":"${pics[i]}"}${i<params.title.length-1?',':''}`;
                     }
+                    data=await websiteModel.adEdit(str);
                 }
                     break;
             }

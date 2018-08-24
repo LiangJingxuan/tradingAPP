@@ -7,12 +7,7 @@ module.exports={
         return sql.query(`SELECT ${field} FROM websiteinfo;`);
     },
 
-    // 添加logo图片路径操作
-    upAdd(field,value){
-        return sql.query(`INSERT INTO websiteinfo (${field}) VALUES ('${value}');`);
-    },
-
-    // 修改logo图片路径操作
+    // 修改图片路径操作
     upEdit(field,value){
         return sql.query(`UPDATE websiteinfo SET ${field}='${value}';`);
     },
@@ -20,8 +15,12 @@ module.exports={
     // 品牌介绍编辑操作
     bradnEdit(brand='',goods=''){
         return sql.query(`UPDATE websiteinfo SET brand='{"brandInfo":"${brand.trim()}","goodsInfo":"${goods.trim()}"}';`);
-    }
+    },
 
+    // 轮播图信息编辑操作
+    adEdit(data){
+        return sql.query(`UPDATE websiteinfo SET adinfo='[${data}]';`);
+    }
 
 
 };

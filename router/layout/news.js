@@ -4,6 +4,7 @@ const router=require('koa-router')();
 const newsModel=require('../../model/news');
 const homeModel=require('../../model/layoutModel');
 const info=require('../../middlewares/info');
+const layout=require('../../model/layoutCommon');
 
 router
     // 主页数据分配
@@ -23,11 +24,13 @@ router
 
         // 新闻分类数据
         const classify=await homeModel.classify('新闻中心');
+        const I=await layout.webI();
 
         // 输出模板
         await ctx.render('news',{
             newsList: info.paging(dataList,page,totalPage,totalRows), // 全部已发布新闻分页查询
-            classify // 新闻分类数据
+            classify, // 新闻分类数据
+            I:I[0] // logo
         });
     });
 module.exports=router.routes();

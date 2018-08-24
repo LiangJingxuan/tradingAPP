@@ -14,6 +14,7 @@ router
 
         // 热门产品数据
         const hotGoods=await layout.hotGoods();
+        const I=await layout.webI();
 
         // 商品列表
         const params=ctx.query;
@@ -30,7 +31,8 @@ router
             signId: 'goods', // 商品及案例区别标志
             classify, // 商品类别数据
             hotGoods, // 热门产品数据
-            goodsList: info.paging(dataList,page,totalPage,totalRows) // 商品列表
+            goodsList: info.paging(dataList,page,totalPage,totalRows), // 商品列表
+            I:I[0] // logo
 
         });
     });

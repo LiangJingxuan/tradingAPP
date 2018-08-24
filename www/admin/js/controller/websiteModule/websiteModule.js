@@ -9,47 +9,33 @@ angular.module('app')
         // website信息查询
         $http.get('/common/webinfoquery').success(function(data){
             G.expire(data);
-
             // logo图片路径查询
             $('.webLogoPic').css({'backgroundImage':'url('+data.logo+')'});
 
-            // 品牌介绍信息查询
             try {
+                // 品牌介绍信息查询
                 $scope.brandScope=JSON.parse(data.brand);
                 $scope.brandInfoModel=$scope.brandScope.brandInfo;
                 $scope.goodsInfoModel=$scope.brandScope.goodsInfo;
+
+                // 活动图片路径查询
+                var sales = data.sales.split(','),
+                    box = $('.webSalesPic');
+                for(var i=0,len=sales.length;i<len;i++){
+                    for(var k=0,len2=box.length;k<len2;k++){
+                        if(k===i){
+                            $(box[k]).css({'backgroundImage':'url('+sales[i]+')'});
+                        }
+                    }
+                }
+
+                // 轮播图信息查询
+                $scope.adItem=JSON.parse(data.adinfo);
+
             }catch (e) {
 
             }
-
-            // 活动图片路径查询
-            var sales = data.sales.split(','),
-                box = $('.webSalesPic');
-            for(var i=0,len=sales.length;i<len;i++){
-                for(var k=0,len2=box.length;k<len2;k++){
-                    if(k===i){
-                        $(box[k]).css({'backgroundImage':'url('+sales[i]+')'});
-                    }
-                }
-            }
-
         });
-
-        // 品牌介绍编辑操作
-        $scope.brandEdit=function(){
-            $('.webBrandModel').modal('hide');
-            $('#brandEditId').ajaxForm({
-                beforeSend:function(){
-                    $scope.EDITBRANDIF = true;
-                },
-                success:function(data){
-                    G.expire(data);
-                    $scope.EDITBRANDIF = false;
-                    $('#alerts').modal('show');
-                    $('#alerts .modal-body').text(data.msg);
-                }
-            });
-        };
 
         /**
          * 图片上传操作封装
@@ -121,6 +107,7 @@ angular.module('app')
                     }
                 });
             });
+
         }
 
         // logo图片上传
@@ -132,5 +119,26 @@ angular.module('app')
         var salesFiles=$('#salesEditId input[name="sales"]'), salesdBtns=$('#salesEditId .webSalesPic'),
             salesSubmitBtn=$('#salesSubmitBtnId'), salesModal=$('.webSalesModel'), salesUpForm=$('#salesEditId');
         upImageAct(salesFiles,salesdBtns,salesSubmitBtn,salesModal,salesUpForm,false);
+
+        // 轮播图片上传
+        var adFiles=$('#adEditId input[name="ad"]'), adBtns=$('#adEditId .webAdPic'),
+            adSubmitBtn=$('#adSubmitBtnId'), adModal=$('.webAdModel'), adUpForm=$('#adEditId');
+        upImageAct(adFiles,adBtns,adSubmitBtn,adModal,adUpForm,false);
+
+        // 品牌介绍编辑操作
+        $scope.brandEdit=function(){
+            $('.webBrandModel').modal('hide');
+            $('#brandEditId').ajaxForm({
+                beforeSend:function(){
+                    $scope.EDITBRANDIF = true;
+                },
+                success:function(data){
+                    G.expire(data);
+                    $scope.EDITBRANDIF = false;
+                    $('#alerts').modal('show');
+                    $('#alerts .modal-body').text(data.msg);
+                }
+            });
+        };
 
     }]);

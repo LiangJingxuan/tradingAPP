@@ -19,6 +19,11 @@ module.exports={
 
     // website信息查询
     webInfoQuery(){
-        return sql.query(`SELECT logo,brand,sales FROM websiteinfo;`);
+        return sql.query(`SELECT logo,brand,sales,adinfo FROM websiteinfo;`);
+    },
+
+    // websiteLogo查询
+    webI(){
+        return sql.query(`SELECT logo FROM websiteinfo;`);
     }
 };

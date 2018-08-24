@@ -7,37 +7,24 @@
 	<div class="wrapper">
 		<% include header.ejs %>
 		<!--Slider Area Start-->
-		<div class="slider-area pl-50 pr-50">
+		<div class="slider-area pl-50 pr-50" id="adboxId">
+
 			<div class="hero-slider owl-carousel">
-				<!--Single Slider Start-->
-				<div class="single-slider single-slider-style-2" style="background-image: url(/layout/img/slider/home1-slider1.jpg)">
-					<!--<div class="slider-progress"></div>-->
+				<% for(let i=0,data=JSON.parse(websiteInfo[0].adinfo),len=data.length;i<len;i++){ %>
+				<div class="single-slider single-slider-style-2" style="background-image: url(<%=data[i].pic%>)">
 					<div class="container">
 						<div class="hero-slider-content">
-							<h1>Perfect Plant</h1>
-							<p>Captain America: Civil War Christopher Markus and Stephen McFeely see the Hulk as the game over moment. </p>
+							<h1><%=data[i].title%></h1>
+							<p><%=data[i].info%></p>
 							<div class="slider-btn">
-								<a href="#">Shop Collection <i class="fa fa-chevron-right"></i></a>
+								<a href="<%=data[i].href%>">查看详情 <i class="fa fa-chevron-right"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!--Single Slider End-->
-				<!--Single Slider Start-->
-				<div class="single-slider single-slider-style-2" style="background-image: url(/layout/img/slider/home1-slider2.jpg)">
-					<!--<div class="slider-progress"></div>-->
-					<div class="container">
-						<div class="hero-slider-content">
-							<h1>Plant Mega Sale</h1>
-							<p>Captain America: Civil War Christopher Markus and Stephen McFeely see the Hulk as the game over moment. </p>
-							<div class="slider-btn">
-								<a href="#">Shop Collection <i class="fa fa-chevron-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--Single Slider End-->
+				<% } %>
 			</div>
+
 		</div>
 		<!--Slider Area End-->
 		<!--Feature Area Start-->
@@ -109,8 +96,8 @@
 		        <div class="row">
 		            <div class="col-lg-8 ml-auto mr-auto">
 		                <div class="history-area-content text-center">
-		                    <p><strong id="brandInfoId"></strong></p>
-		                    <p id="goodsInfoId"></p>
+		                    <p><strong><%=JSON.parse(websiteInfo[0].brand).brandInfo%></strong></p>
+		                    <p><%=JSON.parse(websiteInfo[0].brand).goodsInfo%></p>
 		                </div>
 		            </div>
 		        </div>
@@ -242,18 +229,18 @@
 		<!--Banner Area Start-->
 		<div class="banner-area pt-105">
 		    <div class="container-fluid pl-50 pr-50">
-		        <div class="row" id="banner-area-id">
+		        <div class="row">
+					<% for(let i=0,data=websiteInfo[0].sales.split(','),len=data.length;i<len;i++){ %>
 		            <div class="col-md-4">
-		                <!--Single Banner Area Start-->
 		                <div class="single-banner mb-35">
 		                    <div class="banner-img">
 		                        <a href="#">
-		                            <img src="" alt="">
+		                            <img src="<%=websiteInfo[0].sales.split(',')[i]%>" alt="">
 		                        </a>
 		                    </div>
 		                </div>
-		                <!--Single Banner Area End-->
 		            </div>
+					<% } %>
 		        </div>
 		    </div>
 		</div>
