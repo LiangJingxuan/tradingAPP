@@ -95,14 +95,21 @@ angular.module('app')
                         $('#webAlerts').modal('show');
                         $('#webAlerts .modal-body').text(data.msg);
                         if(data.i){
-                            if(rId){
-                                $scope.Tip = function(){
-                                    // 跳转到列表
+                            $scope.Tip = function(){
+                                if(rId){
+                                    // 刷新页面
                                     setTimeout(function(){
                                         location.reload();
                                     },500);
+                                }else {
+                                    // 修改日志信息查询
+                                    $http.get('/admin/website/log').success(function(data){
+                                        G.expire(data);
+                                        $scope.logList=data;
+                                    })
                                 }
                             }
+
                         }
                     }
                 });
@@ -135,10 +142,23 @@ angular.module('app')
                 success:function(data){
                     G.expire(data);
                     $scope.EDITBRANDIF = false;
-                    $('#alerts').modal('show');
-                    $('#alerts .modal-body').text(data.msg);
+                    $('#webAlerts').modal('show');
+                    $('#webAlerts .modal-body').text(data.msg);
+                    $scope.Tip = function(){
+                        // 修改日志信息查询
+                        $http.get('/admin/website/log').success(function(data){
+                            G.expire(data);
+                            $scope.logList=data;
+                        })
+                    }
                 }
             });
         };
+
+        // 修改日志信息查询
+        $http.get('/admin/website/log').success(function(data){
+            G.expire(data);
+            $scope.logList=data;
+        })
 
     }]);

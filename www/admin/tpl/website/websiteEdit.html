@@ -57,21 +57,9 @@
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab-bottom-left1">
                                 <ul class="list-unstyled activity-timeline">
-                                    <li>
+                                    <li ng-repeat="l in logList">
                                         <i class="lnr lnr-history activity-icon"></i>
-                                        <p>Commented on post <a href="#">Prototyping</a> <span class="timestamp">2 minutes ago</span></p>
-                                    </li>
-                                    <li>
-                                        <i class="lnr lnr-history activity-icon"></i>
-                                        <p>Uploaded new file <a href="#">Proposal.docx</a> to project <a href="#">New Year Campaign</a> <span class="timestamp">7 hours ago</span></p>
-                                    </li>
-                                    <li>
-                                        <i class="lnr lnr-history activity-icon"></i>
-                                        <p>Added <a href="#">Martin</a> and <a href="#">3 others colleagues</a> to project repository <span class="timestamp">Yesterday</span></p>
-                                    </li>
-                                    <li>
-                                        <i class="lnr lnr-history activity-icon"></i>
-                                        <p>Finished 80% of all <a href="#">assigned tasks</a> <span class="timestamp">1 day ago</span></p>
+                                        <p><span ng-bind="l.roles"></span> <a><span ng-bind="l.username"></span></a> <span ng-bind="l.info"></span> <span class="timestamp" ng-bind="l.time"></span></p>
                                     </li>
                                 </ul>
                             </div>

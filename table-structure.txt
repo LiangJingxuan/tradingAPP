@@ -35,10 +35,6 @@
 发布人外键 uid   int ;
 发布状态	state	tinyint(1) ;
 
-关于我们 about：
-主键	id	int ;
-内容	content	varchar(1000) ;
-
 客户留言 customer：
 主键	id	int ;
 客户姓名	name	varchar(7) ;

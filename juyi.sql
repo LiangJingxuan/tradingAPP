@@ -10,42 +10,10 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-08-24 15:20:04
+Date: 2018-08-24 16:19:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
-
--- ----------------------------
--- Table structure for about
--- ----------------------------
-DROP TABLE IF EXISTS `about`;
-CREATE TABLE `about` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '关于我们id',
-  `content` varchar(1000) NOT NULL COMMENT '关于我们内容',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of about
--- ----------------------------
-
--- ----------------------------
--- Table structure for case
--- ----------------------------
-DROP TABLE IF EXISTS `case`;
-CREATE TABLE `case` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '案例id',
-  `case_title` varchar(20) NOT NULL COMMENT '案例标题',
-  `case_time` int(10) unsigned NOT NULL COMMENT '案例时间',
-  `case_pic` varchar(300) NOT NULL COMMENT '案例图片',
-  `state` tinyint(1) unsigned NOT NULL COMMENT '热门案例状态',
-  `sid` int(10) unsigned NOT NULL COMMENT '类目外键',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of case
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for category
@@ -225,8 +193,8 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('36', '海琦', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15100284122');
-INSERT INTO `user` VALUES ('37', '景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '听管理员的', '15100284121');
+INSERT INTO `user` VALUES ('36', '王海琦', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15567772021');
+INSERT INTO `user` VALUES ('37', '梁景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '听管理员的', '15100284122');
 
 -- ----------------------------
 -- Table structure for websiteinfo
@@ -245,7 +213,7 @@ CREATE TABLE `websiteinfo` (
 -- ----------------------------
 -- Records of websiteinfo
 -- ----------------------------
-INSERT INTO `websiteinfo` VALUES ('16', '/uploads/upload_977e8daf2a7fd0976066f7ab2e3df075.png', '{\"brandInfo\":\"保定友星（WOOSUNG）体育用品有限公司成立于2005年，是一家中韩合资并拥有独立出口权的运动鞋生产厂家我公司的主要产品为是运动鞋，登山鞋，跑鞋，滑板鞋，休闲鞋，跆拳道鞋等其他多种款式鞋子。\",\"goodsInfo\":\"保定友星体育用品有限公司 位于河北 徐水县，专业生产销售出口跆拳道服，跆拳道鞋，跆拳道垫，跆拳道包，跆拳道护具，跆拳道脚靶，道服，道鞋，道垫，柔道服，柔道垫，空手道服，剑道服，居合道服，合气道服，摔跤服，太极服，武术服，拳击服,散打服,护齿，LP护具,和服,瑜珈服，瑜珈垫等武道体育运动服装，鞋，垫子，护具等及相关用品，产品远销日本，韩国，美国，英国，澳大利亚，俄罗斯等20多国家地区。欢迎国内外客户莅临洽谈 。公司秉承“顾客至上，锐意进取”的经营理念，坚持“客户第一”的原则为广大客户提供优质的服务。欢迎惠顾！\"}', '/uploads/upload_04c941333a44e30d1b0f3a9ef379ec08.jpg,/uploads/upload_430a72cebf8215883d1f227d3a01b754.jpg,/uploads/upload_9294449389e9780dd6ce0ee59bc757ee.jpg', '[{\"id\":\"0\",\"title\":\"轮播图标题1\",\"info\":\"轮播图文字描述测试1\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_91e2027ce3072aafe62f1eda86d4d872.jpg\"},{\"id\":\"1\",\"title\":\"轮播图标题2\",\"info\":\"轮播图文字描述测试2\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_8be407adf8f95c04937c710307b39813.jpg\"},{\"id\":\"2\",\"title\":\"轮播图标题3\",\"info\":\"轮播图文字描述测试3\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_0bb1e356ab38335c5d544cc4c1e5d754.jpg\"},{\"id\":\"3\",\"title\":\"轮播图标题4\",\"info\":\"轮播图文字描述测试4\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_f26a841573b6b31ea9859603391891ba.jpg\"}]', '/uploads/upload_91e2027ce3072aafe62f1eda86d4d872.jpg,/uploads/upload_8be407adf8f95c04937c710307b39813.jpg,/uploads/upload_0bb1e356ab38335c5d544cc4c1e5d754.jpg,/uploads/upload_f26a841573b6b31ea9859603391891ba.jpg');
+INSERT INTO `websiteinfo` VALUES ('16', '/uploads/upload_142f2f680a52a00b82df470f53c1e153.png', '{\"brandInfo\":\"保定友星（WOOSUNG）体育用品有限公司成立于2005年，是一家中韩合资并拥有独立出口权的运动鞋生产厂家我公司的主要产品为是运动鞋，登山鞋，跑鞋，滑板鞋，休闲鞋，跆拳道鞋等其他多种款式鞋子。\",\"goodsInfo\":\"保定友星体育用品有限公司 位于河北 徐水县，专业生产销售出口跆拳道服，跆拳道鞋，跆拳道垫，跆拳道包，跆拳道护具，跆拳道脚靶，道服，道鞋，道垫，柔道服，柔道垫，空手道服，剑道服，居合道服，合气道服，摔跤服，太极服，武术服，拳击服,散打服,护齿，LP护具,和服,瑜珈服，瑜珈垫等武道体育运动服装，鞋，垫子，护具等及相关用品，产品远销日本，韩国，美国，英国，澳大利亚，俄罗斯等20多国家地区。欢迎国内外客户莅临洽谈 。公司秉承“顾客至上，锐意进取”的经营理念，坚持“客户第一”的原则为广大客户提供优质的服务。欢迎惠顾！\"}', '/uploads/upload_28e4d822637ee47fa520b38fff9bbaa6.jpg,/uploads/upload_28fcda9ed5622100b7a9eb05e6c52b2b.jpg,/uploads/upload_56d65684f15933d5f484d73dd2937aa5.jpg', '[{\"id\":\"0\",\"title\":\"轮播图标题1\",\"info\":\"轮播图文字描述测试1轮播图文字描述测试1轮播图文字描述测试1\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_c79dac7e4b46385ad0e078488d632002.jpg\"},{\"id\":\"1\",\"title\":\"轮播图标题2\",\"info\":\"轮播图文字描述测试2轮播图文字描述测试2轮播图文字描述测试2\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_b340c1e19fa6e0285d7dff3ea7183f9d.jpg\"},{\"id\":\"2\",\"title\":\"轮播图标题3\",\"info\":\"轮播图文字描述测试3轮播图文字描述测试3轮播图文字描述测试3\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_c55518490e61367ceaacbdce9f01825b.jpg\"},{\"id\":\"3\",\"title\":\"轮播图标题4\",\"info\":\"轮播图文字描述测试4轮播图文字描述测试4轮播图文字描述测试4\",\"href\":\"/goods\",\"pic\":\"/uploads/upload_461e265ef18452bc6df8cef673c87a9a.jpg\"}]', '/uploads/upload_c79dac7e4b46385ad0e078488d632002.jpg,/uploads/upload_b340c1e19fa6e0285d7dff3ea7183f9d.jpg,/uploads/upload_c55518490e61367ceaacbdce9f01825b.jpg,/uploads/upload_461e265ef18452bc6df8cef673c87a9a.jpg');
 
 -- ----------------------------
 -- Table structure for websitelog
@@ -257,8 +225,14 @@ CREATE TABLE `websitelog` (
   `info` varchar(100) NOT NULL COMMENT '修改信息',
   `time` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of websitelog
 -- ----------------------------
+INSERT INTO `websitelog` VALUES ('2', '36', '修改了网站logo图片。', '1535096511');
+INSERT INTO `websitelog` VALUES ('3', '36', '修改了广告轮播图片信息。', '1535096576');
+INSERT INTO `websitelog` VALUES ('4', '36', '编辑了网站品牌介绍信息。', '1535096595');
+INSERT INTO `websitelog` VALUES ('5', '36', '修改了活动宣传的图片。', '1535096622');
+INSERT INTO `websitelog` VALUES ('11', '36', '编辑了网站品牌介绍信息。', '1535098356');
+INSERT INTO `websitelog` VALUES ('12', '37', '编辑了网站品牌介绍信息。', '1535098601');
