@@ -74,6 +74,12 @@ angular.module('app')
 
             // 刷新
             $scope.resetReload=function(){
+                // 清除视图
+                var selects = $('#genreBox .select2-selection__rendered');
+                selects.text('全部状态');
+                selects.attr('phone','全部状态');
+                // 数据清除
+                $scope.genre=undefined; $scope.kw=undefined;
                 queryNews(1,pagesize);
             }
 
