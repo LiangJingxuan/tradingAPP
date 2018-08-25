@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>聚义商贸管理系统</title>
+    <title class="CopyrightId"></title>
     <link rel="icon" href="img/xs.ico" type="image/x-icon"/>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
@@ -95,6 +95,10 @@
             }
 
         });
+        // 公司信息
+        $.get("/common/company", function(res){
+            $('.CopyrightId').text(res.name);
+        })
     </script>
 </body>
 </html>

@@ -49,10 +49,10 @@
                         <li ng-repeat="d in customerList.dataList">
                             <i class="lnr lnr-user"></i>
                             <p>
-                                <a ng-bind="d.name"></a>
-                                <span><span class="lnr lnr-phone-handset"></span> <span ng-bind="d.phone"></span></span>
-                                <span><span class="lnr lnr-link"></span> <span ng-bind="d.email"></span></span>
-                                <span><span class="lnr lnr-bubble"></span> <span class="txt" ng-bind="d.content"></span></span>
+                                <a ng-bind="d.name" ng-if="d.name"></a>
+                                <span ng-if="d.phone"><span class="lnr lnr-phone-handset"></span> <span ng-bind="d.phone"></span></span>
+                                <span ng-if="d.email"><span class="lnr lnr-link"></span> <span ng-bind="d.email"></span></span>
+                                <span ng-if="d.content"><span class="lnr lnr-bubble"></span> <span class="txt" ng-bind="d.content"></span></span>
                                 <span class="timestamp">
                                     <span ng-bind="d.time"></span>
                                     <small class="badge bg-success" ng-if="d.reply">已回复</small>
