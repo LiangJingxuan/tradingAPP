@@ -14,6 +14,10 @@
 
 > /www : 静态资源，前端静态页面的文件资源
 
+> /www/admin : 网站后台界面
+
+> /www/layout : 网站前端界面
+
 > /www/uploads : 存放上传的文件资源
 
 > /test : 测试文件
@@ -29,7 +33,7 @@
 	// 配置信息
     const config={
         // 启动端口
-        port: 8001,
+        port: 80,
         // 数据库配置
         db: {
             database: '',

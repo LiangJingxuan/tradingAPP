@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2018-08-24 16:19:20
+Date: 2018-08-25 11:10:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -49,7 +49,7 @@ CREATE TABLE `company` (
 -- ----------------------------
 -- Records of company
 -- ----------------------------
-INSERT INTO `company` VALUES ('2', '聚义商贸有限公司', '北京大兴', '15100284122', 'xuan03121994@163.com', '116.341221,39.743713');
+INSERT INTO `company` VALUES ('2', '聚义商贸有限公司', '北京大兴', '15100284122', 'xuan03121994@163.com', '116.337341,39.770844');
 
 -- ----------------------------
 -- Table structure for customer
@@ -64,7 +64,7 @@ CREATE TABLE `customer` (
   `reply` tinyint(1) unsigned NOT NULL COMMENT '联系状态',
   `time` int(10) unsigned NOT NULL COMMENT '添加用户时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer
@@ -74,29 +74,10 @@ INSERT INTO `customer` VALUES ('2', '岳绮罗', '1403190714@qq.com', '187421796
 INSERT INTO `customer` VALUES ('3', '月牙', 'liang4122@127.com', '13341752809', '保护家园，保护野生动物，热爱自然', '0', '1530498355');
 INSERT INTO `customer` VALUES ('4', '顾玄武', 'gudaren8888@163.com', '18122447875', '保护自然热爱世界，热爱动物', '0', '1530498457');
 INSERT INTO `customer` VALUES ('5', '张显宗', 'qiluo5201314@163.com', '15126472819', '保护世界保护大自然保护地球', '0', '1530498579');
-INSERT INTO `customer` VALUES ('6', '', '', '15566374567', '', '0', '1534296411');
-INSERT INTO `customer` VALUES ('7', '', '', '17752584521', '', '0', '1534297079');
-INSERT INTO `customer` VALUES ('8', '', '', '15151515515', '', '0', '1534297101');
-INSERT INTO `customer` VALUES ('9', '', '', '15100284122', '', '0', '1534297130');
-INSERT INTO `customer` VALUES ('10', '', '', '15100287412', '', '0', '1534300363');
-INSERT INTO `customer` VALUES ('11', '', '', '', '', '0', '1534470808');
 INSERT INTO `customer` VALUES ('12', '梁景', 'xuan03121994@163.com', '15100284122', '', '0', '1534471081');
 INSERT INTO `customer` VALUES ('13', '梁景', '1403190714@qq.com', '15100284122', '测试1234', '0', '1534471131');
 INSERT INTO `customer` VALUES ('14', '梁', 'xuan03121', '15100285412', '测试测试1122', '0', '1534499422');
-INSERT INTO `customer` VALUES ('15', '测试', '测试', '测试', '1234565', '0', '1534499514');
-INSERT INTO `customer` VALUES ('16', '', '', '15100284122', '', '0', '1534554457');
-INSERT INTO `customer` VALUES ('17', '', '', '15100284122', '', '0', '1534555007');
-INSERT INTO `customer` VALUES ('18', '', '', '15100284122', '', '0', '1534555154');
-INSERT INTO `customer` VALUES ('19', '', '', '15100284122', '', '0', '1534555363');
-INSERT INTO `customer` VALUES ('20', '', '', '15100', '', '0', '1534555450');
-INSERT INTO `customer` VALUES ('21', '', '', '15100', '', '0', '1534555519');
-INSERT INTO `customer` VALUES ('22', '', '', '1510028', '', '0', '1534555540');
-INSERT INTO `customer` VALUES ('23', '', '', '1515151515', '', '0', '1534555777');
-INSERT INTO `customer` VALUES ('24', '', '', '151515', '', '0', '1534555812');
-INSERT INTO `customer` VALUES ('25', '', '', '151500', '', '0', '1534555841');
-INSERT INTO `customer` VALUES ('26', '', '', '15151', '', '0', '1534555935');
-INSERT INTO `customer` VALUES ('27', '', '', '15151515', '', '0', '1534556001');
-INSERT INTO `customer` VALUES ('28', '', '', '151515', '', '0', '1534556306');
+INSERT INTO `customer` VALUES ('15', '梁景轩', 'xuan03121994@163.com', '15100284122', '咨询太阳能安装问题', '1', '1535164314');
 
 -- ----------------------------
 -- Table structure for goods
@@ -208,7 +189,7 @@ CREATE TABLE `websiteinfo` (
   `adinfo` varchar(1000) DEFAULT NULL COMMENT '轮播图信息',
   `adpics` varchar(300) DEFAULT NULL COMMENT '轮播图路径',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of websiteinfo
