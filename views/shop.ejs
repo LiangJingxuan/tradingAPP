@@ -121,7 +121,7 @@
                                                             <div class="product-price">
                                                                 <div class="price-box">
                                                                     <span class="regular-price">类别：
-                                                                        <% if(signId==='shop'){ %>
+                                                                        <% if(signId==='goods'){ %>
                                                                             <a href="/goods?page=1&sid=<%=goodsList.dataList[i].sid%>" style="color:#a43d21;"><%=goodsList.dataList[i].sname%></a>
                                                                         <% }else { %>
                                                                             <a href="/product?page=1&sid=<%=goodsList.dataList[i].sid%>" style="color:#a43d21;"><%=goodsList.dataList[i].sname%></a>
@@ -326,8 +326,6 @@
 
         // 设置跳转地址
         signId==='goods'?hrefId='/goods':hrefId='/product';
-
-        console.log(hrefId)
 
         // 分页及参数设置
         try {
