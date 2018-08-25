@@ -86,6 +86,6 @@ angular.module('app')
                     document.getElementById("companyEditId").reset();
                 }
             });
-        }
+        };
 
     }]);

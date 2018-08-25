@@ -7,7 +7,7 @@ const info=require('../../middlewares/info');
 
 router
 
-    // 查询新闻列表
+    // 查询客户列表
     .get('/customerlist', async (ctx)=>{
         const params=ctx.query;
         const page=parseInt(params.page);

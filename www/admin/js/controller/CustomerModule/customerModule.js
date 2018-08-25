@@ -72,6 +72,11 @@ angular.module('app')
                 });
             };
 
+            // 刷新
+            $scope.resetReload=function(){
+                queryNews(1,pagesize);
+            }
+
         })(page,pagesize,rid,phone);
 
 
