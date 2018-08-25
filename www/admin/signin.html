@@ -18,8 +18,8 @@
                     <div class="left">
                         <div class="content">
                             <div class="header">
-                                <div class="logo text-center"><img src="/admin/img/logo-dark.png"></div>
-                                <p class="lead">Login to your account</p>
+                                <div class="logo text-center"><h3 class="CopyrightId"></h3></div>
+                                <!--<p class="lead">Login to your account</p>-->
                             </div>
                             <form id="signinId" class="form-auth-small" action="/admin/user/signin" method="post">
                                 <div class="form-group">
@@ -43,9 +43,9 @@
                     </div>
                     <div class="right">
                         <div class="overlay"></div>
-                        <div class="content text">
-                            <h1 class="heading">Free Bootstrap dashboard template</h1>
-                            <p>by The Develovers</p>
+                        <div class="content text" id="logoTip">
+                            <h3>Welcome to the land. </h3>
+                            <p style="letter-spacing:5px;">by The Develovers</p>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -98,6 +98,8 @@
         // 公司信息
         $.get("/common/company", function(res){
             $('.CopyrightId').text(res.name);
+            $('#logoTip p').text('欢迎登陆'+res.name+'管理系统.');
+            sessionStorage.setItem('copyright',res.name);
         })
     </script>
 </body>
