@@ -40,7 +40,7 @@ app.use(session({
 app.use(async (ctx,next)=>{
     await next();
     if(ctx.status===404){
-        // ctx.redirect('/404.html');
+        ctx.redirect('/404.html');
     }
 });
 
