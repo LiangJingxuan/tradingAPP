@@ -174,8 +174,8 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('36', '王海琦', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15567772021');
-INSERT INTO `user` VALUES ('37', '梁景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '听管理员的', '15100284122');
+INSERT INTO `user` VALUES ('36', '梁景', 'ae2d874fe06430805b3fa7e61ae7f46d', '管理员', '15567772021');
+INSERT INTO `user` VALUES ('37', '梁景轩', 'ae2d874fe06430805b3fa7e61ae7f46d', '员工', '15100284122');
 
 -- ----------------------------
 -- Table structure for websiteinfo
